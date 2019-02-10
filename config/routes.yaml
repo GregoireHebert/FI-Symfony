@@ -4,7 +4,6 @@ index:
 product:
     path: /products
     controller: App\Controller\ProductController
-    methods: ["POST"]
 
 getProduct:
     path: /products/{id}
