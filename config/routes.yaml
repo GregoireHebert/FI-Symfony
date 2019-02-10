@@ -1,0 +1,23 @@
+index:
+    path: /
+    controller: App\Controller\HomeController
+product:
+    path: /products
+    controller: App\Controller\ProductController
+    methods: ["POST"]
+
+getProduct:
+    path: /products/{id}
+    controller: App\Controller\GetProduct
+    methods: ["GET"]
+
+updateProduct:
+    path: /products/{id}
+    controller: App\Controller\UpdateProduct
+    methods: ["POST"]
+
+
+updateProducts:
+    path: /products/{id}
+    controller: App\Controller\DeleteProduct
+    methods: ["DELETE"]
