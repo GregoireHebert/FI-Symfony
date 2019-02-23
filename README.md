@@ -84,3 +84,22 @@ Je regarderai la manière dont les commits ont été fait.
 Je regarderai quelles fonctionnalités "bonus" ont été faites.
 
 
+## How To
+
+Lancer le serveur :  
+- composer install
+- php bin/console server:run
+
+Ajouter une entité :  
+- php bin/console make:entity  
+Et un controller :
+- php bin/console make:controller ProductController
+
+Pour regénérer les getters et setters :  
+- php bin/console make:entity --regenerate
+
+Migrer la BDD :  
+-  php bin/console make:migration
+
+Charger les fixtures :  
+- php bin/console doctrine:fixtures:load

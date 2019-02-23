@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Mon blog</h1>
+    <div class="card-columns">
+        {% for article in articles %}
+            {{ include('article/article_card.html.twig', { 'article': article }) }}
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style type="text/css">
+        .card-columns {
+            column-count: 2;
+        }
+    </style>
+{% endblock %}
