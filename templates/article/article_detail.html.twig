@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ app_name }} - {{ article.title }}{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Mon blog</h1>
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    <div class="card">
+        <div class="card-header">
+            {{ article.title }} - <i>Le {{ article.createdAt|date('Y-m-d à H:i') }}</i>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ article.subtitle }}</h5>
+            <p class="card-text">{{ article.corpus }}</p>
+        </div>
+        {% if article.tags.count >0 %}
+            <div class="card-footer text-muted">
+                <span class="oi oi-tag"></span> Tags:&nbsp;
+                {% for tag in article.tags %}
+                    <a href="{{ path('article_list_filtered',{'nameTag': tag.name }) }}"><span
+                                class="badge badge-secondary">{{ tag.name }}</span></a>&nbsp;
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

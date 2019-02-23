@@ -1,13 +1,17 @@
-<div class="card text-center">
+<div class="card ">
     <div class="card-header">
-        {{ article.title }}
+        {{ article.title }} - <i>Le {{ article.createdAt|date('Y-m-d à H:i') }}</i>
     </div>
     <div class="card-body">
         <h5 class="card-title">{{ article.subtitle }}</h5>
         <p class="card-text">{{ article.corpus|truncate(30) }}</p>
-        <a href="{{ path('article_show', {'id':  article.id }) }}" class="btn btn-primary">Lire cet article</a>
+        <a href="{{ path('article_show', {'id':  article.id }) }}" class="btn btn-dark">Lire cet article</a>
     </div>
     <div class="card-footer text-muted">
-        {{ article.createdAt|date('Y-m-d H:i') }}
+        <span class="oi oi-tag"></span> Tags:&nbsp;
+        {% for tag in article.tags %}
+            <a href="{{ path('article_list_filtered',{'nameTag': tag.name }) }}"><span
+                        class="badge badge-secondary">{{ tag.name }}</span></a>&nbsp;
+        {% endfor %}
     </div>
 </div>

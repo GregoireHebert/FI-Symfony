@@ -33,7 +33,7 @@ class Article
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\Length(min="3")
+     * @Assert\Length(min="30")
      */
     private $corpus;
 

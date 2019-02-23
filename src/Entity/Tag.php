@@ -30,10 +30,12 @@ class Tag
      */
     private $articles;
 
-    public function __construct()
+    public function __construct($name = null)
     {
         $this->articles = new ArrayCollection();
+        $this->name = $name;
     }
+
 
     public function getId(): ?int
     {

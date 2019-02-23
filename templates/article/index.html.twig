@@ -1,21 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ArticleController!{% endblock %}
+{% block title %}{{ app_name }}{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Mon blog</h1>
-    <div class="card-columns">
-        {% for article in articles %}
-            {{ include('article/article_card.html.twig', { 'article': article }) }}
-        {% endfor %}
-    </div>
+    <h1 class="text-center mb-3">Mon blog</h1>
+    {% for flashMessage in app.session.flashbag.get('warning') %}
+        <div class="alert alert-warning">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for article in articles %}
+        {% if loop.index == 1 or (loop.index-1) % 2 == 0 %}
+            <div class="card-deck mb-3">
+        {% endif %}
+        {{ include('article/article_card.html.twig', { 'article': article }) }}
+        {% if loop.index % 2 == 0 %}
+            </div>
+        {% endif %}
+    {% endfor %}
 {% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
-    <style type="text/css">
-        .card-columns {
-            column-count: 2;
-        }
-    </style>
 {% endblock %}
