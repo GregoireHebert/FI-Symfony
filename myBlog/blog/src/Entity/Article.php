@@ -1,11 +1,11 @@
-<?php
+<?php /** @noinspection PhpUnusedAliasInspection */
+
+/** @noinspection PhpUndefinedClassInspection */
 
 namespace App\Entity;
 
-use /** @noinspection PhpUndefinedClassInspection */
-    Doctrine\Common\Collections\ArrayCollection;
-use /** @noinspection PhpUndefinedClassInspection */
-    Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -49,33 +49,24 @@ class Article
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
-    /** @noinspection PhpUndefinedClassInspection */
-
 
     /**
-     * @var Collection|Tag[]
-     *
      * @ORM\ManyToMany(targetEntity="App\Entity\Tag", mappedBy="articles")
      */
     private $tags;
-
     public function __construct()
     {
-        /** @noinspection PhpUndefinedClassInspection */
         $this->tags = new ArrayCollection();
-    }/** @noinspection PhpUndefinedClassInspection */
+    }
 
     /**
-     * Get tags
      * @return Collection|Tag[]
      */
     public function getTags()
     {
         return $this->tags;
     }
-
     /**
-     * @addTag
      * @param Tag $tag
      * @return Article
      */
@@ -87,14 +78,11 @@ class Article
         }
         return $this;
     }
-
-
     /**
-     * @removeTag
      * @param Tag $tag
      * @return Article
      */
-    public function removeTag($tag)
+    public function removeTag(Tag $tag)
     {
         if ($this->tags->contains($tag)) {
             $this->tags->removeElement($tag);
@@ -102,6 +90,7 @@ class Article
         }
         return $this;
     }
+
 
     /**
      * Get id

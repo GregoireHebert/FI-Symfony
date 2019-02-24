@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUndefinedClassInspection */
 
 namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
@@ -46,6 +46,36 @@ class Tag
     }
 
     /**
+     * @return Collection|Article[]
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+    /**
+     * @param Article $article
+     * @return Tag
+     */
+    public function addArticle(Article $article)
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+        }
+        return $this;
+    }
+    /**
+     * @param Article $article
+     * @return Tag
+     */
+    public function removeArticle(Article $article)
+    {
+        if ($this->articles->contains($article)) {
+            $this->articles->removeElement($article);
+        }
+        return $this;
+    }
+
+    /**
      * Get id
      *
      * @return int
@@ -79,38 +109,17 @@ class Tag
         return $this->name;
     }
 
-    /** @noinspection PhpUndefinedClassInspection */
     /**
-     * @return Collection|Article[]
-     */
-    public function getArticles()
-    {
-        return $this->articles;
-    }
-
-    /**
-     * @addArticle
-     * @param Article $article
+     * Set name
+     *
+     * @param string $name
+     *
      * @return Tag
      */
-    public function addArticle($article)
+    public function setTitle($name)
     {
-        if (!$this->articles->contains($article)) {
-            $this->articles[] = $article;
-        }
-        return $this;
-    }
+        $this->name = $name;
 
-    /**
-     * @removeArticle
-     * @param Article $article
-     * @return Tag
-     */
-    public function removeArticle($article)
-    {
-        if ($this->articles->contains($article)) {
-            $this->articles->removeElement($article);
-        }
         return $this;
     }
 }
