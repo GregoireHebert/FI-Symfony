@@ -76,7 +76,6 @@ class ArticleController extends AbstractController
      */
     public function new(Request $request)
     {
-        //todo ajouter auth basic
         $article = new Article();
         $article->setTitle('Titre');
         $article->setSubtitle('Sous-titre');
