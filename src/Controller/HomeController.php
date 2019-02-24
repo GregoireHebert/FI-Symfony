@@ -22,10 +22,7 @@ class HomeController extends Controller
         $name = $request->get('name', 'Anonymous');
         $repository = $this->findAll($em);
 
-        var_dump($repository);
-
-        // return new JsonResponse($product);
-        return $this->render('base.html.twig',['name' => $name]);
+        return $this->render('base.html.twig',['name' => $name, 'articles' => $repository]);
     }
 
     public function findAll( EntityManagerInterface $entityManager): array
@@ -35,8 +32,6 @@ class HomeController extends Controller
             'SELECT p.title,p.corpus,p.subtitle,p.createdAt,p.tags
             FROM App\Entity\Article p'
         );
-    
-        // returns an array of Product objects
         return $query->execute();
     }
 }

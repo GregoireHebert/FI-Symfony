@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>{% block title %}Un blog magnifique{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-    Welcome {{name}}
+        {{ include('header.html.twig') }}
         {% block body %}{% endblock %}
+            <a class="navbar-brand" href="{{ path('createArticle') }}">
+               Ajouter un nouvel article
+            </a>
+            {% if articles|length == 0 %}
+                <p>Pas encore d'article dans le blog.</p>
+            {% else %}
+                <ul id="navigation"> 
+                    {% for item in articles %}
+                        <li style="margin-bottom: 40px;">
+                            <h3>{{ item.title }}</h3>
+                            <h5>{{ item.subtitle }}</h5>
+                            <div style="display: flex; align-items: center;">
+                                {% for tag in item.tags %}
+                                    <p style="margin-right: 10px;">{{ tag.name }}</p>
+                                {% endfor %}
+                            </div>
+                            <a style="cursor: pointer;">
+                                Voir l'article
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -78,6 +78,11 @@ class Article
         return $this->title;
     }
 
+    public function getSubtitle(): ?string
+    {
+        return $this->subtitle;
+    }
+
     public function addTag(Tag $tag): void
     {
         array_push($this->tags,$tag);
