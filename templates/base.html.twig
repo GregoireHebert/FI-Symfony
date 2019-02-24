@@ -9,18 +9,20 @@
     <body>
         {{ include('header.html.twig') }}
         {% block body %}
-            <a class="navbar-brand" href="{{ path('createArticle') }}">
-               Ajouter un nouvel article
-            </a>
+            <div style="text-align:center; margin-top: 10px; margin-bottom: 30px;">
+                <a href="{{ path('createArticle') }}">
+                Ajouter un nouvel article
+                </a>
+            </div>
+            
             {% if articles|length == 0 %}
                 <p>Pas encore d'article dans le blog.</p>
-            {% else %}
-                <ul id="navigation"> 
+            {% else %} 
                     {% for item in articles %}
-                        <li style="margin-bottom: 40px;">
+                        <div style="margin-bottom: 40px; text-align:center;">
                             <h3>{{ item.title }}</h3>
                             <h5>{{ item.subtitle }}</h5>
-                            <div style="display: flex; align-items: center;">
+                            <div style="display: flex; align-items: center; justify-content: center;">
                                 {% for tag in item.tags %}
                                     <p style="margin-right: 10px;">{{ tag.name }}</p>
                                 {% endfor %}
@@ -28,9 +30,8 @@
                             <a style="cursor: pointer;" href="{{ path('getArticle', {'id' : item.id }) }}">
                                 Voir l'article
                             </a>
-                        </li>
+                        </div>
                     {% endfor %}
-                </ul>
             {% endif %}
         {% endblock %}
         {% block javascripts %}{% endblock %}

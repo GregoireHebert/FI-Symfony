@@ -9,18 +9,18 @@
     <body>
         {{ include('header.html.twig') }}
         {% block body %}
-            <div style="margin-left: 24px;">
+            <div style="text-align: center;margin-top: 50px;">
                 <h1>{{ article.title }}</h1>
                 <h3>{{ article.subtitle }}</h3>
-                <p>Publié le : {{ article.createdAt | date }}</p>
-                <div style="display: flex; align-items: center;">
+                <p>Publié le : {{ article.createdAt | date("d/m/Y") }}</p>
+                <div style="display: flex; align-items: center; justify-content: center;">
                     {% for tag in article.tags %}
                         <p style="margin-right: 10px;">{{ tag.name }}</p>
                     {% endfor %}
                 </div>
                 <div>{{ article.corpus }}</div>
             </div>
-            <div>
+            <div style="margin-top: 50px; text-align: center;">
                 <a href="{{ path('home') }}">Retour</a>
             </div>
         {% endblock %}
