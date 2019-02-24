@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% set current_path = app.request.get('_route') %}
+
     <meta charset="UTF-8">
     <title>{% block title %}Mon Blog{% endblock %}</title>
     {% block stylesheets %}
@@ -20,10 +22,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         {% block navbar %}
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('article_list') }}">Accueil <span class="sr-only">(current)</span></a>
+                <li class="nav-item {% if current_path ==  'article_list' or current_path == 'article_list_paginated' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('article_list') }}">Accueil</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% if current_path ==  'article_add' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('article_add') }}">Ajouter un article</a>
                 </li>
             </ul>
