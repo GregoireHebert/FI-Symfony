@@ -21,7 +21,6 @@ class HomeController extends Controller
     {
         $name = $request->get('name', 'Anonymous');
         $repository = $this->findAll($em);
-
         return $this->render('base.html.twig',['name' => $name, 'articles' => $repository]);
     }
 
@@ -29,7 +28,7 @@ class HomeController extends Controller
     {
     
         $query = $entityManager->createQuery(
-            'SELECT p.title,p.corpus,p.subtitle,p.createdAt,p.tags
+            'SELECT p.id,p.title,p.corpus,p.subtitle,p.createdAt,p.tags
             FROM App\Entity\Article p'
         );
         return $query->execute();

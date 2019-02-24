@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>{% block title %}Un blog magnifique{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        {{ include('header.html.twig') }}
+        {% block body %}
+            <div style="margin-left: 24px;">
+                <h1>{{ article.title }}</h1>
+                <h3>{{ article.subtitle }}</h3>
+                <p>Publié le : {{ article.createdAt | date }}</p>
+                <div style="display: flex; align-items: center;">
+                    {% for tag in article.tags %}
+                        <p style="margin-right: 10px;">{{ tag.name }}</p>
+                    {% endfor %}
+                </div>
+                <div>{{ article.corpus }}</div>
+            </div>
+            <div>
+                <a href="{{ path('home') }}">Retour</a>
+            </div>
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

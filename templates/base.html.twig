@@ -8,7 +8,7 @@
     </head>
     <body>
         {{ include('header.html.twig') }}
-        {% block body %}{% endblock %}
+        {% block body %}
             <a class="navbar-brand" href="{{ path('createArticle') }}">
                Ajouter un nouvel article
             </a>
@@ -25,13 +25,14 @@
                                     <p style="margin-right: 10px;">{{ tag.name }}</p>
                                 {% endfor %}
                             </div>
-                            <a style="cursor: pointer;">
+                            <a style="cursor: pointer;" href="{{ path('getArticle', {'id' : item.id }) }}">
                                 Voir l'article
                             </a>
                         </li>
                     {% endfor %}
                 </ul>
             {% endif %}
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
