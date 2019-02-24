@@ -4,14 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\Tag;
+use App\Form\ArticleType;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\EntityRepository;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -86,25 +82,7 @@ class ArticleController extends AbstractController
         $article->setSubtitle('Sous-titre');
         $article->setCorpus('Ceci est un article passionant !');
 
-        //todo creer la classe qui gere le formulaire ArticleType
-        $form = $this->createFormBuilder($article)
-            ->add('title', TextType::class, ['label' => 'Titre'])
-            ->add('subtitle', TextType::class, ['label' => 'Sous-titre'])
-            ->add('corpus', TextareaType::class, ['label' => 'Corps'])
-            ->add('tags', EntityType::class, [
-                'class' => Tag::class,
-                'choice_label' => 'name',
-                'multiple' => true,
-                'by_reference' => false,
-                'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('t')
-                        ->andWhere('t.name != :name')
-                        ->setParameter('name', 'New')
-                        ->orderBy('t.name', 'ASC');
-                },
-            ])
-            ->add('save', SubmitType::class, ['label' => 'Créer l\'article'])
-            ->getForm();
+        $form = $this->createForm(ArticleType::class, $article);
 
         $form->handleRequest($request);
 
