@@ -21,7 +21,7 @@ class HomeController extends Controller
     {
         $name = $request->get('name', 'Anonymous');
         $repository = $this->findAll($em);
-        return $this->render('base.html.twig',['name' => $name, 'articles' => $repository]);
+        return $this->render('base.html.twig',['name' => $name, 'tags'=> $tags, 'articles' => $repository]);
     }
 
     public function findAll( EntityManagerInterface $entityManager): array

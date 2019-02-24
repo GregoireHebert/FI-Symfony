@@ -6,8 +6,8 @@
         <title>{% block title %}Un blog magnifique{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
-    <body>
         {{ include('header.html.twig') }}
+    <body style="width: 100%;position: absolute;top: 50px;margin-bottom: 10px;">
         {% block body %}
             <div style="text-align:center; margin-top: 10px; margin-bottom: 30px;">
                 <a href="{{ path('createArticle') }}">
@@ -18,6 +18,7 @@
             {% if articles|length == 0 %}
                 <p>Pas encore d'article dans le blog.</p>
             {% else %} 
+                    <div>
                     {% for item in articles %}
                         <div style="margin-bottom: 40px; text-align:center;">
                             <h3>{{ item.title }}</h3>
@@ -32,8 +33,10 @@
                             </a>
                         </div>
                     {% endfor %}
+                    </div>
             {% endif %}
         {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
+    {{ include('footer.html.twig') }}
 </html>

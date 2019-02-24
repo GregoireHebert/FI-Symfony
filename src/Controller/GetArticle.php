@@ -19,10 +19,21 @@ class GetArticle extends Controller
     {
         $repository = $em->getRepository(Article::class);
         $articleId = $request->get('id');
+        $articles = $this->findAll($em);
 
         $article = $repository->find($articleId);
         
-        return $this->render('article.html.twig', ['article' => $article]);
+        return $this->render('article.html.twig', ['size'=> count($articles),'article' => $article]);
         
+    }
+
+    public function findAll( EntityManagerInterface $entityManager): array
+    {
+    
+        $query = $entityManager->createQuery(
+            'SELECT p.id,p.title,p.corpus,p.subtitle,p.createdAt,p.tags
+            FROM App\Entity\Article p'
+        );
+        return $query->execute();
     }
 }

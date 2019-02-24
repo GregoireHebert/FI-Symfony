@@ -47,6 +47,7 @@ class CreateArticle extends Controller
             $array = array();
             $comment->setTag($array);
             for($i=0;$i<count($tags);$i++){
+                // VERIFIER QUE LE TAGS N EXISTE PAS 
                 $tag = new Tag();
                 $tag->setName($tags[$i]);
                 $tag->setArticle($comment->getTitle());
