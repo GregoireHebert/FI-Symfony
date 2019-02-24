@@ -1,0 +1,13 @@
+home:
+   path: /
+   controller: App\Controller\HomeController
+article:
+  path: /article
+  controller: App\Controller\ArticleController
+
+getArticle:
+  path: /article/{id}
+  controller: App\Controller\GetArticle
+updateArticle:
+  path: /article/update/{id}
+  controller: App\Controller\UpdateArticle
