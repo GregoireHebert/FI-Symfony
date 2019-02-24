@@ -4,22 +4,39 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Entity\Article;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
-class HomeController
+class HomeController extends Controller
 {
-    public function __invoke(Request $request)
+    /**
+     * @Route("/")
+     */
+    public function home(Request $request, EntityManagerInterface $em)
     {
         $name = $request->get('name', 'Anonymous');
-        return new Response(<<<HTML
-<html>
-        <head></head>
-        <body>
-            Welcome $name on the HomePage
-        </body>
-</html>
-HTML
+        $repository = $this->findAll($em);
+
+        var_dump($repository);
+
+        // return new JsonResponse($product);
+        return $this->render('base.html.twig',['name' => $name]);
+    }
+
+    public function findAll( EntityManagerInterface $entityManager): array
+    {
+    
+        $query = $entityManager->createQuery(
+            'SELECT p.title,p.corpus,p.subtitle,p.createdAt,p.tags
+            FROM App\Entity\Article p'
         );
+    
+        // returns an array of Product objects
+        return $query->execute();
     }
 }
