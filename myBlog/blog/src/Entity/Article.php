@@ -54,10 +54,7 @@ class Article
      * @ORM\ManyToMany(targetEntity="App\Entity\Tag", mappedBy="articles")
      */
     private $tags;
-    public function __construct()
-    {
-        $this->tags = new ArrayCollection();
-    }
+
 
     /**
      * @return Collection|Tag[]
@@ -72,12 +69,19 @@ class Article
      */
     public function addTag($tag)
     {
-        if (!$this->tags->contains($tag)) {
+        if(!$this->tags == null){
             $this->tags[] = $tag;
             $tag->addArticle($this);
+        }else{
+            if (!$this->tags->contains($tag)) {
+                $this->tags[] = $tag;
+                $tag->addArticle($this);
+            }
         }
+
         return $this;
     }
+
     /**
      * @param Tag $tag
      * @return Article

@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98a38db9-528c-498b-9793-e815e520b8a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/myBlog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myBlog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/.env" beforeDir="false" afterPath="$PROJECT_DIR$/blog/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/blog/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/blog/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/src/Controller/BlogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/src/Entity/Article.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/src/Entity/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/src/Entity/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/blog/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/src/Entity/BlogPost.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="207" column="5" selection-start-line="207" selection-start-column="5" selection-end-line="207" selection-end-column="5" />
+            <state relative-caret-position="199">
+              <caret line="60" column="23" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
               <folding>
                 <element signature="e#126#174#0#PHP" expanded="true" />
                 <element signature="e#1149#1244#0#PHP" />
@@ -91,10 +79,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blog/src/DataFixtures/ORM/Fixtures.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+              <folding>
+                <element signature="e#121#144#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/src/Entity/Article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="81" column="22" lean-forward="true" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+            <state relative-caret-position="92">
+              <caret line="77" column="40" lean-forward="true" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -102,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/src/Entity/Tag.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+            <state relative-caret-position="928">
+              <caret line="104" selection-start-line="104" selection-end-line="104" />
               <folding>
                 <element signature="e#29#61#0#PHP" expanded="true" />
               </folding>
@@ -133,6 +133,7 @@
       <find>'engine' =&gt;</find>
       <find>Schem</find>
       <find>public function boot</find>
+      <find>contains</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,12 +148,12 @@
         <option value="$PROJECT_DIR$/blog/var/cache/dev/ContainerYiMDxxM/getDoctrine_Dbal_DefaultConnectionService.php" />
         <option value="$PROJECT_DIR$/blog/vendor/symfony/cache/Traits/PdoTrait.php" />
         <option value="$PROJECT_DIR$/blog/vendor/symfony/framework-bundle/Templating/TemplateReference.php" />
-        <option value="$PROJECT_DIR$/blog/src/DataFixtures/ORM/Fixtures.php" />
         <option value="$PROJECT_DIR$/blog/.env" />
         <option value="$PROJECT_DIR$/blog/config/packages/doctrine.yaml" />
         <option value="$PROJECT_DIR$/blog/src/Entity/BlogPost.php" />
-        <option value="$PROJECT_DIR$/blog/src/Entity/Article.php" />
         <option value="$PROJECT_DIR$/blog/src/Entity/Tag.php" />
+        <option value="$PROJECT_DIR$/blog/src/Entity/Article.php" />
+        <option value="$PROJECT_DIR$/blog/src/DataFixtures/ORM/Fixtures.php" />
       </list>
     </option>
   </component>
@@ -230,14 +231,7 @@
               <item name="myBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="myBlog" type="462c0819:PsiDirectoryNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -277,18 +271,18 @@
       <option name="presentableId" value="Default" />
       <updated>1550853207475</updated>
       <workItem from="1550853301172" duration="23823000" />
-      <workItem from="1550949543375" duration="10784000" />
+      <workItem from="1550949543375" duration="12709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34607000" />
+    <option name="totallyTimeSpent" value="36532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16439395" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16439395" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" weight="0.3295082" />
@@ -302,12 +296,12 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.37213114" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.30491802" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.5130719" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.28484848" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.28484848" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,13 +365,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/855f8dd9-efa5-4093-8dbf-a622e064e0a2/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://855f8dd9-efa5-4093-8dbf-a622e064e0a2/schema/database/table/article">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://855f8dd9-efa5-4093-8dbf-a622e064e0a2/schema/database/table/tag_article">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -398,9 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/src/DataFixtures/ORM/Fixtures.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/vendor/symfony/framework-bundle/Templating/TemplateReference.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -412,17 +396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="93" column="27" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/src/Entity/BlogPost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="207" column="5" selection-start-line="207" selection-start-column="5" selection-end-line="207" selection-end-column="5" />
-          <folding>
-            <element signature="e#126#174#0#PHP" expanded="true" />
-            <element signature="e#1149#1244#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -440,10 +413,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blog/src/Entity/BlogPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="60" column="23" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
+          <folding>
+            <element signature="e#126#174#0#PHP" expanded="true" />
+            <element signature="e#1149#1244#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://855f8dd9-efa5-4093-8dbf-a622e064e0a2/schema/database/table/article">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blog/src/Entity/Tag.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+        <state relative-caret-position="928">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
           <folding>
             <element signature="e#29#61#0#PHP" expanded="true" />
           </folding>
@@ -452,8 +443,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/src/Entity/Article.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="81" column="22" lean-forward="true" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+        <state relative-caret-position="92">
+          <caret line="77" column="40" lean-forward="true" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/src/DataFixtures/ORM/Fixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding>
+            <element signature="e#121#144#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

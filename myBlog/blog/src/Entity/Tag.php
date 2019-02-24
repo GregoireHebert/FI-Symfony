@@ -39,12 +39,6 @@ class Tag
     private $articles;
 
 
-    public function __construct()
-    {
-        /** @noinspection PhpUndefinedClassInspection */
-        $this->articles = new ArrayCollection();
-    }
-
     /**
      * @return Collection|Article[]
      */
@@ -109,17 +103,4 @@ class Tag
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Tag
-     */
-    public function setTitle($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
 }
