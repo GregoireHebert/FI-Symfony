@@ -90,6 +90,9 @@ Lancer le serveur :
 - composer install
 - php bin/console server:run
 
+Charger les fixtures :  
+- php bin/console doctrine:fixtures:load
+
 Ajouter une entité :  
 - php bin/console make:entity  
 Et un controller :
@@ -100,6 +103,3 @@ Pour regénérer les getters et setters :
 
 Migrer la BDD :  
 -  php bin/console make:migration
-
-Charger les fixtures :  
-- php bin/console doctrine:fixtures:load

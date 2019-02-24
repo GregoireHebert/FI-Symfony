@@ -58,8 +58,9 @@ class ArticleController extends AbstractController
      */
     public function indexPaginated(EntityManagerInterface $entityManager, string $page)
     {
-        //todo ajouter pagination dans l'html
-        $articles = $entityManager->getRepository(Article::class)->findBy([], ['createdAt' => 'DESC'], 4, ($page - 1) * 4);
+        $articlesPerPage = 4;// changer cette variable pour changer le nb d'articles par page
+        $nbArticles = $entityManager->getRepository(Article::class)->count([]);
+        $articles = $entityManager->getRepository(Article::class)->findBy([], ['createdAt' => 'DESC'], $articlesPerPage, ($page - 1) * $articlesPerPage);
         if (empty($articles)) {
             $this->get('session')->getFlashBag()->add('warning', 'Cette page n\'existe pas');
             return $this->redirectToRoute('article_list_paginated', ['page' => 1]);
@@ -67,6 +68,8 @@ class ArticleController extends AbstractController
 
         return $this->render('article/index.html.twig', [
             'articles' => $articles,
+            'nb_pages' => ceil($nbArticles / $articlesPerPage),
+            'page' => $page,
         ]);
     }
 
@@ -85,9 +88,9 @@ class ArticleController extends AbstractController
 
         //todo creer la classe qui gere le formulaire ArticleType
         $form = $this->createFormBuilder($article)
-            ->add('title', TextType::class)
-            ->add('subtitle', TextType::class)
-            ->add('corpus', TextareaType::class)
+            ->add('title', TextType::class, ['label' => 'Titre'])
+            ->add('subtitle', TextType::class, ['label' => 'Sous-titre'])
+            ->add('corpus', TextareaType::class, ['label' => 'Corps'])
             ->add('tags', EntityType::class, [
                 'class' => Tag::class,
                 'choice_label' => 'name',
@@ -139,12 +142,16 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}", name="article_show")
+     * @throws \Doctrine\ORM\NonUniqueResultException
      */
-    public function show(Article $article)
+    public function show(Article $article, EntityManagerInterface $entityManager)
     {
-        //todo ajouter suivant et précédant dans l'html
+        $next = $entityManager->getRepository(Article::class)->findNextByDateCreated($article);
+        $previous = $entityManager->getRepository(Article::class)->findPreviousByDateCreated($article);
         return $this->render('article/article_detail.html.twig', [
             'article' => $article,
+            'previous_id' => $previous != null ? $previous->getId() : null,
+            'next_id' => $next != null ? $next->getId() : null,
         ]);
     }
 

@@ -18,9 +18,8 @@ class ArticleFixtures extends Fixture
         $manager->persist($tagNew);
         $tagSymfony = new Tag("Symfony");
         $manager->persist($tagSymfony);
-
-        $tag = new Tag("PHP");
-        $manager->persist($tag);
+        $tagPHP = new Tag("PHP");
+        $manager->persist($tagPHP);
         $tag = new Tag("Java");
         $manager->persist($tag);
         $tag = new Tag("Javascript");
@@ -40,24 +39,35 @@ class ArticleFixtures extends Fixture
         $article->setTitle("Premier article");
         $article->setSubtitle("On est content");
         $article->setCorpus("Dans cet article, nous allons voir comment créer une application symfony...");
-        $article->setCreatedAt(\DateTime::createFromFormat("d/m/Y H:i", "25/04/2015 15:00"));
+        $article->setCreatedAt(\DateTime::createFromFormat("d/m/Y H:i", "22/02/2019 13:00"));
         $article->addTag($tagSymfony);
+        $article->addTag($tagPHP);
         $manager->persist($article);
 
         $article = new Article();
         $article->setTitle("Deuxième article");
         $article->setSubtitle("On est encore content");
         $article->setCorpus("Dans cet article, nous allons voir comment créer une application symfony... et oui encore !");
-        $article->setCreatedAt(\DateTime::createFromFormat("d/m/Y H:i", "25/04/2015 15:00"));
-        $article->addTag($tagSymfony);
+        $article->setCreatedAt(\DateTime::createFromFormat("d/m/Y H:i", "22/02/2019 14:00"));
+        $article->addTag($tag);
         $manager->persist($article);
 
         $article = new Article();
         $article->setTitle("Troisième article");
         $article->setSubtitle("On avance bien");
         $article->setCorpus("Dans cet article, nous allons voir comment créer une application symfony... mais oui c'est clair.");
-        $article->setCreatedAt(\DateTime::createFromFormat("d/m/Y H:i", "25/04/2015 15:00"));
+        $article->setCreatedAt(\DateTime::createFromFormat("d/m/Y H:i", "22/02/2019 15:00"));
         $article->addTag($tagSymfony);
+        $article->addTag($tagPHP);
+        $manager->persist($article);
+
+        $article = new Article();
+        $article->setTitle("Un autre article");
+        $article->setSubtitle("Oui");
+        $article->setCorpus("Dans cet article, nous sommes en pleine réflexion sur... ?");
+        $article->setCreatedAt(\DateTime::createFromFormat("d/m/Y H:i", "22/02/2019 16:00"));
+        $article->addTag($tagSymfony);
+        $article->addTag($tagPHP);
         $manager->persist($article);
 
         $article = new Article();
@@ -85,6 +95,7 @@ Oportunum est, ut arbitror, explanare nunc causam, quae ad exitium praecipitem A
 Utque proeliorum periti rectores primo catervas densas opponunt et fortes, deinde leves armaturas, post iaculatores ultimasque subsidiales acies, si fors adegerit, iuvaturas, ita praepositis urbanae familiae suspensae digerentibus sollicite, quos insignes faciunt virgae dexteris aptatae velut tessera data castrensi iuxta vehiculi frontem omne textrinum incedit: huic atratum coquinae iungitur ministerium, dein totum promiscue servitium cum otiosis plebeiis de vicinitate coniunctis: postrema multitudo spadonum a senibus in pueros desinens, obluridi distortaque lineamentorum conpage deformes, ut quaqua incesserit quisquam cernens mutilorum hominum agmina detestetur memoriam Samiramidis reginae illius veteris, quae teneros mares castravit omnium prima velut vim iniectans naturae, eandemque ab instituto cursu retorquens, quae inter ipsa oriundi crepundia per primigenios seminis fontes tacita quodam modo lege vias propagandae posteritatis ostendit.");
         $article->setCreatedAt(new \DateTime());
         $article->addTag($tagSymfony);
+        $article->addTag($tagPHP);
         $article->addTag($tagNew);
         $manager->persist($article);
 

@@ -39,6 +39,33 @@ class ArticleRepository extends ServiceEntityRepository
             ->getQuery();
 
         return $qb->execute();
+    }
 
+    /**
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findNextByDateCreated(Article $article)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.createdAt > :article_created')
+            ->setParameter('article_created', $article->getCreatedAt())
+            ->orderBy('a.createdAt', 'ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+    /**
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findPreviousByDateCreated(Article $article)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.createdAt < :article_created')
+            ->setParameter('article_created', $article->getCreatedAt())
+            ->orderBy('a.createdAt', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
     }
 }
