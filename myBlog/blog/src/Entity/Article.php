@@ -51,10 +51,14 @@ class Article
     private $createdAt;
 
     /**
+     * @var Collection|Tag[]
      * @ORM\ManyToMany(targetEntity="App\Entity\Tag", mappedBy="articles")
      */
     private $tags;
 
+    public function __construct() {
+        $this->tags = new ArrayCollection();
+    }
 
     /**
      * @return Collection|Tag[]
@@ -63,23 +67,36 @@ class Article
     {
         return $this->tags;
     }
+
+    /**
+     * Set tag
+     *
+     * @param Tag $tag
+     *
+     * @return void
+     */
+    public function setTag($tag)
+    {
+        $this->tags = $tag;
+    }
     /**
      * @param Tag $tag
-     * @return Article
+     * @return void
      */
     public function addTag($tag)
     {
-        if(!$this->tags == null){
-            $this->tags[] = $tag;
-            $tag->addArticle($this);
-        }else{
+        array_push($this->tags,$tag);
+    }
+
+    /**
+     * @param Tag $tag
+     * @return void
+     */
+    public function addTag2($tag)
+    {
             if (!$this->tags->contains($tag)) {
                 $this->tags[] = $tag;
-                $tag->addArticle($this);
             }
-        }
-
-        return $this;
     }
 
     /**

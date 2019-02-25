@@ -46,27 +46,49 @@ class Tag
     {
         return $this->articles;
     }
+
+    /**
+     * Set article
+     *
+     * @param Article $article
+     *
+     * @return void
+     */
+    public function setArticle($article)
+    {
+        $this->article = $article;
+    }
+
     /**
      * @param Article $article
-     * @return Tag
+     * @return void
+     */
+    public function addArticle2(Article $article)
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+        }
+    }
+    /**
+     * @param Article $article
+     * @return void
      */
     public function addArticle(Article $article)
     {
         if (!$this->articles->contains($article)) {
             $this->articles[] = $article;
         }
-        return $this;
     }
+
     /**
      * @param Article $article
-     * @return Tag
+     * @return void
      */
     public function removeArticle(Article $article)
     {
         if ($this->articles->contains($article)) {
             $this->articles->removeElement($article);
         }
-        return $this;
     }
 
     /**
