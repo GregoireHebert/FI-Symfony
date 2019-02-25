@@ -83,6 +83,7 @@ class ComposerStaticInit847bf71c52f36f8222957d6de55d98fc
         'A' => 
         array (
             'AppBundle\\' => 10,
+            'Afrass\\' => 7,
         ),
     );
 
@@ -234,6 +235,10 @@ class ComposerStaticInit847bf71c52f36f8222957d6de55d98fc
         'AppBundle\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/AppBundle',
+        ),
+        'Afrass\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Afrass',
         ),
     );
 
