@@ -32,7 +32,7 @@ class Twig_Tests_IntegrationTest extends Twig_Test_IntegrationTestCase
 
     public function getFixturesDir()
     {
-        return __DIR__.'/Fixtures/';
+        return dirname(__FILE__).'/Fixtures/';
     }
 }
 
@@ -136,41 +136,39 @@ class TwigTestExtension extends Twig_Extension
     public function getFilters()
     {
         return [
-            new Twig_Filter('§', [$this, '§Filter']),
-            new Twig_Filter('escape_and_nl2br', [$this, 'escape_and_nl2br'], ['needs_environment' => true, 'is_safe' => ['html']]),
-            new Twig_Filter('nl2br', [$this, 'nl2br'], ['pre_escape' => 'html', 'is_safe' => ['html']]),
-            new Twig_Filter('escape_something', [$this, 'escape_something'], ['is_safe' => ['something']]),
-            new Twig_Filter('preserves_safety', [$this, 'preserves_safety'], ['preserves_safety' => ['html']]),
-            new Twig_Filter('static_call_string', 'TwigTestExtension::staticCall'),
-            new Twig_Filter('static_call_array', ['TwigTestExtension', 'staticCall']),
-            new Twig_Filter('magic_call', [$this, 'magicCall']),
-            new Twig_Filter('magic_call_string', 'TwigTestExtension::magicStaticCall'),
-            new Twig_Filter('magic_call_array', ['TwigTestExtension', 'magicStaticCall']),
-            new Twig_Filter('*_path', [$this, 'dynamic_path']),
-            new Twig_Filter('*_foo_*_bar', [$this, 'dynamic_foo']),
-            new Twig_Filter('anon_foo', function ($name) { return '*'.$name.'*'; }),
+            new Twig_SimpleFilter('§', [$this, '§Filter']),
+            new Twig_SimpleFilter('escape_and_nl2br', [$this, 'escape_and_nl2br'], ['needs_environment' => true, 'is_safe' => ['html']]),
+            new Twig_SimpleFilter('nl2br', [$this, 'nl2br'], ['pre_escape' => 'html', 'is_safe' => ['html']]),
+            new Twig_SimpleFilter('escape_something', [$this, 'escape_something'], ['is_safe' => ['something']]),
+            new Twig_SimpleFilter('preserves_safety', [$this, 'preserves_safety'], ['preserves_safety' => ['html']]),
+            new Twig_SimpleFilter('static_call_string', 'TwigTestExtension::staticCall'),
+            new Twig_SimpleFilter('static_call_array', ['TwigTestExtension', 'staticCall']),
+            new Twig_SimpleFilter('magic_call', [$this, 'magicCall']),
+            new Twig_SimpleFilter('magic_call_string', 'TwigTestExtension::magicStaticCall'),
+            new Twig_SimpleFilter('magic_call_array', ['TwigTestExtension', 'magicStaticCall']),
+            new Twig_SimpleFilter('*_path', [$this, 'dynamic_path']),
+            new Twig_SimpleFilter('*_foo_*_bar', [$this, 'dynamic_foo']),
         ];
     }
 
     public function getFunctions()
     {
         return [
-            new Twig_Function('§', [$this, '§Function']),
-            new Twig_Function('safe_br', [$this, 'br'], ['is_safe' => ['html']]),
-            new Twig_Function('unsafe_br', [$this, 'br']),
-            new Twig_Function('static_call_string', 'TwigTestExtension::staticCall'),
-            new Twig_Function('static_call_array', ['TwigTestExtension', 'staticCall']),
-            new Twig_Function('*_path', [$this, 'dynamic_path']),
-            new Twig_Function('*_foo_*_bar', [$this, 'dynamic_foo']),
-            new Twig_Function('anon_foo', function ($name) { return '*'.$name.'*'; }),
+            new Twig_SimpleFunction('§', [$this, '§Function']),
+            new Twig_SimpleFunction('safe_br', [$this, 'br'], ['is_safe' => ['html']]),
+            new Twig_SimpleFunction('unsafe_br', [$this, 'br']),
+            new Twig_SimpleFunction('static_call_string', 'TwigTestExtension::staticCall'),
+            new Twig_SimpleFunction('static_call_array', ['TwigTestExtension', 'staticCall']),
+            new Twig_SimpleFunction('*_path', [$this, 'dynamic_path']),
+            new Twig_SimpleFunction('*_foo_*_bar', [$this, 'dynamic_foo']),
         ];
     }
 
     public function getTests()
     {
         return [
-            new Twig_Test('multi word', [$this, 'is_multi_word']),
-            new Twig_Test('test_*', [$this, 'dynamic_test']),
+            new Twig_SimpleTest('multi word', [$this, 'is_multi_word']),
+            new Twig_SimpleTest('test_*', [$this, 'dynamic_test']),
         ];
     }
 

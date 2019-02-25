@@ -9,9 +9,12 @@
  * file that was distributed with this source code.
  */
 
-final class Twig_Extension_Escaper extends Twig_Extension
+/**
+ * @final
+ */
+class Twig_Extension_Escaper extends Twig_Extension
 {
-    private $defaultStrategy;
+    protected $defaultStrategy;
 
     /**
      * @param string|false|callable $defaultStrategy An escaping strategy
@@ -36,7 +39,7 @@ final class Twig_Extension_Escaper extends Twig_Extension
     public function getFilters()
     {
         return [
-            new Twig_Filter('raw', 'twig_raw_filter', ['is_safe' => ['all']]),
+            new Twig_SimpleFilter('raw', 'twig_raw_filter', ['is_safe' => ['all']]),
         ];
     }
 
@@ -50,6 +53,19 @@ final class Twig_Extension_Escaper extends Twig_Extension
      */
     public function setDefaultStrategy($defaultStrategy)
     {
+        // for BC
+        if (true === $defaultStrategy) {
+            @trigger_error('Using "true" as the default strategy is deprecated since version 1.21. Use "html" instead.', E_USER_DEPRECATED);
+
+            $defaultStrategy = 'html';
+        }
+
+        if ('filename' === $defaultStrategy) {
+            @trigger_error('Using "filename" as the default strategy is deprecated since version 1.27. Use "name" instead.', E_USER_DEPRECATED);
+
+            $defaultStrategy = 'name';
+        }
+
         if ('name' === $defaultStrategy) {
             $defaultStrategy = ['Twig_FileExtensionEscapingStrategy', 'guess'];
         }
@@ -73,6 +89,11 @@ final class Twig_Extension_Escaper extends Twig_Extension
         }
 
         return $this->defaultStrategy;
+    }
+
+    public function getName()
+    {
+        return 'escaper';
     }
 }
 

@@ -14,7 +14,7 @@ class Twig_Tests_Node_Expression_CallTest extends \PHPUnit\Framework\TestCase
     public function testGetArguments()
     {
         $node = new Twig_Tests_Node_Expression_Call([], ['type' => 'function', 'name' => 'date']);
-        $this->assertEquals(['U', null], $this->getArguments($node, ['date', ['format' => 'U', 'timestamp' => null]]));
+        $this->assertEquals(['U', null], $node->getArguments('date', ['format' => 'U', 'timestamp' => null]));
     }
 
     /**
@@ -24,7 +24,7 @@ class Twig_Tests_Node_Expression_CallTest extends \PHPUnit\Framework\TestCase
     public function testGetArgumentsWhenPositionalArgumentsAfterNamedArguments()
     {
         $node = new Twig_Tests_Node_Expression_Call([], ['type' => 'function', 'name' => 'date']);
-        $this->getArguments($node, ['date', ['timestamp' => 123456, 'Y-m-d']]);
+        $node->getArguments('date', ['timestamp' => 123456, 'Y-m-d']);
     }
 
     /**
@@ -34,7 +34,7 @@ class Twig_Tests_Node_Expression_CallTest extends \PHPUnit\Framework\TestCase
     public function testGetArgumentsWhenArgumentIsDefinedTwice()
     {
         $node = new Twig_Tests_Node_Expression_Call([], ['type' => 'function', 'name' => 'date']);
-        $this->getArguments($node, ['date', ['Y-m-d', 'format' => 'U']]);
+        $node->getArguments('date', ['Y-m-d', 'format' => 'U']);
     }
 
     /**
@@ -44,7 +44,7 @@ class Twig_Tests_Node_Expression_CallTest extends \PHPUnit\Framework\TestCase
     public function testGetArgumentsWithWrongNamedArgumentName()
     {
         $node = new Twig_Tests_Node_Expression_Call([], ['type' => 'function', 'name' => 'date']);
-        $this->getArguments($node, ['date', ['Y-m-d', 'timestamp' => null, 'unknown' => '']]);
+        $node->getArguments('date', ['Y-m-d', 'timestamp' => null, 'unknown' => '']);
     }
 
     /**
@@ -54,7 +54,7 @@ class Twig_Tests_Node_Expression_CallTest extends \PHPUnit\Framework\TestCase
     public function testGetArgumentsWithWrongNamedArgumentNames()
     {
         $node = new Twig_Tests_Node_Expression_Call([], ['type' => 'function', 'name' => 'date']);
-        $this->getArguments($node, ['date', ['Y-m-d', 'timestamp' => null, 'unknown1' => '', 'unknown2' => '']]);
+        $node->getArguments('date', ['Y-m-d', 'timestamp' => null, 'unknown1' => '', 'unknown2' => '']);
     }
 
     /**
@@ -64,20 +64,20 @@ class Twig_Tests_Node_Expression_CallTest extends \PHPUnit\Framework\TestCase
     public function testResolveArgumentsWithMissingValueForOptionalArgument()
     {
         $node = new Twig_Tests_Node_Expression_Call([], ['type' => 'function', 'name' => 'substr_compare']);
-        $this->getArguments($node, ['substr_compare', ['abcd', 'bc', 'offset' => 1, 'case_sensitivity' => true]]);
+        $node->getArguments('substr_compare', ['abcd', 'bc', 'offset' => 1, 'case_sensitivity' => true]);
     }
 
     public function testResolveArgumentsOnlyNecessaryArgumentsForCustomFunction()
     {
         $node = new Twig_Tests_Node_Expression_Call([], ['type' => 'function', 'name' => 'custom_function']);
 
-        $this->assertEquals(['arg1'], $this->getArguments($node, [[$this, 'customFunction'], ['arg1' => 'arg1']]));
+        $this->assertEquals(['arg1'], $node->getArguments([$this, 'customFunction'], ['arg1' => 'arg1']));
     }
 
     public function testGetArgumentsForStaticMethod()
     {
         $node = new Twig_Tests_Node_Expression_Call([], ['type' => 'function', 'name' => 'custom_static_function']);
-        $this->assertEquals(['arg1'], $this->getArguments($node, [__CLASS__.'::customStaticFunction', ['arg1' => 'arg1']]));
+        $this->assertEquals(['arg1'], $node->getArguments(__CLASS__.'::customStaticFunction', ['arg1' => 'arg1']));
     }
 
     /**
@@ -87,7 +87,7 @@ class Twig_Tests_Node_Expression_CallTest extends \PHPUnit\Framework\TestCase
     public function testResolveArgumentsWithMissingParameterForArbitraryArguments()
     {
         $node = new Twig_Tests_Node_Expression_Call([], ['type' => 'function', 'name' => 'foo', 'is_variadic' => true]);
-        $this->getArguments($node, [[$this, 'customFunctionWithArbitraryArguments'], []]);
+        $node->getArguments([$this, 'customFunctionWithArbitraryArguments'], []);
     }
 
     public static function customStaticFunction($arg1, $arg2 = 'default', $arg3 = [])
@@ -96,14 +96,6 @@ class Twig_Tests_Node_Expression_CallTest extends \PHPUnit\Framework\TestCase
 
     public function customFunction($arg1, $arg2 = 'default', $arg3 = [])
     {
-    }
-
-    private function getArguments($call, $args)
-    {
-        $m = new ReflectionMethod($call, 'getArguments');
-        $m->setAccessible(true);
-
-        return $m->invokeArgs($call, $args);
     }
 
     public function customFunctionWithArbitraryArguments()
@@ -133,7 +125,7 @@ class Twig_Tests_Node_Expression_CallTest extends \PHPUnit\Framework\TestCase
 
 class Twig_Tests_Node_Expression_Call extends Twig_Node_Expression_Call
 {
-    public function getArguments($callable = null, $arguments)
+    public function getArguments($callable, $arguments)
     {
         return parent::getArguments($callable, $arguments);
     }

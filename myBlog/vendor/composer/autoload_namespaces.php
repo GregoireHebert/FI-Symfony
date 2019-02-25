@@ -7,8 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
-    'Rize\\UriTemplate' => array($vendorDir . '/rize/uri-template/src'),
-    'ProxyManager\\' => array($vendorDir . '/ocramius/proxy-manager/src'),
+    'Doctrine\\ORM\\' => array($vendorDir . '/doctrine/orm/lib'),
+    'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
+    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
 );
