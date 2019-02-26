@@ -3,6 +3,17 @@
 #    controller: App\Controller\DefaultController::index
 
 
-app_lucky_number:
-  path: /lucky/number
-  controller: App\Controller\LuckyController::number
+app_home:
+  path: /
+  controller: App\Controller\HomeController::home
+  methods: [GET]
+
+app_create_article:
+  path: /blogposts
+  controller: App\Controller\CreatePostController::create
+  methods: [GET]
+
+app_submite_article:
+  path: /blogposts
+  controller: App\Controller\SubmitPostController::submit
+  methods: [POST]

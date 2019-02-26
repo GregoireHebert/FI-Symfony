@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create a post{% endblock %}
+
+{% block body %}
+    <h1>Bienvenue sur le blog de Gautier & Henri</h1>
+    {% for post in posts %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }}</h6>
+                <a href="#" class="card-link">Read</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
