@@ -1,12 +1,17 @@
 home:
    path: /
    controller: App\Controller\HomeController
-product:
-   path: /products
+display_form:
+   path: /blogposts
    controller: App\Controller\ProductController
-getProduct:
-   path: /products/{id}
-   controller: App\Controller\GetProduct
-updateProduct:
-   path: /updateProduct/{id}
-   controller: App\Controller\UpdateProduct
+   methods: [GET]
+add_article:
+   path: /blogposts
+   controller: App\Controller\AddProductController
+   methods: [POST]
+# getProduct:
+#    path: /products/{id}
+#    controller: App\Controller\GetProduct
+# updateProduct:
+#    path: /updateProduct/{id}
+#    controller: App\Controller\UpdateProduct
