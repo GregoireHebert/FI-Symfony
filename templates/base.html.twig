@@ -13,6 +13,9 @@
                 <a href="{{ path('createArticle') }}">
                 Ajouter un nouvel article
                 </a>
+                <a href="{{ path('home', {sorted: 'true'}) }}">
+                    Trier par date
+                </a>
             </div>
             
             {% if articles|length == 0 %}

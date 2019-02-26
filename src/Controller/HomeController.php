@@ -19,18 +19,20 @@ class HomeController extends Controller
      */
     public function home(Request $request, EntityManagerInterface $em)
     {
-        $name = $request->get('name', 'Anonymous');
-        $repository = $this->findAll($em);
-        return $this->render('base.html.twig',['name' => $name, 'tags'=> $tags, 'articles' => $repository]);
+        
+        if($request->get('sorted')=='true'){
+            $repository = $em->createQuery(
+                'SELECT p.id,p.title,p.corpus,p.subtitle,p.createdAt,p.tags
+                FROM App\Entity\Article p order by p.createdAt ASC'
+            )->execute();            
+        }else{
+            $repository = $em->createQuery(
+                'SELECT p.id,p.title,p.corpus,p.subtitle,p.createdAt,p.tags
+                FROM App\Entity\Article p'
+            )->execute(); 
+        }
+        return $this->render('base.html.twig',['articles' => $repository]);
     }
 
-    public function findAll( EntityManagerInterface $entityManager): array
-    {
-    
-        $query = $entityManager->createQuery(
-            'SELECT p.id,p.title,p.corpus,p.subtitle,p.createdAt,p.tags
-            FROM App\Entity\Article p'
-        );
-        return $query->execute();
-    }
+
 }
