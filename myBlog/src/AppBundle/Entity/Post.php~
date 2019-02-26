@@ -2,7 +2,6 @@
 
 namespace AppBundle\Entity;
 
-use Afrass\TagBundle\Concern\Taggable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -13,9 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
-
-    use Taggable;
-
     /**
      * @var int
      *
@@ -53,6 +49,14 @@ class Post
      */
     private $createdAt;
 
+    /**
+     * @var array
+     *
+     * @ORM\ManyToMany(targetEntity="Afrass\TagBundle\Entity\Tag", cascade={"persist"})
+     *
+     *
+     */
+    private $tags;
 
     /**
      * Get id
@@ -159,12 +163,5 @@ class Post
     {
         return $this->createdAt;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
 }
+
