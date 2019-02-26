@@ -10,14 +10,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Post controller.
  *
- * @Route("post")
+ * @Route("/")
  */
 class PostController extends Controller
 {
     /**
      * Lists all post entities.
      *
-     * @Route("/", name="post_index")
+     * @Route("", name="post_index")
      * @Method("GET")
      */
     public function indexAction(Request $request)
@@ -41,7 +41,7 @@ class PostController extends Controller
     /**
      * Creates a new post entity.
      *
-     * @Route("/new", name="post_new")
+     * @Route("blogposts", name="post_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -50,6 +50,7 @@ class PostController extends Controller
         $form = $this->createForm('AppBundle\Form\PostType', $post);
         $form->handleRequest($request);
 
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
@@ -130,7 +131,7 @@ class PostController extends Controller
      *
      * @param Post $post The post entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return \Symfony\Component\Form\Form|\Symfony\Component\Form\FormInterface
      */
     private function createDeleteForm(Post $post)
     {
@@ -138,6 +139,10 @@ class PostController extends Controller
             ->setAction($this->generateUrl('post_delete', array('id' => $post->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
+
+
+
+
 }
