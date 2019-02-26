@@ -1,48 +1,91 @@
 <?php
 
-declare (strict_types = 1);
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="product")
+ * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
  */
-class Product{
+class Product
+{
     /**
      * @ORM\Id()
+     * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
-   public $id;
+    private $id;
 
     /**
-     * @ORM\Column(type="string", length=155)
-     * @Assert\Type(type="string")
-     * @Assert\Length(min="5")
+     * @ORM\Column(type="string", length=100)
      */
-   public $title;
-    /**
-     * @ORM\Column(type="string", length=255) //verif coté sql
-     * @Assert\Type(type="string") //verif coté applicatif
-     */
-   public $subtitle;
-
-   /**
-     * @ORM\Column(type="string") 
-     * @Assert\Type(type="string")
-     */
-    public $corpus;
+    private $title;
 
     /**
-     * @ORM\Column(type="date") 
-     * @Assert\Type(type="date")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-   public $createdAt;
+    private $subtitle;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $corpus;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getSubtitle(): ?string
+    {
+        return $this->subtitle;
+    }
+
+    public function setSubtitle(?string $subtitle): self
+    {
+        $this->subtitle = $subtitle;
+
+        return $this;
+    }
+
+    public function getCorpus(): ?string
+    {
+        return $this->corpus;
+    }
+
+    public function setCorpus(?string $corpus): self
+    {
+        $this->corpus = $corpus;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
 }
-?>
-
-

@@ -1,1 +1,1 @@
-# auvray_henneton
+# Claire Auvray & Laury Henneton
