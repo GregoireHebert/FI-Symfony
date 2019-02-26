@@ -1,7 +1,7 @@
 <?php
 
 namespace Afrass\TagBundle\Entity;
-
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,7 +23,7 @@ class Tag
 
     /**
      * @var string
-     *
+     * @Groups({"public"})
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
