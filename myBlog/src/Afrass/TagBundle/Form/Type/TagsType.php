@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\DataTransformer\CollectionToArrayTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TagsType extends AbstractType {
 
@@ -30,6 +31,12 @@ class TagsType extends AbstractType {
         $builder
             ->addModelTransformer(new CollectionToArrayTransformer(), true)
             ->addModelTransformer(new TagsTransformer($this->manager), true);
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        //si Tag est vide => la modification de l'article ne bloque pas
+        $resolver->setDefault('required',false);
     }
 
     public function getParent()

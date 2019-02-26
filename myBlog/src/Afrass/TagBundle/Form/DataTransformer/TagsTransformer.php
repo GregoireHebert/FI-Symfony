@@ -39,7 +39,10 @@ class TagsTransformer implements DataTransformerInterface {
      */
     public function reverseTransform($string)
     {
-      $names = explode(',',$string);
+      //utiliser pour chaque argument la fonction trim
+      //utiliser array_filter pour enlever les tag vide valeur par default la fonction Empty
+      //utiliser array_unique pour pas avoir de doublon
+      $names = array_unique(array_filter(array_map('trim',explode(',',$string))));
       $tags = $this->manager->getRepository('TagBundle:Tag')->findBy(
           [
               'name' => $names
