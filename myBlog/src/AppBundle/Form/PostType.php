@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use Afrass\TagBundle\Form\Type\TagsType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,7 +18,7 @@ class PostType extends AbstractType
             ->add('subtitle')
             ->add('corpus')
             ->add('createdAt')
-            ->add('tags');
+            ->add('tags',TagsType::class);
     }/**
      * {@inheritdoc}
      */
