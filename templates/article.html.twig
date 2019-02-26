@@ -2,6 +2,21 @@
 
 {% block body %}
 
-    {{  post }}
+    <br>
+    <div class="card">
+        <h5 class="card-header">{{  post.title }}</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{  post.subtitle }}</h5>
+            <p class="card-text">{{  post.corpus }}</p>
+            <div class="card-footer text-muted">
+                Crée le {{  post.createdAt|date('d/m/Y') }}
+            </div>
+            <br>
+            <div>
+                <a href="/" class="btn btn-primary">Back</a>
+            </div>
+
+        </div>
+    </div>
 
 {% endblock %}

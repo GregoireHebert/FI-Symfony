@@ -3,14 +3,32 @@
 {% block title %}Create a post{% endblock %}
 
 {% block body %}
+
+    <div class="text-center">
     <h1>Bienvenue sur le blog de Gautier & Henri</h1>
+
+    <h3> Il y a actuellement {{ posts|length }}
+        {% if posts|length > 1 %} articles {% else %} article {% endif %}
+         sur le blog</h3>
+    </div>
+
     {% for post in posts %}
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{ post.title }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }}</h6>
-                <a href="#" class="card-link">Read</a>
+        <br>
+        <div class="row">
+            <div class="col-2">
+                <img src="https://loremflickr.com/300/300" alt="..." class="img-thumbnail">
             </div>
+            <div class="col">
+                <div class="card">
+                    <h5 class="card-header">{{ post.title }}</h5>
+                    <div class="card-body">
+                        <p class="card-text">{{ post.subtitle }}</p>
+                        <a href="/{{ post.id }}" class="btn btn-primary">Read</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
     {% endfor %}
 {% endblock %}

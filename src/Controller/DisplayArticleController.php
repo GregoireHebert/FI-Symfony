@@ -10,10 +10,10 @@ class DisplayArticleController extends AbstractController
     public function display($id)
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $posts = $entityManager->getRepository("App\Entity\Post")-> findAll();
+        $post = $entityManager->getRepository("App\Entity\Post")-> find($id);
 
         return $this->render('article.html.twig', [
-            'post' => $id
+            'post' => $post
         ]);
     }
 }
