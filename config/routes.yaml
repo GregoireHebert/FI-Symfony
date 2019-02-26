@@ -17,3 +17,7 @@ app_submite_article:
   path: /blogposts
   controller: App\Controller\SubmitPostController::submit
   methods: [POST]
+
+blog_show:
+  path: /{id}
+  controller: App\Controller\DisplayArticleController::display
