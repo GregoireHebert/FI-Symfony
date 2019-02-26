@@ -21,9 +21,9 @@ class PostType extends AbstractType
             ->add('tags',
                 TagsType::class,
                 [
-                    'attr' => ['class' => 'form-control'],
-                    'required' => true
                     
+                    'required' => true
+
                 ]
             );
     }/**
