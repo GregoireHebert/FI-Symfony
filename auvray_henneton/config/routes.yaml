@@ -1,0 +1,12 @@
+home:
+   path: /
+   controller: App\Controller\HomeController
+product:
+   path: /products
+   controller: App\Controller\ProductController
+getProduct:
+   path: /products/{id}
+   controller: App\Controller\GetProduct
+updateProduct:
+   path: /updateProduct/{id}
+   controller: App\Controller\UpdateProduct
