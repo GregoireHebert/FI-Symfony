@@ -10,4 +10,12 @@ namespace AppBundle\Repository;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+    //personnaliser les requetes pour faire une seule requetes au lieu de deux.
+    public function findLatest(){
+        return $this->createQueryBuilder('p')
+            ->join('p.tags','t')
+            ->select('p,t')
+            ->getQuery()
+            ->getResult();
+    }
 }

@@ -10,6 +10,7 @@
                 <th>Title</th>
                 <th>Subtitle</th>
                 <th>Corpus</th>
+                <th>Tags</th>
                 <th>Createdat</th>
                 <th>Actions</th>
             </tr>
@@ -21,6 +22,7 @@
                 <td>{{ post.title }}</td>
                 <td>{{ post.subtitle }}</td>
                 <td>{{ post.corpus }}</td>
+                <td>{{ post.tags | join(', ')}}</td>
                 <td>{% if post.createdAt %}{{ post.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>

@@ -35,6 +35,11 @@ class TagsType extends AbstractType {
 
     public function configureOptions(OptionsResolver $resolver)
     {
+        $resolver->setDefault(
+            'attr',
+            ['class' => 'tag-input']
+        );
+
         //si Tag est vide => la modification de l'article ne bloque pas
         $resolver->setDefault('required',false);
     }
