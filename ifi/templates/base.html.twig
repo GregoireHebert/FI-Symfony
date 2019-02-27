@@ -11,11 +11,31 @@
 <body>
 {{ include('nav.html.twig') }}
 <main role="main" class="container">
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
-        <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
-    </div>
+    {% block body %}
+
+        {% if articles|length == 0 %}
+            <p>Aucun article !</p>
+        {% else %}
+
+                {% for article in articles %}
+                    <div class="jumbotron">
+                        <h1>{{ article.title }}</h1>
+                        <p class="lead">{{ article.subtitle }}</p>
+
+                        <a class="btn btn-lg btn-primary" href="#" role="button">Afficher l'article</a>
+                    </div>
+
+                {% endfor %}
+        {% endif %}
+    {% endblock %}
+
+
+
+
+
+
+
+
 </main>
 {{ include('footer.html.twig') }}
 </body>
