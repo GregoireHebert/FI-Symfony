@@ -84,3 +84,17 @@ Je regarderai la manière dont les commits ont été fait.
 Je regarderai quelles fonctionnalités "bonus" ont été faites.
 
 
+# Launch project 
+
+- composer install 
+- php bin/console doctrine:schema:update --force
+- php bin/console server:run
+- décommenter la ligne 33 dans RegistrationController
+- se rendre à l'@ http://127.0.0.1:8000/register et créer un admin
+- recommenter la ligne 33 dans RegistrationController
+
+- vous pouvez maintenant ajouter des utilisateurs classiques sur la page d'inscription
+
+Pour ajouter/modifier/supprimer un article/tag, connectez vous en admin. 
+
+
