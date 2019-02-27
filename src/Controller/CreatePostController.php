@@ -24,8 +24,7 @@ class CreatePostController extends AbstractController
             ->getForm();
 
         return $this->render('createPost.html.twig', [
-            'form' => $form->createView(),
-            'etat' => "Neutre"
+            'form' => $form->createView()
         ]);
     }
 }
