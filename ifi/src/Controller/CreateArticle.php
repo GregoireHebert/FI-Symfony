@@ -53,7 +53,7 @@ class CreateArticle extends Controller
             $eventDispatcher->dispatch(Events::ARTICLE_CREATED, $event);
             return $this->redirectToRoute('home');
         }
-        return $this->render('createFormError.html.twig', [
+        return $this->render('createArticleError.html.twig', [
             'form' => $form->createView(),
         ]);
     }
