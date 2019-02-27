@@ -1,12 +1,112 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My amazing Blog{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ asset('img/blogger.png') }}">
+
+    {% block stylesheets %}
+        {# On charge le css de bootstrap depuis le site directement #}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+
+
+    {% endblock %}
+</head>
+
+<body>
+
+<div class="container">
+
+    {% block nav %}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Button for smallest screens -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="/">MON BLOG</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li {% if mainNavHome is defined %}class="active"{% endif %}><a href="/" >Blog</a></li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <li {% if mainNavBlogposts is defined %}class="active"{% endif %} ><a href="/blogposts">Créer un article</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('logout')}}">Déconnexion</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
+                            <a class="nav-link" href="{{path('login')}}">Connexion</a>
+                        </li>
+                        <li class="nav-item {% if mainNavRegistration is defined %}active{% endif %}">
+                            <a class="nav-link" href="{{path('register')}}">Inscription</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+    {% endblock %}
+
+
+    <div id="header" class="jumbotron">
+        <h1>Mon blog</h1>
+
+    </div>
+
+    {% block flash %}
+        {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="container alert alert-success" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+        {% for flash_message in app.session.flashbag.get('info') %}
+            <div class="container alert alert-info" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+        {% for flash_message in app.session.flashbag.get('warning') %}
+            <div class="container alert alert-warning" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+        {% for flash_message in app.session.flashbag.get('danger') %}
+            <div class="container alert alert-danger" role="alert">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+    {% endblock %}
+
+    <div class="row">
+
+        <div id="content" class="col-lg-11">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
+    </footer>
+</div>
+
+
+{% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+    <script>
+        $('select').select2();
+    </script>
+{% endblock %}
+
+
+</body>
+
 </html>
