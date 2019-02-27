@@ -3,7 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Article;
+use App\Entity\ArticleSearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -17,6 +19,36 @@ class ArticleRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Article::class);
+    }
+
+    /*
+     * @return Query
+     */
+    public function findAllQuery(ArticleSearch $search): Query
+    {
+        $query = $this->createQueryBuilder('a');
+
+        if ($search->getTitre()) {
+            $query = $query
+                ->andWhere('a.title like :title');
+            $query->setParameter('title', '%'.$search->getTitre().'%');
+        }
+
+        if ($search->getTags()->count() > 0) {
+            // Avoid sql Injection
+            $k = 0;
+            foreach ($search->getTags() as $tag) {
+                $k++;
+                $query = $query
+                    ->andWhere(":tag$k MEMBER OF a.tags")
+                    ->setParameter("tag$k", $tag);
+            }
+        }
+
+
+        $query = $query->orderBy('a.createdAt', 'DESC');
+
+        return $query->getQuery();
     }
 
     // /**
