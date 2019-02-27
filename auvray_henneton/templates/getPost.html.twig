@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>THE blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    {{ include('header.html.twig') }}
+    <body>
+      {% block body %}
+           <div style="text-align: center; margin-top: 2%;" class="container">
+                <h3>{{ post.title }}</h3>
+                <h4>{{ post.subtitle }}</h5>
+                <p>Publié le : {{ post.createdAt | date("d/m/Y") }}</p>
+                <div>{{ post.corpus }}</div>
+                <a style="margin-top:3%" href="{{ path('home')}}" class="btn btn-primary">Retour</a>
+
+            </div>
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

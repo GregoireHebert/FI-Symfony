@@ -10,9 +10,6 @@ add_article:
    path: /blogposts
    controller: App\Controller\AddProductController
    methods: [POST]
-# getProduct:
-#    path: /products/{id}
-#    controller: App\Controller\GetProduct
-# updateProduct:
-#    path: /updateProduct/{id}
-#    controller: App\Controller\UpdateProduct
+get_article:
+  path: /{id}
+  controller: App\Controller\GetProductController
