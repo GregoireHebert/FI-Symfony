@@ -32,8 +32,8 @@ class SubmitPostController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($post);
             $entityManager->flush();
-            return $this->render('createPost.html.twig');
+            return $this->redirectToRoute('app_home');
         }
-        return $this->render('createPost.html.twig');
+        return $this->render('createPost.html.twig', ['form' => $form->createView(),'etat' => "Bad"]);
     }
 }
