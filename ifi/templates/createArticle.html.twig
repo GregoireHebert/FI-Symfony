@@ -12,7 +12,7 @@
 <main role="main" class="container">
     {% block body %}
         <h1>
-            Add an Article
+            Add post
         </h1>
         {{ form_start(form, {method: 'POST', action: path('post_article')}) }}
 
@@ -77,14 +77,14 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary pull-right" type="submit">
-                Sauvegarder
+                Submit
             </button>
         </div>
 
 
         {{ form_end(form) }}
     {% endblock %}
-    <a class="btn btn-lg btn-primary" href="{{ path('home') }}" role="button">Retour à l'accueil</a>
+    <a class="btn btn-lg btn-primary" href="{{ path('home') }}" role="button">Back to Home</a>
 </main>
 {{ include('footer.html.twig') }}
 </body>

@@ -42,7 +42,6 @@ class Article
     private  $createdAt;
     /**
      * @ORM\Column(type="array")
-     * One article has many tags. This is the inverse side.
      */
     public $tags;
 

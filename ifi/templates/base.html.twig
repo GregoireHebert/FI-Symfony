@@ -14,15 +14,15 @@
     {% block body %}
 
         {% if articles|length == 0 %}
-            <p>Aucun article !</p>
+            <p>No post !</p>
         {% else %}
 
                 {% for article in articles %}
                     <div class="jumbotron">
-                        <h1>{{ article.title }}</h1>
-                        <p class="lead">{{ article.subtitle }}</p>
+                        <h1>{{ article.getTitle() }}</h1>
+                        <p class="lead">{{ article.getSubtitle() }}</p>
 
-                        <a class="btn btn-lg btn-primary" href="{{ path('getArticle', {'id' : article.id }) }}" role="button">Afficher l'article</a>
+                        <a class="btn btn-lg btn-primary" href="{{ path('getArticle', {'id' : article.getId() }) }}" role="button">Display post</a>
                     </div>
 
                 {% endfor %}
