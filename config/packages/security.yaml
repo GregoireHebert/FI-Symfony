@@ -1,0 +1,35 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+    providers:
+        my_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    firewalls:
+        main:
+            pattern:   ^/
+            http_basic: ~
+            provider: my_provider
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login
+            logout:
+                path:  /logout
+                target: /
+
+    role_hierarchy:
+        ROLE_ADMIN:      ROLE_USER
+        #ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/connexion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/blogposts, roles: ROLE_ADMIN }
+        - { path: ^/tag, roles: ROLE_ADMIN }
+        - { path: ^/, roles: ROLE_USER }
+
