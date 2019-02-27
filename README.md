@@ -43,7 +43,7 @@ Créer les entités et les relier à la base de donnée.
 
 ## Page de création d'article
 
-La page sera accessible sur l'adresse `/blogposts` en `GET`.
+La page sera accessible sur l'adresse `/blogpostss` en `GET`.
 Elle comprendra un formulaire permettant de soumettre un nouvel article.
 
 Utiliser la même url mais cette fois ci en `POST` pour gérer la soumission.

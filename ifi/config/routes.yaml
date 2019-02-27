@@ -4,3 +4,6 @@
 home:
   path: /
   controller: App\Controller\HomeController
+createArticle:
+  path: /blogposts
+  controller: App\Controller\CreateArticle

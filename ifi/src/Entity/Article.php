@@ -1,11 +1,13 @@
 <?php
 
-
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Entity\Tag;
 
 /**
  * @ORM\Entity
@@ -42,7 +44,7 @@ class Article
      * @ORM\Column(type="array")
      * One article has many tags. This is the inverse side.
      */
-    private  $tags;
+    public $tags;
 
 
     public function __construct() {
