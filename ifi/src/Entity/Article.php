@@ -92,7 +92,10 @@ class Article
     {
         $this->createdAt = $createdAt;
     }
-
+    public function getCreatedAt(): ?\DateTime
+    {
+        return $this->createdAt;
+    }
 
     /**
      * @ORM\PrePersist()
