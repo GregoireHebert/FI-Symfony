@@ -84,3 +84,10 @@ Je regarderai la manière dont les commits ont été fait.
 Je regarderai quelles fonctionnalités "bonus" ont été faites.
 
 
+## Commandes Pour créer DB & inserer fixtures:
+- 1> Supprimer var/data.db
+- 2> Supprimer tous les fichiers dans src/Migrations
+- 3> Création base: php bin/console doctrine:database:create
+- 4> php bin/console make:migration
+- 5> php bin/console doctrine:migrations:migrate
+- 6> insert des fixtures: php bin/console doctrine:fixtures:load
