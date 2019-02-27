@@ -13,33 +13,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AddProductController extends AbstractController{
     public function __invoke(Request $request,EntityManagerInterface $em){
-
         $product = new Product();
 
         $form = $this->createForm(ArticleFormType::class,$product);
-        
-        $msg ='';
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $product = $form->getData();
             $product->setCreatedAt(new \DateTime());
             $em->persist($product);
             $em->flush();
             $msg="New post added on the blog :)";
-
-        } else {
-            $msg = "There are mistakes in the form :(";
-
-        }
-
-        return $this->render('new.html.twig', [
+            return $this->render('new.html.twig', [
+                'articleForm' => $form->createView(),
+                'msg' => $msg
+            ]);
+        } 
+        return $this->render('articleFormError.html.twig', [
             'articleForm' => $form->createView(),
-            'msg' => $msg
         ]);
-
     }
-
-  
 }
 
 ?>

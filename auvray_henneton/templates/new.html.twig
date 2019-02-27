@@ -1,7 +1,21 @@
-{% block content_body %}
-    <h1 class="text-center">Add a new post on the blog ! 🚀</h1>
-     {{ form_start(articleForm) }}
-        {{ form_widget(articleForm) }}
-    {{ form_end(articleForm) }}
-        {{ msg }}
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>THE blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        {% block content_body %}
+            <h1 class="text-center">Add a new post on the blog ! 🚀</h1>
+            {{ form_start(articleForm) }}
+            {{ form_widget(articleForm) }}
+            {{ form_end(articleForm) }}
+            <div class="alert alert-success">
+                {{ msg }}
+            </div>
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
