@@ -1,22 +1,25 @@
-index:
+
+article_index:
     path: /
-    controller: App\Controller\HomeController
-product:
-    path: /products
-    controller: App\Controller\ProductController
+    controller: App\Controller\ArticleController::index
 
-getProduct:
-    path: /products/{id}
-    controller: App\Controller\GetProduct
-    methods: ["GET"]
+article_new:
+    path: /blogposts
+    controller: App\Controller\BlogpostsController::new
+    methods: ["GET","POST"]
 
-updateProduct:
-    path: /products/{id}
-    controller: App\Controller\UpdateProduct
-    methods: ["POST"]
+article_show:
+    path: /{id}
+    controller: App\Controller\ArticleController::show
+
+article_edit:
+    path: /blogposts/{id}/edit
+    controller: App\Controller\ArticleController::edit
+    methods: ["GET","POST"]
 
 
-updateProducts:
-    path: /products/{id}
-    controller: App\Controller\DeleteProduct
+article_delete:
+    path: /blogposts/{id}
+    controller: App\Controller\ArticleController::delete
     methods: ["DELETE"]
+
