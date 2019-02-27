@@ -16,6 +16,10 @@
         {% if article is null %}
             <p>Post don't exist !</p>
         {% else %}
+            {% set page = app.request.query.get('page', 1) %}
+            {% include '::pagination.html.twig' with {'page': page, 'nbPages': nbPages, 'objectName': 'article'} %}
+
+
             <div class="jumbotron">
                 <h1>{{ article.getTitle() }}</h1>
                 <h3>{{ article.getSubtitle() }}</h3>
