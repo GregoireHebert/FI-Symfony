@@ -1,3 +1,7 @@
+register:
+    path: /register
+    controller: App\Controller\RegistrationController::registerAction
+    methods: ["GET","POST"]
 
 article_index:
     path: /
@@ -22,4 +26,9 @@ article_delete:
     path: /blogposts/{id}
     controller: App\Controller\ArticleController::delete
     methods: ["DELETE"]
+
+logout:
+    path: /logout
+
+
 
