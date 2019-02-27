@@ -1,6 +1,7 @@
 home:
    path: /
    controller: App\Controller\HomeController
+   methods: [GET]
 display_form:
    path: /blogposts
    controller: App\Controller\ProductController
