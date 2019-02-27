@@ -1,14 +1,15 @@
 <?php
 
+
+namespace App\Entity;
+
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Created by IntelliJ IDEA.
- * User: redan
- * Date: 26/02/2019
- * Time: 19:40
+ * @ORM\Entity
  */
-
 class Article
 {
     /**
@@ -16,31 +17,32 @@ class Article
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    public $id;
+    private  $id;
     /**
      * @ORM\Column(type="string", length= 255)
      * @Assert\Length(min="5")
      */
-    public $title;
+    private  $title;
     /**
      * @ORM\Column(type="string", length= 255)
      * @Assert\Length(min="5")
      */
-    public $subtitle;
+    private  $subtitle;
     /**
      * @ORM\Column(type="string", length= 500)
      * @Assert\Length(min="5")
      */
-    public $corpus;
+    private  $corpus;
+
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
-    public $createdAt;
+    private  $createdAt;
     /**
      * @ORM\Column(type="array")
      * One article has many tags. This is the inverse side.
      */
-    public $tags;
+    private  $tags;
 
 
     public function __construct() {
@@ -53,6 +55,14 @@ class Article
     public function setCorpus(string $corpus): void
     {
         $this->corpus = $corpus;
+    }
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+    public function setSubtitle(string $subtitle): void
+    {
+        $this->subtitle = $subtitle;
     }
     public function getId(): ?string
     {
@@ -77,5 +87,19 @@ class Article
     public function setTag(array $tag): void
     {
         $this->tags = $tag;
+    }
+    public function setCreatedAt(\DateTimeInterface $createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
+
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function prePersist()
+    {
+        $this->createdAt =new \DateTime();
+
     }
 }
