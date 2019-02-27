@@ -22,7 +22,7 @@
                         <h1>{{ article.title }}</h1>
                         <p class="lead">{{ article.subtitle }}</p>
 
-                        <a class="btn btn-lg btn-primary" href="#" role="button">Afficher l'article</a>
+                        <a class="btn btn-lg btn-primary" href="{{ path('getArticle', {'id' : article.id }) }}" role="button">Afficher l'article</a>
                     </div>
 
                 {% endfor %}
