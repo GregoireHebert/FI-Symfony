@@ -4,19 +4,26 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>THE blog</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
+    {{ include('header.html.twig') }}
     <body>
-        {% block body %}
-        <h1>Technoblog</h1>
-
-        <div class="posts">
-            {% for post in posts %}
-				<h2>{{ post.title }}</h2>
-				<p>{{ post.subtitle }}</p>
-				<a href="http://localhost:8000/{{post.id}}">Read</a>
-			{% endfor %}
-        </div>
+      {% block body %}
+           <div class="container">
+                <div class="row">
+                    {% for post in posts %}
+                        <div class="col-sm-4">
+                            <div style="margin:2%" class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{post.title}}</h5>
+                                    <p class="card-text">{{post.subtitle}}</p>
+                                    <a href="#" class="btn btn-primary">Read</a>
+                                </div>
+                            </div>
+                        </div>   
+                    {% endfor %}
+                </div>
+            </div>
         {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
