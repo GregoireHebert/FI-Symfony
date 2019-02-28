@@ -16,8 +16,7 @@ class ArticleType extends AbstractType
             ->add('subtitle')
             ->add('corpus')
             ->add('createdAt')
-            ->add('tag')
-        ;
+            ->add('tag');
     }
 
     public function configureOptions(OptionsResolver $resolver)

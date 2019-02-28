@@ -47,10 +47,10 @@ class ArticleController extends AbstractController
     public function show(int $idArticle): Response
     {
         $article = $this->getDoctrine()
-        ->getRepository(Article::class)
-        ->find($idArticle);
+            ->getRepository(Article::class)
+            ->find($idArticle);
 
-        if ($article == null){
+        if ($article == null) {
             return $this->index();
         }
 

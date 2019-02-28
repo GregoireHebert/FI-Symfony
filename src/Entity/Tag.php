@@ -49,6 +49,7 @@ class Tag
     {
         return $this->articles;
     }
+
     public function addArticle(Article $article): self
     {
         if (!$this->articles->contains($article)) {
@@ -56,6 +57,7 @@ class Tag
         }
         return $this;
     }
+
     public function removeArticle(Article $article): self
     {
         if ($this->articles->contains($article)) {

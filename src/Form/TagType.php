@@ -13,8 +13,7 @@ class TagType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('articles')
-        ;
+            ->add('articles');
     }
 
     public function configureOptions(OptionsResolver $resolver)
