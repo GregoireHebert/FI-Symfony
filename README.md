@@ -91,3 +91,5 @@ Je regarderai quelles fonctionnalités "bonus" ont été faites.
 - 4> php bin/console make:migration
 - 5> php bin/console doctrine:migrations:migrate
 - 6> insert des fixtures: php bin/console doctrine:fixtures:load
+- 7> php ../composer.phar require knplabs/knp-paginator-bundle
+
