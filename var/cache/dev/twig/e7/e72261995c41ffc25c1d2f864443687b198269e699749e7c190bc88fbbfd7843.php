@@ -69,45 +69,53 @@ class __TwigTemplate_bf5b5c6abf716cf8be496a5247fe6d7deb9f6ab4d9e7d9b6e31a0616bf8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Tag index</h1>
+        echo "<div class=\"container\">
 
+    <div class=\"row justify-content-md-center\">
+
+        <div class=\"col-*-auto\">
+    <h1>Tag list</h1>
+
+        </div>
+
+    </div>
     <table class=\"table\">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 17
+        // line 25
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["tags"]) || array_key_exists("tags", $context) ? $context["tags"] : (function () { throw new Twig_Error_Runtime('Variable "tags" does not exist.', 17, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["tags"]) || array_key_exists("tags", $context) ? $context["tags"] : (function () { throw new Twig_Error_Runtime('Variable "tags" does not exist.', 25, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 18
+            // line 26
             echo "            <tr>
                 <td>";
-            // line 19
+            // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "id", []), "html", null, true);
             echo "</td>
                 <td>";
-            // line 20
+            // line 28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "name", []), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 22
+            // line 30
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tag_show", ["id" => twig_get_attribute($this->env, $this->source, $context["tag"], "id", [])]), "html", null, true);
-            echo "\">show</a>
+            echo "\">Show</a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 26
+            // line 34
             echo "            <tr>
                 <td colspan=\"3\">no records found</td>
             </tr>
@@ -116,14 +124,9 @@ class __TwigTemplate_bf5b5c6abf716cf8be496a5247fe6d7deb9f6ab4d9e7d9b6e31a0616bf8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 38
         echo "        </tbody>
     </table>
-
-    <a href=\"";
-        // line 33
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tag_new");
-        echo "\">Create new</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -145,7 +148,7 @@ class __TwigTemplate_bf5b5c6abf716cf8be496a5247fe6d7deb9f6ab4d9e7d9b6e31a0616bf8
 
     public function getDebugInfo()
     {
-        return array (  125 => 33,  120 => 30,  111 => 26,  102 => 22,  97 => 20,  93 => 19,  90 => 18,  85 => 17,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  128 => 38,  119 => 34,  110 => 30,  105 => 28,  101 => 27,  98 => 26,  93 => 25,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -155,14 +158,22 @@ class __TwigTemplate_bf5b5c6abf716cf8be496a5247fe6d7deb9f6ab4d9e7d9b6e31a0616bf8
 {% block title %}Tag index{% endblock %}
 
 {% block body %}
-    <h1>Tag index</h1>
+<div class=\"container\">
 
+    <div class=\"row justify-content-md-center\">
+
+        <div class=\"col-*-auto\">
+    <h1>Tag list</h1>
+
+        </div>
+
+    </div>
     <table class=\"table\">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -171,7 +182,7 @@ class __TwigTemplate_bf5b5c6abf716cf8be496a5247fe6d7deb9f6ab4d9e7d9b6e31a0616bf8
                 <td>{{ tag.id }}</td>
                 <td>{{ tag.name }}</td>
                 <td>
-                    <a href=\"{{ path('tag_show', {'id': tag.id}) }}\">show</a>
+                    <a href=\"{{ path('tag_show', {'id': tag.id}) }}\">Show</a>
                 </td>
             </tr>
         {% else %}
@@ -181,8 +192,6 @@ class __TwigTemplate_bf5b5c6abf716cf8be496a5247fe6d7deb9f6ab4d9e7d9b6e31a0616bf8
         {% endfor %}
         </tbody>
     </table>
-
-    <a href=\"{{ path('tag_new') }}\">Create new</a>
 {% endblock %}
 ", "tag/index.html.twig", "/home/kwet/Bureau/FI-Symfony/templates/tag/index.html.twig");
     }

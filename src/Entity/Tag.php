@@ -38,7 +38,7 @@ class Tag
     public $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Article", mappedBy="tag")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Article", mappedBy="tag")
      */
     public $articles;
 

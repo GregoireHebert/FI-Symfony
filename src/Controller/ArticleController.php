@@ -4,11 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
-use PhpParser\Node\Arg;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends AbstractController
 {
@@ -46,8 +44,16 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function show(Article $article): Response
+    public function show(int $idArticle): Response
     {
+        $article = $this->getDoctrine()
+        ->getRepository(Article::class)
+        ->find($idArticle);
+
+        if ($article == null){
+            return $this->index();
+        }
+
         return $this->render('article/show.html.twig', [
             'article' => $article,
         ]);

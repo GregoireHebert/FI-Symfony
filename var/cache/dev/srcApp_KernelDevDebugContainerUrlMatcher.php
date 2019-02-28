@@ -54,7 +54,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => array(array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null, false, false, null)),
             149 => array(array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null, false, false, null)),
             159 => array(array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null, false, true, null)),
-            186 => array(array(array('_route' => 'article_show', '_controller' => 'App\\Controller\\ArticleController::show'), array('id'), null, null, false, true, null)),
+            186 => array(array(array('_route' => 'article_show', '_controller' => 'App\\Controller\\ArticleController::show'), array('idArticle'), null, null, false, true, null)),
             207 => array(array(array('_route' => 'tag_show', '_controller' => 'App\\Controller\\TagController::show'), array('id'), null, null, false, true, null)),
         );
     }

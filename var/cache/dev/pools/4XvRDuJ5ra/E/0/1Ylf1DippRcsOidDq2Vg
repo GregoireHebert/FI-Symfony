@@ -8,7 +8,7 @@
         [
             'stdClass' => [
                 'targetEntity' => [
-                    'Article',
+                    'App\\Entity\\Tag',
                 ],
                 'inversedBy' => [
                     'articles',

@@ -56,7 +56,7 @@ class Article
     public $createdAt;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Article",inversedBy="articles")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Tag", inversedBy="articles")
      */
     public $tag;
 

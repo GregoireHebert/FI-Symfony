@@ -42,16 +42,24 @@ class __TwigTemplate_bb85788f788d1b2166a67f3599d1cb30c11afa98ce2b1a03b4ebde63c4c
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 7
-        echo "    </head>
+        echo "        ";
+        $this->loadTemplate("header.html", "base.html.twig", 7)->display($context);
+        // line 8
+        echo "        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+
+    </head>
     <body>
         ";
-        // line 9
+        // line 12
         $this->displayBlock('body', $context, $blocks);
-        // line 10
+        // line 13
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 11
-        echo "    </body>
+        // line 14
+        echo "        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
+    </body>
 </html>
 ";
         
@@ -97,7 +105,7 @@ class __TwigTemplate_bb85788f788d1b2166a67f3599d1cb30c11afa98ce2b1a03b4ebde63c4c
 
     }
 
-    // line 9
+    // line 12
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -114,7 +122,7 @@ class __TwigTemplate_bb85788f788d1b2166a67f3599d1cb30c11afa98ce2b1a03b4ebde63c4c
 
     }
 
-    // line 10
+    // line 13
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -136,9 +144,14 @@ class __TwigTemplate_bb85788f788d1b2166a67f3599d1cb30c11afa98ce2b1a03b4ebde63c4c
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  118 => 10,  101 => 9,  84 => 6,  66 => 5,  54 => 11,  51 => 10,  49 => 9,  45 => 7,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  126 => 13,  109 => 12,  92 => 6,  74 => 5,  59 => 14,  56 => 13,  54 => 12,  48 => 8,  45 => 7,  43 => 6,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -149,10 +162,16 @@ class __TwigTemplate_bb85788f788d1b2166a67f3599d1cb30c11afa98ce2b1a03b4ebde63c4c
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        {% include 'header.html' %}
+        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+
     </head>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
     </body>
 </html>
 ", "base.html.twig", "/home/kwet/Bureau/FI-Symfony/templates/base.html.twig");
