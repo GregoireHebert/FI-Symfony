@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/home/kwet/Documents/M2/PHP/skeleton/src</parameter>
-    <parameter key="kernel.project_dir">/home/kwet/Documents/M2/PHP/skeleton</parameter>
+    <parameter key="kernel.root_dir">/home/kwet/Bureau/FI-Symfony/src</parameter>
+    <parameter key="kernel.project_dir">/home/kwet/Bureau/FI-Symfony</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">src</parameter>
-    <parameter key="kernel.cache_dir">/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/home/kwet/Documents/M2/PHP/skeleton/var/log</parameter>
+    <parameter key="kernel.cache_dir">/home/kwet/Bureau/FI-Symfony/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/home/kwet/Bureau/FI-Symfony/var/log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
@@ -21,39 +21,39 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/framework-bundle</parameter>
+        <parameter key="path">/home/kwet/Bureau/FI-Symfony/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="WebServerBundle" type="collection">
-        <parameter key="path">/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/web-server-bundle</parameter>
+        <parameter key="path">/home/kwet/Bureau/FI-Symfony/vendor/symfony/web-server-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebServerBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/twig-bundle</parameter>
+        <parameter key="path">/home/kwet/Bureau/FI-Symfony/vendor/symfony/twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
-        <parameter key="path">/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/web-profiler-bundle</parameter>
+        <parameter key="path">/home/kwet/Bureau/FI-Symfony/vendor/symfony/web-profiler-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
-        <parameter key="path">/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/monolog-bundle</parameter>
+        <parameter key="path">/home/kwet/Bureau/FI-Symfony/vendor/symfony/monolog-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
-        <parameter key="path">/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/debug-bundle</parameter>
+        <parameter key="path">/home/kwet/Bureau/FI-Symfony/vendor/symfony/debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="DoctrineCacheBundle" type="collection">
-        <parameter key="path">/home/kwet/Documents/M2/PHP/skeleton/vendor/doctrine/doctrine-cache-bundle</parameter>
+        <parameter key="path">/home/kwet/Bureau/FI-Symfony/vendor/doctrine/doctrine-cache-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineCacheBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">/home/kwet/Documents/M2/PHP/skeleton/vendor/doctrine/doctrine-bundle</parameter>
+        <parameter key="path">/home/kwet/Bureau/FI-Symfony/vendor/doctrine/doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">/home/kwet/Documents/M2/PHP/skeleton/vendor/doctrine/doctrine-migrations-bundle</parameter>
+        <parameter key="path">/home/kwet/Bureau/FI-Symfony/vendor/doctrine/doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
     </parameter>
@@ -77,16 +77,16 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">/home/kwet/Bureau/FI-Symfony/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="validator.mapping.cache.prefix"></parameter>
-    <parameter key="validator.mapping.cache.file">/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">/home/kwet/Bureau/FI-Symfony/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:/home/kwet/Bureau/FI-Symfony/var/cache/dev/profiler</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/srcApp_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">/home/kwet/Bureau/FI-Symfony/var/cache/dev/srcApp_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
@@ -98,7 +98,7 @@
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">/home/kwet/Documents/M2/PHP/skeleton/templates</parameter>
+    <parameter key="twig.default_path">/home/kwet/Bureau/FI-Symfony/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
@@ -227,9 +227,9 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">/home/kwet/Bureau/FI-Symfony/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
-    <parameter key="doctrine_migrations.dir_name">/home/kwet/Documents/M2/PHP/skeleton/src/Migrations</parameter>
+    <parameter key="doctrine_migrations.dir_name">/home/kwet/Bureau/FI-Symfony/src/Migrations</parameter>
     <parameter key="doctrine_migrations.namespace">DoctrineMigrations</parameter>
     <parameter key="doctrine_migrations.table_name">migration_versions</parameter>
     <parameter key="doctrine_migrations.column_name">version</parameter>
@@ -369,7 +369,7 @@
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate" public="true">
       <argument type="tagged" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/srcApp_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/srcApp_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <argument type="tagged" tag="kernel.cache_clearer"/>
@@ -378,9 +378,9 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem" public="true"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator" public="false">
       <argument type="service" id="kernel"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/src/Resources</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/src/Resources</argument>
       <argument type="collection">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/src</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/src</argument>
       </argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner" public="false">
@@ -540,7 +540,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/pools</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -569,7 +569,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/pools</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -632,8 +632,8 @@
         <argument key="cache.app" type="service" id="cache.app" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
-    <service id=".1_NativeFileSessionHandler~3aMJCqm" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/sessions</argument>
+    <service id=".1_NativeFileSessionHandler~.KoYLoQ" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/sessions</argument>
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session" public="true">
       <argument type="service" id="session.storage.native"/>
@@ -656,12 +656,12 @@
     <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false"/>
     <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/sessions</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler" public="false">
-      <argument type="service" id=".1_NativeFileSessionHandler~3aMJCqm"/>
+      <argument type="service" id=".1_NativeFileSessionHandler~.KoYLoQ"/>
     </service>
     <service id="session_listener" class="Symfony\Component\HttpKernel\EventListener\SessionListener" public="false">
       <tag name="kernel.event_subscriber"/>
@@ -673,8 +673,8 @@
     <service id="session.save_listener" class="Symfony\Component\HttpKernel\EventListener\SaveSessionListener" public="false">
       <deprecated>The "%service_id%" service is deprecated since Symfony 4.1. Use the "session_listener" service instead.</deprecated>
     </service>
-    <service id=".1_PhpArrayAdapter~p2a0Kln" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/validation.php</argument>
+    <service id=".1_PhpArrayAdapter~gb9mHVi" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -701,10 +701,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/validation.php</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.symfony" class="Symfony\Component\Validator\Mapping\Cache\Psr6Cache" public="false">
-      <argument type="service" id=".1_PhpArrayAdapter~p2a0Kln"/>
+      <argument type="service" id=".1_PhpArrayAdapter~gb9mHVi"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory" public="false">
       <argument type="service" id=".service_locator.Af1b9SX"/>
@@ -766,7 +766,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-      <argument>file:/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/profiler</argument>
+      <argument>file:/home/kwet/Bureau/FI-Symfony/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener" public="false">
       <tag name="kernel.event_subscriber"/>
@@ -803,7 +803,7 @@
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/srcApp_KernelDevDebugContainer</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/srcApp_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector" public="false">
@@ -1039,6 +1039,14 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -1189,7 +1197,7 @@
       <argument type="service" id=".service_locator.MAfdX1A.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev</argument>
+        <argument key="cache_dir">/home/kwet/Bureau/FI-Symfony/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -1231,7 +1239,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -1257,12 +1265,12 @@
       <argument type="service" id="file_locator"/>
       <argument type="service" id="routing.loader.annotation"/>
     </service>
-    <service id=".2_PhpArrayAdapter~AeulwQa" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/annotations.php</argument>
+    <service id=".2_PhpArrayAdapter~nS9CLSw" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
-    <service id=".1_ArrayCache~AeulwQa" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
+    <service id=".1_ArrayCache~nS9CLSw" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
     <service id="annotations.reader" class="Doctrine\Common\Annotations\AnnotationReader" public="false">
       <call method="addGlobalIgnoredName">
         <argument>required</argument>
@@ -1277,7 +1285,7 @@
     <service id="annotations.cached_reader" class="Doctrine\Common\Annotations\CachedReader" public="false">
       <tag name="annotations.cached_reader"/>
       <argument type="service" id="annotations.reader"/>
-      <argument type="service" id=".1_ArrayCache~AeulwQa"/>
+      <argument type="service" id=".1_ArrayCache~nS9CLSw"/>
       <argument>true</argument>
       <property name="cacheProviderBackup" type="service" id="annotations.cache"/>
     </service>
@@ -1287,16 +1295,16 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/annotations.php</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!AbstractController$|Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider" public="false">
-      <argument type="service" id=".2_PhpArrayAdapter~AeulwQa"/>
+      <argument type="service" id=".2_PhpArrayAdapter~nS9CLSw"/>
     </service>
     <service id="web_server.command.server_run" class="Symfony\Bundle\WebServerBundle\Command\ServerRunCommand" public="false">
       <tag name="console.command" command="server:run"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/public</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/public</argument>
       <argument>dev</argument>
       <call method="setName">
         <argument>server:run</argument>
@@ -1304,7 +1312,7 @@
     </service>
     <service id="web_server.command.server_start" class="Symfony\Bundle\WebServerBundle\Command\ServerStartCommand" public="false">
       <tag name="console.command" command="server:start"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/public</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/public</argument>
       <argument>dev</argument>
       <call method="setName">
         <argument>server:start</argument>
@@ -1331,7 +1339,7 @@
     <service id="twig" class="Twig\Environment" public="true">
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="default_path">/home/kwet/Documents/M2/PHP/skeleton/templates</argument>
+        <argument key="default_path">/home/kwet/Bureau/FI-Symfony/templates</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
         <argument key="exception_controller">twig.controller.exception::showAction</argument>
@@ -1339,7 +1347,7 @@
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">name</argument>
-        <argument key="cache">/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/twig</argument>
+        <argument key="cache">/home/kwet/Bureau/FI-Symfony/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -1415,9 +1423,9 @@
     </service>
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator" public="false">
       <argument type="service" id="kernel"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/src</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/src</argument>
       <argument type="collection"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/templates</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
@@ -1428,49 +1436,49 @@
     <service id="twig.loader.native_filesystem" class="Symfony\Bundle\TwigBundle\Loader\NativeFilesystemLoader" public="false">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony</argument>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/framework-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/symfony/framework-bundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/framework-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/symfony/framework-bundle/Resources/views</argument>
         <argument>!Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/twig-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/symfony/twig-bundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/twig-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/symfony/twig-bundle/Resources/views</argument>
         <argument>!Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/web-profiler-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/symfony/web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/web-profiler-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/symfony/web-profiler-bundle/Resources/views</argument>
         <argument>!WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/symfony/debug-bundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/symfony/debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/doctrine/doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/vendor/doctrine/doctrine-bundle/Resources/views</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/templates</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/templates</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader" public="false"/>
@@ -1492,7 +1500,7 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension" public="false">
@@ -1552,10 +1560,10 @@
     <service id="twig.command.debug" class="Symfony\Bridge\Twig\Command\DebugCommand" public="false">
       <tag name="console.command" command="debug:twig"/>
       <argument type="service" id="twig"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/templates</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/src</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/templates</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/src</argument>
       <call method="setName">
         <argument>debug:twig</argument>
       </call>
@@ -1567,7 +1575,7 @@
         <argument>lint:twig</argument>
       </call>
     </service>
-    <service id=".2_HtmlDumper~gB85dmk" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
+    <service id=".2_HtmlDumper~NaNWW79" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
       <argument>null</argument>
       <argument>UTF-8</argument>
       <argument>1</argument>
@@ -1578,14 +1586,14 @@
         </argument>
       </call>
     </service>
-    <service id=".1_NonceGenerator~gB85dmk" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
+    <service id=".1_NonceGenerator~NaNWW79" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController" public="true">
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="profiler" on-invalid="null"/>
       <argument type="service" id="twig"/>
       <argument>%data_collector.templates%</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -1599,16 +1607,16 @@
       <argument type="service" id="debug.file_link_formatter"/>
     </service>
     <service id="web_profiler.csp.handler" class="Symfony\Bundle\WebProfilerBundle\Csp\ContentSecurityPolicyHandler" public="false">
-      <argument type="service" id=".1_NonceGenerator~gB85dmk"/>
+      <argument type="service" id=".1_NonceGenerator~NaNWW79"/>
     </service>
     <service id="twig.extension.webprofiler" class="Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension" public="false">
       <tag name="twig.extension"/>
-      <argument type="service" id=".2_HtmlDumper~gB85dmk"/>
+      <argument type="service" id=".2_HtmlDumper~NaNWW79"/>
     </service>
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" public="false">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony</argument>
       <argument type="service" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.file_link_formatter.url_format" class="string" public="false">
@@ -1649,7 +1657,7 @@
     </service>
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor" public="false"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/log/dev.log</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/log/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -1663,19 +1671,19 @@
       <argument>true</argument>
       <argument type="collection"/>
     </service>
-    <service id=".5_HtmlDescriptor~AABUi0K" class="Symfony\Component\VarDumper\Command\Descriptor\HtmlDescriptor" public="false">
+    <service id=".5_HtmlDescriptor~4Wugv9V" class="Symfony\Component\VarDumper\Command\Descriptor\HtmlDescriptor" public="false">
       <argument type="service" id="var_dumper.html_dumper"/>
     </service>
-    <service id=".4_CliDescriptor~AABUi0K" class="Symfony\Component\VarDumper\Command\Descriptor\CliDescriptor" public="false">
+    <service id=".4_CliDescriptor~4Wugv9V" class="Symfony\Component\VarDumper\Command\Descriptor\CliDescriptor" public="false">
       <argument type="service" id="var_dumper.cli_dumper"/>
     </service>
-    <service id=".3_CliContextProvider~AABUi0K" class="Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvider" public="false"/>
-    <service id=".2_RequestContextProvider~AABUi0K" class="Symfony\Component\VarDumper\Dumper\ContextProvider\RequestContextProvider" public="false">
+    <service id=".3_CliContextProvider~4Wugv9V" class="Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvider" public="false"/>
+    <service id=".2_RequestContextProvider~4Wugv9V" class="Symfony\Component\VarDumper\Dumper\ContextProvider\RequestContextProvider" public="false">
       <argument type="service" id="request_stack"/>
     </service>
-    <service id=".1_SourceContextProvider~AABUi0K" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
+    <service id=".1_SourceContextProvider~4Wugv9V" class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider" public="false">
       <argument>UTF-8</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
     </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
@@ -1726,9 +1734,9 @@
     <service id="var_dumper.server_connection" class="Symfony\Component\VarDumper\Server\Connection" public="false">
       <argument>tcp://%env(VAR_DUMPER_SERVER)%</argument>
       <argument type="collection">
-        <argument key="source" type="service" id=".1_SourceContextProvider~AABUi0K"/>
-        <argument key="request" type="service" id=".2_RequestContextProvider~AABUi0K"/>
-        <argument key="cli" type="service" id=".3_CliContextProvider~AABUi0K"/>
+        <argument key="source" type="service" id=".1_SourceContextProvider~4Wugv9V"/>
+        <argument key="request" type="service" id=".2_RequestContextProvider~4Wugv9V"/>
+        <argument key="cli" type="service" id=".3_CliContextProvider~4Wugv9V"/>
       </argument>
     </service>
     <service id="var_dumper.dump_server" class="Symfony\Component\VarDumper\Server\DumpServer" public="false">
@@ -1740,8 +1748,8 @@
       <tag name="console.command" command="server:dump"/>
       <argument type="service" id="var_dumper.dump_server"/>
       <argument type="collection">
-        <argument key="cli" type="service" id=".4_CliDescriptor~AABUi0K"/>
-        <argument key="html" type="service" id=".5_HtmlDescriptor~AABUi0K"/>
+        <argument key="cli" type="service" id=".4_CliDescriptor~4Wugv9V"/>
+        <argument key="html" type="service" id=".5_HtmlDescriptor~4Wugv9V"/>
       </argument>
       <call method="setName">
         <argument>server:dump</argument>
@@ -1983,7 +1991,7 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/src/Entity</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/src/Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
@@ -2030,7 +2038,7 @@
     </service>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/log/dev.log</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/log/dev.log</argument>
     </service>
     <service id="App\Controller\DeleteProduct" class="App\Controller\DeleteProduct" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -2222,7 +2230,7 @@
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -2251,17 +2259,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
       <call method="setNamespace">
-        <argument>sf_orm_default_0433c5525c3ee0a1c777bb8f4d08df9f755f8bedf6f8f5d5c6cdf67de8d3c873</argument>
+        <argument>sf_orm_default_83f73e3301e56ad3a6dcdc563326b4391dacdfdc65b187285019f36c96f992d1</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
       <call method="setNamespace">
-        <argument>sf_orm_default_0433c5525c3ee0a1c777bb8f4d08df9f755f8bedf6f8f5d5c6cdf67de8d3c873</argument>
+        <argument>sf_orm_default_83f73e3301e56ad3a6dcdc563326b4391dacdfdc65b187285019f36c96f992d1</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
       <call method="setNamespace">
-        <argument>sf_orm_default_0433c5525c3ee0a1c777bb8f4d08df9f755f8bedf6f8f5d5c6cdf67de8d3c873</argument>
+        <argument>sf_orm_default_83f73e3301e56ad3a6dcdc563326b4391dacdfdc65b187285019f36c96f992d1</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_manager_configurator" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator">
@@ -2559,10 +2567,10 @@
       </argument>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>q1kuzxAzgZ</argument>
+      <argument>B3kmtlepnw</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/pools</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2571,10 +2579,10 @@
       <argument type="service" id="cache.system.recorder_inner"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>zMzae4mwQW</argument>
+      <argument>-MVFTfcFhI</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/pools</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2583,10 +2591,10 @@
       <argument type="service" id="cache.validator.recorder_inner"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>g-lKAw8sc+</argument>
+      <argument>TIKK-Ko0yx</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/pools</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2595,10 +2603,10 @@
       <argument type="service" id="cache.serializer.recorder_inner"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
-      <argument>GgW+h9BDu1</argument>
+      <argument>4XvRDuJ5ra</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/pools</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2607,9 +2615,9 @@
       <argument type="service" id="cache.annotations.recorder_inner"/>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="false">
-      <argument>oakpm-EvH-</argument>
+      <argument>HDQGZFa0dP</argument>
       <argument>0</argument>
-      <argument>/home/kwet/Documents/M2/PHP/skeleton/var/cache/dev/pools</argument>
+      <argument>/home/kwet/Bureau/FI-Symfony/var/cache/dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
