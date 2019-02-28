@@ -1,3 +1,17 @@
+## Auteurs
+
+Defossez Gautier
+Valette Henri
+
+# Exercice - Blog
+
+Nous avons réalisé ce qui a été demandé, à savoir :
+- l'affichage de la liste des articles, accessible à l'URL `localhost:8000/`.
+- la création d'un article, accessible à l'URL `localhost:8000/blogposts`.
+- l'affichage d'un article, accessible à l'URL `localhost:8000/{id}`.
+
+Enfin, nous pouvons naviguer entre les pages facilements.
+
 # Exercice à produire
 
 Un blog comprenant 3 types de pages.
