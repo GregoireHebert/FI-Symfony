@@ -12,7 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 /**
  * @ORM\Entity
  */
@@ -30,10 +31,14 @@ class Tag
      */
     public $name;
     /**
-     * Many tags have one tag. This is the owning side.
-     * @ORM\Column(type="string", length= 255)
+     * @ORM\ManyToMany(targetEntity="App\Entity\Article", mappedBy="tags")
      */
-    public $article;
+    public $articles;
+
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
 
     public function getName(): ?string
     {
@@ -43,13 +48,19 @@ class Tag
     {
         $this->name = $name;
     }
+    /**
+     * @return Collection|Article[]
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+    public function addArticle(Article $article): self
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+        }
+        return $this;
+    }
 
-    public function getArticle(): ?string
-    {
-        return $this->article;
-    }
-    public function setArticle(string $art): void
-    {
-        $this->article = $art;
-    }
 }

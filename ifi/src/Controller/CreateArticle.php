@@ -43,7 +43,7 @@ class CreateArticle extends Controller
             for ($i = 0; $i < count($tags); $i++) {
                 $tag = new Tag();
                 $tag->setName($tags[$i]);
-                $tag->setArticle($comment->getTitle());
+                $tag->addArticle($comment);
                 $em->persist($tag);
                 $comment->addTag($tag);
             }
