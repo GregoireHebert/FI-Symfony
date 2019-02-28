@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 style="color:white;background-color:DodgerBlue;"><center><span style="text-decoration: underline;">Afrass's Blog</span></center></h1>
+    <br/>
+    <br/>
+    <br/>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th>Tags</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <td><a href="{{ path('post_show', { 'id': post.id }) }}">{{ post.id }}</a></td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.subtitle }}</td>
+                 <td>
+                <!--{{ post.tags | join(', ')}}-->
+                {% for tag in post.tags %}
+                    <a href="{{path('post_index') }}?tag={{ tag }}">{{ tag }}</a>
+                {% endfor %}
+
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('post_show', { 'id': post.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('post_edit', { 'id': post.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('post_new') }}">Create a new article</a>
+        </li>
+    </ul>
+{% endblock %}

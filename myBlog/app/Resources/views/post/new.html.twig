@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1 style="color:white;background-color:DodgerBlue;"><center><span style="text-decoration: underline;">Afrass's Blog</span></center></h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('post_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
