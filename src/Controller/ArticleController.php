@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
+use PhpParser\Node\Arg;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,8 +33,11 @@ class ArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
+            $this->addFlash('success', "L'article a été ajouté");
 
-            return $this->redirectToRoute('article_index');
+            return $this->redirectToRoute('article_show', array(
+                'id' => $article->id,
+            ));
         }
 
         return $this->render('article/new.html.twig', [

@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -11,6 +13,17 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Tag
 {
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+        $this->name = "undefined";
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
+
     /**
      * @ORM\Id()
      * @ORM\Column(type="integer")
@@ -28,4 +41,26 @@ class Tag
      * @ORM\ManyToMany(targetEntity="Article", mappedBy="tag")
      */
     public $articles;
+
+    /**
+     * @return Collection|Article[]
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+    public function addArticle(Article $article): self
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+        }
+        return $this;
+    }
+    public function removeArticle(Article $article): self
+    {
+        if ($this->articles->contains($article)) {
+            $this->articles->removeElement($article);
+        }
+        return $this;
+    }
 }

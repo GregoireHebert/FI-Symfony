@@ -34,7 +34,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_exception_css' => array(array('token'), array('_controller' => 'web_profiler.controller.exception::cssAction'), array(), array(array('text', '/exception.css'), array('variable', '/', '[^/]++', 'token', true), array('text', '/_profiler')), array(), array()),
         'article_index' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::index'), array(), array(array('text', '/')), array(), array()),
         'article_new' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::new'), array(), array(array('text', '/blogposts')), array(), array()),
-        'article_show' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::show'), array(), array(array('variable', '/', '[^/]++', 'id', true)), array(), array()),
+        'article_show' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::show'), array(), array(array('variable', '/', '[^/]++', 'id', true), array('text', '/article')), array(), array()),
         'tag_index' => array(array(), array('_controller' => 'App\\Controller\\TagController::index'), array(), array(array('text', '/tag')), array(), array()),
         'tag_new' => array(array(), array('_controller' => 'App\\Controller\\TagController::new'), array(), array(array('text', '/tag/add')), array(), array()),
         'tag_show' => array(array('id'), array('_controller' => 'App\\Controller\\TagController::show'), array(), array(array('variable', '/', '[^/]++', 'id', true), array('text', '/tag')), array(), array()),
