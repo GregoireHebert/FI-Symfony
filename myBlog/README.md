@@ -8,7 +8,7 @@ Afrass'Blog realisé par ilias afrass
 
 ======================================
 
-Lançer la commande `bin/console server:start` :
+Lançer la commande `bin/console server:run` :
 
 http://127.0.0.1:8000/tags.json => visualiser les tags.
 
