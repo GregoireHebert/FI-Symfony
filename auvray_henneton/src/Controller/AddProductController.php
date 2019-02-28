@@ -11,8 +11,10 @@ use App\Form\ArticleFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-class AddProductController extends AbstractController{
-    public function __invoke(Request $request,EntityManagerInterface $em){
+class AddProductController extends AbstractController
+{
+    public function __invoke(Request $request,EntityManagerInterface $em)
+    {
         $product = new Product();
 
         $form = $this->createForm(ArticleFormType::class,$product);

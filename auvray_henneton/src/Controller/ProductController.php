@@ -11,19 +11,19 @@ use App\Form\ArticleFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-class ProductController extends AbstractController{
-    public function __invoke(){
+class ProductController extends AbstractController
+{
+    public function __invoke()
+    {
         $product = new Product();
         $form = $this->createForm(ArticleFormType::class,$product);
         
-        return $this->render('new.html.twig', [
-            'articleForm' => $form->createView(),
-            'msg' => ''
-        ]);
-
+        return $this->render(
+            'new.html.twig',
+            ['articleForm' => $form->createView(),
+            'msg' => '']
+        );
     }
-
-  
 }
 
 ?>

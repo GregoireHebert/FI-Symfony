@@ -11,5 +11,6 @@ add_article:
    controller: App\Controller\AddProductController
    methods: [POST]
 get_article:
-  path: /{id}
-  controller: App\Controller\GetProductController
+   path: /{id}
+   controller: App\Controller\GetProductController
+   methods: [GET]

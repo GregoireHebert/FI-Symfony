@@ -11,13 +11,16 @@ use App\Entity\Product;
 use App\Form\ArticleFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class HomeController extends AbstractController{
-    public function __invoke(Request $request,EntityManagerInterface $em){
+class HomeController extends AbstractController
+{
+    public function __invoke(Request $request,EntityManagerInterface $em)
+    {
         $repository = $em->getrepository(Product::class);
 		$posts = $repository->findAll();
-        return $this->render('homePage.html.twig', [
-            'posts' => $posts
-        ]);
+        return $this->render(
+            'homePage.html.twig', 
+            ['posts' => $posts]
+        );
     }
 }
 ?>
