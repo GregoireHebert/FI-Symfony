@@ -10,7 +10,10 @@
     <body style="width: 100%;position: absolute;top: 50px;margin-bottom: 10px;">
         {% block body %}
             <div style="text-align:center; margin-top: 10px; margin-bottom: 30px;">
-                <a href="{{ path('createArticle') }}">
+                <a style="margin-left: 10px" href="{{ path('home') }}">
+                Reinitialiser les Filtres
+                </a>
+                <a style="margin-left: 10px" href="{{ path('createArticle') }}">
                 Ajouter un nouvel article
                 </a>
                 <a style="margin-left: 10px" href="{{ path('home', {sorted: 'true'}) }}">
@@ -28,7 +31,7 @@
                             <h5>{{ item.subtitle }}</h5>
                             <div style="display: flex; align-items: center; justify-content: center;">
                                 {% for tag in item.tags %}
-                                    <p style="margin-right: 10px;">{{ tag.name }}</p>
+                                <a style="cursor: pointer;" href="{{ path('home', {'tag' : tag.name }) }}"><p style="margin-right: 10px;">{{ tag.name }}</p></a>
                                 {% endfor %}
                             </div>
                             <a style="cursor: pointer;" href="{{ path('getArticle', {'id' : item.id }) }}">

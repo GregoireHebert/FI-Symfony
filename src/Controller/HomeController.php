@@ -31,7 +31,20 @@ class HomeController extends Controller
                 FROM App\Entity\Article p'
             )->execute(); 
         }
-        return $this->render('base.html.twig',['articles' => $repository]);
+        $tag = $request->get('tag');
+        $array = [];
+        if($tag!=NULL){
+            foreach( $repository as $art){
+                foreach( $art["tags"] as $lesTags){
+                    if($lesTags->name == $tag){
+                        array_push($array,$art);
+                    }
+                }
+            }
+        }else{
+            $array = $repository;
+        }
+        return $this->render('base.html.twig',['articles' => $array]);
     }
 
 
