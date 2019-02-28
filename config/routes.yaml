@@ -13,3 +13,7 @@ getProduct:
 putProduct:
     path: /products/{id}/{name}
     controller: App\Controller\PutProduct
+blogposts:
+    path: /blogposts
+    controller: App\Controller\GetAddArticle
+    methods: ["GET","POST"]
