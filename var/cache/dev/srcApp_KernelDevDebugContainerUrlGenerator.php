@@ -32,11 +32,12 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_router' => array(array('token'), array('_controller' => 'web_profiler.controller.router::panelAction'), array(), array(array('text', '/router'), array('variable', '/', '[^/]++', 'token', true), array('text', '/_profiler')), array(), array()),
         '_profiler_exception' => array(array('token'), array('_controller' => 'web_profiler.controller.exception::showAction'), array(), array(array('text', '/exception'), array('variable', '/', '[^/]++', 'token', true), array('text', '/_profiler')), array(), array()),
         '_profiler_exception_css' => array(array('token'), array('_controller' => 'web_profiler.controller.exception::cssAction'), array(), array(array('text', '/exception.css'), array('variable', '/', '[^/]++', 'token', true), array('text', '/_profiler')), array(), array()),
-        'home' => array(array(), array('_controller' => 'App\\Controller\\HomeController'), array(), array(array('text', '/')), array(), array()),
-        'product' => array(array(), array('_controller' => 'App\\Controller\\ProductController'), array(), array(array('text', '/products')), array(), array()),
-        'deleteProduct' => array(array('id'), array('_controller' => 'App\\Controller\\DeleteProduct'), array(), array(array('variable', '/', '[^/]++', 'id', true), array('text', '/products/delete')), array(), array()),
-        'getProduct' => array(array('id'), array('_controller' => 'App\\Controller\\GetProduct'), array(), array(array('variable', '/', '[^/]++', 'id', true), array('text', '/products')), array(), array()),
-        'putProduct' => array(array('id', 'name'), array('_controller' => 'App\\Controller\\PutProduct'), array(), array(array('variable', '/', '[^/]++', 'name', true), array('variable', '/', '[^/]++', 'id', true), array('text', '/products')), array(), array()),
+        'article_index' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::index'), array(), array(array('text', '/')), array(), array()),
+        'article_new' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::new'), array(), array(array('text', '/blogposts')), array(), array()),
+        'article_show' => array(array('id'), array('_controller' => 'App\\Controller\\ArticleController::show'), array(), array(array('variable', '/', '[^/]++', 'id', true)), array(), array()),
+        'tag_index' => array(array(), array('_controller' => 'App\\Controller\\TagController::index'), array(), array(array('text', '/tag')), array(), array()),
+        'tag_new' => array(array(), array('_controller' => 'App\\Controller\\TagController::new'), array(), array(array('text', '/tag/add')), array(), array()),
+        'tag_show' => array(array('id'), array('_controller' => 'App\\Controller\\TagController::show'), array(), array(array('variable', '/', '[^/]++', 'id', true), array('text', '/tag')), array(), array()),
     );
         }
     }

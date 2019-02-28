@@ -2515,40 +2515,11 @@
     <service id=".abstract.instanceof.App\Form\ArticleType" class="App\Form\ArticleType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\TagType" class="App\Form\TagType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\BlogpostsController" class="App\Controller\BlogpostsController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="App\Controller\DeleteProduct" class="App\Controller\DeleteProduct" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="App\Controller\GetProduct" class="App\Controller\GetProduct" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="App\Controller\ProductController" class="App\Controller\ProductController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="App\Controller\PutProduct" class="App\Controller\PutProduct" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
     <service id=".abstract.instanceof.App\Controller\TagController" class="App\Controller\TagController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.NUP9Hmn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="article" type="service" id=".errored..service_locator.NUP9Hmn.App\Entity\Article"/>
-      </argument>
-    </service>
-    <service id=".service_locator.pe89cNF" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="em" type="service" id="doctrine.orm.default_entity_manager"/>
-      </argument>
-    </service>
-    <service id=".service_locator.S1KoMNJ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="registry" type="service" id="doctrine"/>
-        <argument key="validator" type="service" id="debug.validator"/>
       </argument>
     </service>
     <service id=".service_locator.s.PIIJ0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -2557,32 +2528,12 @@
         <argument key="tag" type="service" id=".errored..service_locator.s.PIIJ0.App\Entity\Tag"/>
       </argument>
     </service>
-    <service id=".service_locator.QUorsp2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.adboGwq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\ArticleController::delete" type="service" id=".service_locator.NUP9Hmn"/>
-        <argument key="App\Controller\ArticleController::edit" type="service" id=".service_locator.NUP9Hmn"/>
         <argument key="App\Controller\ArticleController::show" type="service" id=".service_locator.NUP9Hmn"/>
-        <argument key="App\Controller\DeleteProduct::__invoke" type="service" id=".service_locator.pe89cNF"/>
-        <argument key="App\Controller\GetProduct::__invoke" type="service" id=".service_locator.pe89cNF"/>
-        <argument key="App\Controller\ProductController::__invoke" type="service" id=".service_locator.S1KoMNJ"/>
-        <argument key="App\Controller\PutProduct::__invoke" type="service" id=".service_locator.pe89cNF"/>
-        <argument key="App\Controller\TagController::delete" type="service" id=".service_locator.s.PIIJ0"/>
-        <argument key="App\Controller\TagController::edit" type="service" id=".service_locator.s.PIIJ0"/>
         <argument key="App\Controller\TagController::show" type="service" id=".service_locator.s.PIIJ0"/>
-        <argument key="App\Controller\ArticleController:delete" type="service" id=".service_locator.NUP9Hmn"/>
-        <argument key="App\Controller\ArticleController:edit" type="service" id=".service_locator.NUP9Hmn"/>
         <argument key="App\Controller\ArticleController:show" type="service" id=".service_locator.NUP9Hmn"/>
-        <argument key="App\Controller\DeleteProduct:__invoke" type="service" id=".service_locator.pe89cNF"/>
-        <argument key="App\Controller\DeleteProduct" type="service" id=".service_locator.pe89cNF"/>
-        <argument key="App\Controller\GetProduct:__invoke" type="service" id=".service_locator.pe89cNF"/>
-        <argument key="App\Controller\GetProduct" type="service" id=".service_locator.pe89cNF"/>
-        <argument key="App\Controller\ProductController:__invoke" type="service" id=".service_locator.S1KoMNJ"/>
-        <argument key="App\Controller\ProductController" type="service" id=".service_locator.S1KoMNJ"/>
-        <argument key="App\Controller\PutProduct:__invoke" type="service" id=".service_locator.pe89cNF"/>
-        <argument key="App\Controller\PutProduct" type="service" id=".service_locator.pe89cNF"/>
-        <argument key="App\Controller\TagController:delete" type="service" id=".service_locator.s.PIIJ0"/>
-        <argument key="App\Controller\TagController:edit" type="service" id=".service_locator.s.PIIJ0"/>
         <argument key="App\Controller\TagController:show" type="service" id=".service_locator.s.PIIJ0"/>
       </argument>
     </service>
@@ -2812,15 +2763,6 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\ArticleController"/>
-      </call>
-    </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BlogpostsController" class="App\Controller\BlogpostsController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BlogpostsController" class="App\Controller\BlogpostsController" autowire="true" abstract="true"/>
-    <service id="App\Controller\BlogpostsController" class="App\Controller\BlogpostsController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\BlogpostsController"/>
       </call>
     </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TagController" class="App\Controller\TagController" autowire="true" abstract="true"/>
@@ -3164,12 +3106,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.KTVqfp6" method="withContext"/>
     </service>
-    <service id=".service_locator.KTVqfp6.App\Controller\BlogpostsController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\BlogpostsController"/>
-      <argument>App\Controller\BlogpostsController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.KTVqfp6" method="withContext"/>
-    </service>
     <service id=".service_locator.KTVqfp6.App\Controller\TagController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\TagController"/>
       <argument>App\Controller\TagController</argument>
@@ -3200,7 +3136,7 @@
     <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver" public="false"/>
     <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver" public="false"/>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.QUorsp2"/>
+      <argument type="service" id=".service_locator.adboGwq"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -3471,7 +3407,7 @@
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
     <service id="Psr\Container\ContainerInterface" alias="service_container" public="false"/>
     <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.QUorsp2"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.adboGwq"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

@@ -20,8 +20,9 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/search_bar' => array(array(array('_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'), null, null, null, false, false, null)),
             '/_profiler/phpinfo' => array(array(array('_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'), null, null, null, false, false, null)),
             '/_profiler/open' => array(array(array('_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'), null, null, null, false, false, null)),
-            '/' => array(array(array('_route' => 'home', '_controller' => 'App\\Controller\\HomeController'), null, null, null, false, false, null)),
-            '/products' => array(array(array('_route' => 'product', '_controller' => 'App\\Controller\\ProductController'), null, null, null, false, false, null)),
+            '/' => array(array(array('_route' => 'article_index', '_controller' => 'App\\Controller\\ArticleController::index'), null, null, null, false, false, null)),
+            '/blogposts' => array(array(array('_route' => 'article_new', '_controller' => 'App\\Controller\\ArticleController::new'), null, array('GET' => 0, 'POST' => 1), null, false, false, null)),
+            '/tag/add' => array(array(array('_route' => 'tag_new', '_controller' => 'App\\Controller\\TagController::new'), null, array('GET' => 0, 'POST' => 1), null, false, false, null)),
         );
         $this->regexpList = array(
             0 => '{^(?'
@@ -40,12 +41,10 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                             .'|(*:159)'
                         .')'
                     .')'
-                    .'|/products/(?'
-                        .'|delete/([^/]++)(*:197)'
-                        .'|([^/]++)(?'
-                            .'|(*:216)'
-                            .'|/([^/]++)(*:233)'
-                        .')'
+                    .'|/([^/]++)(*:178)'
+                    .'|/tag(?'
+                        .'|(*:193)'
+                        .'|/([^/]++)(*:210)'
                     .')'
                 .')/?$}sDu',
         );
@@ -57,9 +56,9 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => array(array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null, false, false, null)),
             149 => array(array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null, false, false, null)),
             159 => array(array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null, false, true, null)),
-            197 => array(array(array('_route' => 'deleteProduct', '_controller' => 'App\\Controller\\DeleteProduct'), array('id'), null, null, false, true, null)),
-            216 => array(array(array('_route' => 'getProduct', '_controller' => 'App\\Controller\\GetProduct'), array('id'), null, null, false, true, null)),
-            233 => array(array(array('_route' => 'putProduct', '_controller' => 'App\\Controller\\PutProduct'), array('id', 'name'), null, null, false, true, null)),
+            178 => array(array(array('_route' => 'article_show', '_controller' => 'App\\Controller\\ArticleController::show'), array('id'), null, null, false, true, null)),
+            193 => array(array(array('_route' => 'tag_index', '_controller' => 'App\\Controller\\TagController::index'), array(), null, null, false, false, null)),
+            210 => array(array(array('_route' => 'tag_show', '_controller' => 'App\\Controller\\TagController::show'), array('id'), null, null, false, true, null)),
         );
     }
 }
