@@ -5,5 +5,9 @@ getArticle:
   path: /{id}
   controller: App\Controller\GetArticle
 createArticle:
-  path: /blogposts
+  path: /blogposts/{is_connexion}
+  defaults:   { is_connexion: false }
   controller: App\Controller\CreateArticle
+login:
+  path: /login
+  controller: App\Controller\SecurityController

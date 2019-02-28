@@ -16,15 +16,23 @@ use App\Entity\Article;
 use App\Entity\Tag;
 use App\Events;
 use App\Form\Type\ArticleType;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class CreateArticle extends Controller
 {
     /**
      * @Route("/blogposts", methods={"GET"}, name="create_form"))
      */
-    public function __invoke(Request $request, EntityManagerInterface $em)
+    public function __invoke(Request $request, EntityManagerInterface $em, AuthenticationUtils $authenticationUtils)
     {
         $form = $this->createForm(ArticleType::class);
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+        if (!$lastUsername || $lastUsername == null || $lastUsername == "") {
+            return $this->redirect( $this->generateUrl('login', ['last_username' => $lastUsername, 'error' => $error]) );
+        }
         return $this->render('createForm.html.twig',[
             'form' => $form->createView(),
         ]);
@@ -37,6 +45,14 @@ class CreateArticle extends Controller
     {
 
         $comment = new Article();
+        $is_Connexion = $request->get('is_connexion');
+        var_dump($is_Connexion);
+        if ($is_Connexion == true) {
+            $form = $this->createForm(ArticleType::class);
+            return $this->render('createForm.html.twig',[
+                'form' => $form->createView(),
+            ]);
+        }
 
         $form = $this->createForm(ArticleType::class, $comment);
         $form->handleRequest($request);

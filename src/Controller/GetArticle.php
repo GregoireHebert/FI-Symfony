@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class GetArticle extends Controller
 {
     /**
-     * @Route("/{id}", methods={"GET"}, name="get_article"))
+     * @Route("/article/{id}", methods={"GET"}, name="get_article"))
      */
     public function __invoke(Request $request, EntityManagerInterface $em)
     {
