@@ -34,7 +34,7 @@ class ArticleController extends AbstractController
             $this->addFlash('success', "L'article a été ajouté");
 
             return $this->redirectToRoute('article_show', array(
-                'id' => $article->id,
+                'idArticle' => $article->id,
             ));
         }
 

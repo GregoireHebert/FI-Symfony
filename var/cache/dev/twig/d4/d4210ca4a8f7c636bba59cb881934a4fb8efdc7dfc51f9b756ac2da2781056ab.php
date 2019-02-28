@@ -68,18 +68,26 @@ class __TwigTemplate_784f9182b10cffbe91f409bf70cd5af4e39e55c892604c0388751492964
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Create new Article</h1>
+        echo "<div class=\"container\">
 
+    <div class=\"row justify-content-md-center\">
+        <div class=\"col-*-auto\">
+    <h1>Create new Article</h1>
+    </div>
+
+</div>
+    <div class=\"center-text\">
     ";
-        // line 8
+        // line 14
         echo twig_include($this->env, $context, "article/_form.html.twig");
         echo "
 
     <a href=\"";
-        // line 10
+        // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_index");
         echo "\">back to list</a>
+    </div>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -101,7 +109,7 @@ class __TwigTemplate_784f9182b10cffbe91f409bf70cd5af4e39e55c892604c0388751492964
 
     public function getDebugInfo()
     {
-        return array (  81 => 10,  76 => 8,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array(87 => 16, 82 => 14, 63 => 5, 45 => 3, 15 => 1,);
     }
 
     public function getSourceContext()
@@ -110,12 +118,20 @@ class __TwigTemplate_784f9182b10cffbe91f409bf70cd5af4e39e55c892604c0388751492964
 
 {% block title %}New Article{% endblock %}
 
-{% block body %}
-    <h1>Create new Article</h1>
+{% block body %}<div class=\"container\">
 
+    <div class=\"row justify-content-md-center\">
+        <div class=\"col-*-auto\">
+    <h1>Create new Article</h1>
+    </div>
+
+</div>
+    <div class=\"center-text\">
     {{ include('article/_form.html.twig') }}
 
     <a href=\"{{ path('article_index') }}\">back to list</a>
+    </div>
+    </div>
 {% endblock %}
 ", "article/new.html.twig", "/home/kwet/Bureau/FI-Symfony/templates/article/new.html.twig");
     }

@@ -3,9 +3,18 @@
 {% block title %}New Article{% endblock %}
 
 {% block body %}
+    <div class="container">
+
+    <div class="row justify-content-md-center">
+        <div class="col-*-auto">
     <h1>Create new Article</h1>
+        </div>
 
-    {{ include('article/_form.html.twig') }}
+    </div>
+    <div class="center-text">
+        {{ include('article/_form.html.twig') }}
 
-    <a href="{{ path('article_index') }}">back to list</a>
+        <a href="{{ path('article_index') }}">back to list</a>
+    </div>
+    </div>
 {% endblock %}
