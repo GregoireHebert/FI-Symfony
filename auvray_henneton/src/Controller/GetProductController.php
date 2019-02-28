@@ -16,12 +16,13 @@ class GetProductController extends AbstractController{
         $repository = $em->getRepository(Product::class);
         $prostId = $request->get('id');
         $post = $repository->find($prostId);
-        
-        return $this->render('getPost.html.twig', ['post' => $post]);
+        $posts = $repository->findAll();
+
+        return $this->render('getPost.html.twig', 
+        ['post' => $post,"numberOfPosts" => count($posts)
+        ]);
 
     }
-
-  
 }
 
 ?>
