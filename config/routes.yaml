@@ -6,7 +6,7 @@ article_new:
     controller: App\Controller\ArticleController::new
     methods: ["GET","POST"]
 article_show:
-    path: /article/{id}
+    path: /{id}
     controller: App\Controller\ArticleController::show
 
 tag_index:

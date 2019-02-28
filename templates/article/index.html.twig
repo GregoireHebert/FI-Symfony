@@ -29,7 +29,7 @@
             <div class="center-text">
                 <div class="list-group">
                     {% for article in articles %}
-                        <a href="#" class="list-group-item">{{ article.title }}<br/>   <span class="subtitle">{{ article.subtitle }}</span>  </a>
+                        <a href="/{{ article.id}}" class="list-group-item">{{ article.title }}<br/>   <span class="subtitle">{{ article.subtitle }}</span>  </a>
                     {% endfor %}
                 </div>
             </div>
