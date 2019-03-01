@@ -15,14 +15,15 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
     {
         $this->context = $context;
         $this->staticRoutes = [
-            '/' => [[['_route' => 'homepage', '_controller' => 'App\\Controller\\BlogController::index'], null, null, null, false, false, null]],
-            '/blogPost/create' => [[['_route' => 'create', '_controller' => 'App\\Controller\\BlogController::createAction'], null, null, null, false, false, null]],
-            '/user' => [[['_route' => 'user', '_controller' => 'App\\Controller\\UserController::index'], null, null, null, false, false, null]],
             '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
             '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
             '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
             '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+            '/' => [[['_route' => 'article_index', '_controller' => 'App\\Controller\\ArticleController::index'], null, null, null, false, false, null]],
+            '/blogposts' => [[['_route' => 'article_new', '_controller' => 'App\\Controller\\ArticleController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+            '/tag' => [[['_route' => 'tag_index', '_controller' => 'App\\Controller\\TagController::index'], null, null, null, false, false, null]],
+            '/tag/add' => [[['_route' => 'tag_new', '_controller' => 'App\\Controller\\TagController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         ];
         $this->regexpList = [
             0 => '{^(?'
@@ -41,6 +42,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                             .'|(*:159)'
                         .')'
                     .')'
+                    .'|/article/([^/]++)(*:186)'
+                    .'|/tag/([^/]++)(*:207)'
                 .')/?$}sDu',
         ];
         $this->dynamicRoutes = [
@@ -51,6 +54,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+            186 => [[['_route' => 'article_show', '_controller' => 'App\\Controller\\ArticleController::show'], ['idArticle'], null, null, false, true, null]],
+            207 => [[['_route' => 'tag_show', '_controller' => 'App\\Controller\\TagController::show'], ['id'], null, null, false, true, null]],
         ];
     }
 }

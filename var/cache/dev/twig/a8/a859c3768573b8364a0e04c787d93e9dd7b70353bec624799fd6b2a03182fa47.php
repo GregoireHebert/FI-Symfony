@@ -53,7 +53,7 @@ class __TwigTemplate_67b90d4d62d131d32f8284e9f6241cd6ce70f1c2b8ad306c3485136ad75
 
         // line 4
         echo "    ";
-        echo twig_include($this->env, $context, "@WebProfiler/Profiler/header.html.twig", array(), false);
+        echo twig_include($this->env, $context, "@WebProfiler/Profiler/header.html", array(), false);
         echo "
 
     <div id=\"summary\">
@@ -474,7 +474,7 @@ class __TwigTemplate_67b90d4d62d131d32f8284e9f6241cd6ce70f1c2b8ad306c3485136ad75
         return new Twig_Source("{% extends '@WebProfiler/Profiler/base.html.twig' %}
 
 {% block body %}
-    {{ include('@WebProfiler/Profiler/header.html.twig', with_context = false) }}
+    {{ include('@WebProfiler/Profiler/header.html', with_context = false) }}
 
     <div id=\"summary\">
         {% block summary %}

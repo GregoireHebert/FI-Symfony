@@ -33,7 +33,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         echo "<!DOCTYPE html>
 <html>
 <head>
-    <meta charset=\"UTF-8\" />
+    <meta charset=\"UTF-8\">
     <title>";
         // line 5
         $this->displayBlock('title', $context, $blocks);
@@ -42,33 +42,30 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 7
-        echo "    <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
-    <!-- Latest compiled and minified CSS -->
-    <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/cosmo/bootstrap.min.css\">
+        echo "    ";
+        $this->loadTemplate("header.html", "base.html.twig", 7)->display($context);
+        // line 8
+        echo "    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\"
+          integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
 
-    <!-- jQuery library -->
-    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
-
-    <!-- Custom CSS File -->
-    <script src=\"css/style.css\"></script>
 </head>
 <body>
 ";
-        // line 21
-        echo twig_include($this->env, $context, "blog/nav-bar.html.twig");
-        echo "
-";
-        // line 22
+        // line 13
         $this->displayBlock('body', $context, $blocks);
-        // line 23
+        // line 14
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 24
-        echo "</body>
+        // line 15
+        echo "<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
+        integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\"
+        crossorigin=\"anonymous\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"
+        integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\"
+        crossorigin=\"anonymous\"></script>
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"
+        integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\"
+        crossorigin=\"anonymous\"></script>
+</body>
 </html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -113,7 +110,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 22
+    // line 13
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -130,7 +127,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 23
+    // line 14
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -159,7 +156,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     public function getDebugInfo()
     {
-        return array (  134 => 23,  117 => 22,  100 => 6,  82 => 5,  71 => 24,  69 => 23,  67 => 22,  63 => 21,  45 => 7,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  131 => 14,  114 => 13,  97 => 6,  79 => 5,  59 => 15,  57 => 14,  55 => 13,  48 => 8,  45 => 7,  43 => 6,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -167,26 +164,26 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         return new Twig_Source("<!DOCTYPE html>
 <html>
 <head>
-    <meta charset=\"UTF-8\" />
+    <meta charset=\"UTF-8\">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
-    <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
-    <!-- Latest compiled and minified CSS -->
-    <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/cosmo/bootstrap.min.css\">
+    {% include 'header.html' %}
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\"
+          integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
 
-    <!-- jQuery library -->
-    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
-
-    <!-- Custom CSS File -->
-    <script src=\"css/style.css\"></script>
 </head>
 <body>
-{{ include('blog/nav-bar.html.twig') }}
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
+        integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\"
+        crossorigin=\"anonymous\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"
+        integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\"
+        crossorigin=\"anonymous\"></script>
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"
+        integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\"
+        crossorigin=\"anonymous\"></script>
 </body>
 </html>", "base.html.twig", "C:\\wamp64\\www\\my-project\\templates\\base.html.twig");
     }
