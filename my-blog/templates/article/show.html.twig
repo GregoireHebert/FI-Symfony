@@ -3,36 +3,32 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ article.title }}</td>
-            </tr>
-            <tr>
-                <th>Subtitle</th>
-                <td>{{ article.subtitle }}</td>
-            </tr>
-            <tr>
-                <th>Corpus</th>
-                <td>{{ article.corpus }}</td>
-            </tr>
-            <tr>
-                <th>CreatedAt</th>
-                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <div class="container align-content-center" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <h1 class="blogNameFont font-weight-bold text-center">4MINE blog</h1>
+                    <article style="margin: 40px;">
+                        <h2 class="titleFont font-weight-bold">{{ article.title }}</h2>
+                        <h4 class="subtitleFont">{{ article.subtitle }}</h4>
+                        <h6 class="text-muted">{{ article.createdAt ? article.createdAt|date('Y-m-d') : '' }}</h6>
+                        <p>{{ article.corpus }}</p>
+                    </article>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-10 mx-auto align-content-center">
+            <a href="{{ path('article_index') }}">
+                <button class="btn btn-light btn-outline-dark" type="button">
+                    Go back
+                </button>
+            </a>
+            <a href="{{ path('article_edit', {'id': article.id}) }}">
+                <button class="btn btn-light btn-outline-primary" type="button">
+                    Edit article
+                </button>
+            </a>
+        </div>
+    </div>
 
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
-
-    {{ include('article/_delete_form.html.twig') }}
 {% endblock %}
