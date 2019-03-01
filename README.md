@@ -1,3 +1,6 @@
+Danneels Sophie  
+Guillon David  
+
 # Exercice à produire
 
 Un blog comprenant 3 types de pages.
