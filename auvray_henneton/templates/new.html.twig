@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>THE blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    {{ include('header.html.twig') }}
+    <body>
+        {% block body %}
+            <h3 class="text-center">Add a new post on the blog ! 🚀</h3>
+            {{ form_start(articleForm) }}
+                <div style="margin-top:2%" class="text-center container col-md-6" >
+                    <div class="form-group">
+                        {{ form_label(articleForm.title, 'Title') }}
+                        {{ form_widget(articleForm.title, { 'attr': {'class': 'form-control', 'rows': '5', 'style': 'resize:none;'} })}}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(articleForm.subtitle, 'Subtitle') }}
+                        {{ form_widget(articleForm.subtitle, { 'attr': {'class': 'form-control', 'rows': '5', 'style': 'resize:none;'} })}}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(articleForm.corpus, 'Corpus') }}
+                        {{ form_widget(articleForm.corpus, { 'attr': {'class': 'form-control', 'rows': '5', 'style': 'resize:none;'} })}}
+                    </div>
+                    <button style="margin-bottom:3%" type="submit" class="btn btn-primary">Save</button>
+                </div>
+            {{ form_end(articleForm) }}
+            {% if msg != '' %}
+                <div class=" text-center container col-md-6 alert alert-success">
+                    {{ msg }}
+                </div>
+            {% endif %}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
