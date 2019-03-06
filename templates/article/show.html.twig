@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/article.css') }}">
+{% endblock %}
+{% block title %}Article{% endblock %}
+
+{% block body %}
+
+
+
+<header id="head" class="secondary"></header>
+
+<!-- container -->
+<div class="container">
+
+    <ol class="breadcrumb">
+        <li><a href="/">Blog</a></li>
+        <li class="active">{{ article.title }}</li>
+    </ol>
+
+    <div class="row">
+
+        <!-- Article main content -->
+        <article class="col-sm-8 maincontent">
+            <header class="page-header">
+                <h1 id="articleTitle">{{ article.title }}</h1>
+                <span id="articleSubtitle">{{ article.subtitle }}</span>
+            </header>
+
+            <blockquote style="text-align: justify-all">
+                <p id="articleCorpus">{{ article.corpus }}</p>
+            </blockquote>
+
+            <span id="articleDate">Publié le {{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</span>
+        </article>
+
+        <!-- /Article -->
+    </div>
+</div>
+
+
+    <a href="{{ path('article_index') }}">Retour à la liste des articles</a>
+{% endblock %}

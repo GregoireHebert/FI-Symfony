@@ -1,0 +1,34 @@
+register:
+    path: /register
+    controller: App\Controller\RegistrationController::registerAction
+    methods: ["GET","POST"]
+
+article_index:
+    path: /
+    controller: App\Controller\ArticleController::index
+
+article_new:
+    path: /blogposts
+    controller: App\Controller\BlogpostsController::new
+    methods: ["GET","POST"]
+
+article_show:
+    path: /{id}
+    controller: App\Controller\ArticleController::show
+
+article_edit:
+    path: /blogposts/{id}/edit
+    controller: App\Controller\ArticleController::edit
+    methods: ["GET","POST"]
+
+
+article_delete:
+    path: /blogposts/{id}
+    controller: App\Controller\ArticleController::delete
+    methods: ["DELETE"]
+
+logout:
+    path: /logout
+
+
+
