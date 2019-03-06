@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Blog IFI{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    {{ include('style.html.twig') }}
+</head>
+<body>
+{{ include('nav.html.twig') }}
+<main role="main" class="container">
+    {% block body %}
+        <h1>
+            Add post
+        </h1>
+        {{ form_start(form, {method: 'POST', action: path('post_article')}) }}
+
+        {# Render any global form error (e.g. when a constraint on a public getter method failed) #}
+        {{ form_errors(form) }}
+        <div class="jumbotron">
+            <div class="form-group {% if not form.title.vars.valid %}has-error{% endif %}">
+                <label class="col-sm-2 control-label">{{ form_label(form.title, 'Title :', {label_attr: {class: 'hidden'}}) }}</label>
+
+                {# Render any errors for the "title" field (e.g. when a class property constraint failed) #}
+                <div class='text-danger'>{{ form_errors(form.title) }}</div>
+
+                <div class="col-sm-10">
+                    {{ form_widget(form.title) }}
+                    {{ form_help(form.title) }}
+                </div>
+            </div>
+            <div class="form-group {% if not form.subtitle.vars.valid %}has-error{% endif %}">
+                <label class="col-sm-2 control-label">{{ form_label(form.subtitle, 'Subtitle :', {label_attr: {class: 'hidden'}}) }}</label>
+
+                {# Render any errors for the "subtitle" field (e.g. when a class property constraint failed) #}
+                <div class='text-danger'>{{ form_errors(form.subtitle) }}</div>
+
+                <div class="col-sm-10">
+                    {{ form_widget(form.subtitle) }}
+                    {{ form_help(form.subtitle) }}
+                </div>
+            </div>
+            <div class="form-group {% if not form.corpus.vars.valid %}has-error{% endif %}">
+                <label class="col-sm-2 control-label">{{ form_label(form.corpus, 'Corpus :', {label_attr: {class: 'hidden'}}) }}</label>
+
+                {# Render any errors for the "corpus" field (e.g. when a class property constraint failed) #}
+                <div class='text-danger'>{{ form_errors(form.corpus) }}</div>
+
+                <div class="col-sm-10">
+                    {{ form_widget(form.corpus, {attr: {rows: 10}}) }}
+                    {{ form_help(form.corpus) }}
+                </div>
+            </div>
+            <div class="form-group {% if not form.createdAt.vars.valid %}has-error{% endif %}">
+                <label class="col-sm-2 control-label">{{ form_label(form.createdAt, 'Created At :', {label_attr: {class: 'hidden'}}) }}</label>
+
+                {# Render any errors for the "createdAt" field (e.g. when a class property constraint failed) #}
+                <div class='text-danger'>{{ form_errors(form.createdAt) }}</div>
+
+                <div class="col-sm-10">
+                    {{ form_widget(form.createdAt) }}
+                    {{ form_help(form.createdAt) }}
+                </div>
+            </div>
+            <div class="form-group {% if not form.tags.vars.valid %}has-error{% endif %}">
+                <label class="col-sm-2 control-label">{{ form_label(form.tags, 'Tags :', {label_attr: {class: 'hidden'}}) }}</label>
+
+                {# Render any errors for the "tags" field (e.g. when a class property constraint failed) #}
+                <div class='text-danger'>{{ form_errors(form.tags) }}</div>
+
+                <div class="col-sm-10">
+                    {{ form_widget(form.tags) }}
+                    {{ form_help(form.tags) }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary pull-right" type="submit">
+                Submit
+            </button>
+        </div>
+
+
+        {{ form_end(form) }}
+    {% endblock %}
+    <a class="btn btn-lg btn-primary" href="{{ path('home') }}" role="button">Back to Home</a>
+</main>
+{{ include('footer.html.twig') }}
+</body>
+</html>
