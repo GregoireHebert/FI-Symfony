@@ -1,0 +1,19 @@
+{% block footer %}
+<footer style="width: 100%;z-index: 3;position: fixed;bottom:0;border-top: 1px solid #938dac; background-color: #938dac;">
+        <div class="navbar navbar-default navbar-static-bottom" style="text-align: center;" role="navigation">
+            <div class="container" style="display: inline;">
+                <div>
+                    <a class="navbar-brand" style="color: white; font-size:12px;" href="{{ path('home') }}">
+                        Home
+                    </a>
+                    <a class="navbar-brand" style="color: white; font-size:12px;" href="{{ path('createArticle') }}">
+                        Ajout d'article
+                    </a>
+                    <a class="navbar-brand" style="color: white; font-size:12px;" href="{{ path('getArticle', {'id' : 1 })}}">
+                        Première article
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+        {% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>{% block title %}Un blog magnifique{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+        {{ include('header.html.twig') }}
+    <body style="width: 100%;position: absolute;top: 50px;margin-bottom: 10px;">
+        {% block body %}
+            <div style="text-align:center; margin-top: 10px; margin-bottom: 30px;">
+                <a style="margin-left: 10px" href="{{ path('home') }}">
+                Reinitialiser les Filtres
+                </a>
+                <a style="margin-left: 10px" href="{{ path('createArticle') }}">
+                Ajouter un nouvel article
+                </a>
+                <a style="margin-left: 10px" href="{{ path('home', {sorted: 'true'}) }}">
+                    Trier par date
+                </a>
+            </div>
+            
+            {% if articles|length == 0 %}
+                <p>Pas encore d'article dans le blog.</p>
+            {% else %} 
+                    <div>
+                    {% for item in articles %}
+                        <div style="margin-bottom: 40px; text-align:center;">
+                            <h3>{{ item.title }}</h3>
+                            <h5>{{ item.subtitle }}</h5>
+                            <div style="display: flex; align-items: center; justify-content: center;">
+                                {% for tag in item.tags %}
+                                <a style="cursor: pointer;" href="{{ path('home', {'tag' : tag.name }) }}"><p style="margin-right: 10px;">{{ tag.name }}</p></a>
+                                {% endfor %}
+                            </div>
+                            <a style="cursor: pointer;" href="{{ path('getArticle', {'id' : item.id }) }}">
+                                Voir l'article
+                            </a>
+                        </div>
+                    {% endfor %}
+                    </div>
+            {% endif %}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+    {{ include('footer.html.twig') }}
+</html>
