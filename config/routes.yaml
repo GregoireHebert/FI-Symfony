@@ -1,0 +1,21 @@
+article_index:
+    path: /
+    controller: App\Controller\ArticleController::index
+article_new:
+    path: /blogposts
+    controller: App\Controller\ArticleController::new
+    methods: ["GET","POST"]
+article_show:
+    path: /article/{idArticle}
+    controller: App\Controller\ArticleController::show
+
+tag_index:
+    path: /tag
+    controller: App\Controller\TagController::index
+tag_new:
+    path: /tag/add
+    controller: App\Controller\TagController::new
+    methods: ["GET","POST"]
+tag_show:
+    path: /tag/{id}
+    controller: App\Controller\TagController::show

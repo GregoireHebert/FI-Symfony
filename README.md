@@ -1,3 +1,5 @@
+Travail effectué par Pires Thomas et Poupart Valentin, une partie a été réalisée en pair programming sur une seule machine.
+
 # Exercice à produire
 
 Un blog comprenant 3 types de pages.
