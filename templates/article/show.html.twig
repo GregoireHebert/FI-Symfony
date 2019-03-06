@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Blog KACI SOFIANE{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+    < <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+{% include 'header.html' %}
+
+<div class="container">
+
+    <div class="row justify-content-md-center">
+
+        <div class="col-*-auto">
+            <h1>Sofiane Blog</h1>
+        </div>
+
+    </DIV>
+
+
+    <div class="row justify-content-md-center">
+
+        <div class="col-*-6 col-*-push-3">
+
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ article.id }}</td>
+                </tr>
+                <tr>
+                    <th>Title</th>
+                    <td>{{ article.title }}</td>
+                </tr>
+                <tr>
+                    <th>Subtitle</th>
+                    <td>{{ article.subtitle }}</td>
+                </tr>
+                <tr>
+                    <th>Corpus</th>
+                    <td>{{ article.corpus }}</td>
+                </tr>
+                <tr>
+                    <th>CreatedAt</th>
+                    <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <a href="{{ path('article_index') }}">back to list</a>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

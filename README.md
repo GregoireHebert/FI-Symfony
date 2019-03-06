@@ -1,5 +1,8 @@
 # Exercice à produire
 
+Réalisé par : Sofiane KACI
+
+
 Un blog comprenant 3 types de pages.
 
 - La page d'accueil
