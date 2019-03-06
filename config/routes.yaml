@@ -1,0 +1,23 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+app_home:
+  path: /
+  controller: App\Controller\HomeController::home
+  methods: [GET]
+
+app_create_article:
+  path: /blogposts
+  controller: App\Controller\CreatePostController::create
+  methods: [GET]
+
+app_submite_article:
+  path: /blogposts
+  controller: App\Controller\SubmitPostController::submit
+  methods: [POST]
+
+blog_show:
+  path: /{id}
+  controller: App\Controller\DisplayArticleController::display
