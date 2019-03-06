@@ -1,0 +1,19 @@
+body {
+    background-color: lightgray;
+}
+
+.blogNameFont{
+    font: 4rem 'Fira Code', sans-serif;
+}
+
+.titleFont{
+    font: 3rem 'Fira Code', sans-serif;
+}
+
+.subtitleFont{
+    font: 1rem 'Fira Code', sans-serif;
+}
+
+.blogMargin{
+    margin: 30px;
+}

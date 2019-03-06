@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}4MINE{% endblock %}
+
+{% block body %}
+
+    <div class="container" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <h1 class="blogNameFont font-weight-bold text-center">4MINE blog</h1>
+                <a href="{{ path('article_new') }}" style="margin-left: 50px;">
+                    <button class="btn btn-light btn-outline-dark" type="button">
+                        Create a new article !
+                    </button>
+                </a>
+                {% for article in articles %}
+                    <article style="margin: 40px;">
+                        <h2 class="titleFont font-weight-bold">{{ article.title }}</h2>
+                        <h4 class="subtitleFont">{{ article.subtitle }}</h4>
+                        <h6 class="text-muted">{{ article.createdAt ? article.createdAt|date('Y-m-d') : '' }}</h6>
+                        <a href="{{ path('article_show', {'id': article.id}) }}" class="text-dark font-weight-bolder">read article</a>
+                    </article>
+                {% else %}
+                    No articles found
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
