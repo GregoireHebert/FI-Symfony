@@ -29,14 +29,14 @@ final class MicroKernel
     private function initRoutes(): void
     {
         //Initialize database
-        $initRoute = new Route('/init', ['_controller' => 'App\Controller\MenuListController']);
+        $initRoute = new Route('/init', ['_controller' => 'App\Controller\InitController']);
         $initRoute->setMethods(['GET']);
         // Get all menus
-        $menuListRoute = new Route('/menu', ['_controller' => 'App\Controller\MenuListController']);
+        $menuListRoute = new Route('/menus', ['_controller' => 'App\Controller\MenuListController']);
         $menuListRoute->setMethods(['GET']);
 
         // Get all commands
-        $commandListRoute = Route('/Command', ['_controller' => 'App\Controller\CommandListController']);
+        $commandListRoute = new Route('/Command', ['_controller' => 'App\Controller\CommandListController']);
         $commandListRoute->setMethods(['GET']);
 
         $this->routes->add('route_name', new Route('/', ['_controller' => 'App\Controller\MyController']));
