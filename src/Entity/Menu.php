@@ -23,6 +23,22 @@ class Menu
     }
 
     /**
+     * gets the menu price
+     * 
+     * @return the menu price
+     */
+    public function getPrice() : float
+    {
+        $result = 0;
+
+        foreach ($this->products as $product){
+            $result += $product->getPrice(); 
+        }
+
+        return $result;
+    }
+
+    /**
      * @return string
      */
     public function getName(): string

@@ -51,6 +51,9 @@ final class MicroKernel
         $this->routes->add('products.update', self::createRoute('/products/{id}', 'PUT', 'App\Controller\Products\UpdateController'));
         $this->routes->add('products.destroy', self::createRoute('/products/{id}', 'DELETE', 'App\Controller\Products\DeleteController'));
         // Add your Routes here. documentation here https://symfony.com/doc/4.2/components/routing.html
+
+        //Adding commands route
+        $this->routes->add('command_route', new Route('/commands', ['_controller' => 'App\Controller\Command\CommandListController'])); 
     }
 
     private function initServices(): void
