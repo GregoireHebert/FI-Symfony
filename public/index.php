@@ -6,8 +6,14 @@ require __DIR__.'/../vendor/autoload.php';
 
 use App\MicroKernel;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 $kernel = new MicroKernel();
 $request = Request::createFromGlobals();
-$response = $kernel->handleRequest($request);
-$response->send();
+
+try {
+    $response = $kernel->handleRequest($request);
+    $response->send();
+} catch (\Exception $e) {
+    (new Response('Bad Request', 400))->send();
+}

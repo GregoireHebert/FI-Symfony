@@ -7,7 +7,7 @@ namespace App\Controller\Command;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use App\Exception\NotFoundHttpException;
+use App\Exception\HttpException\NotFoundHttpException;
 use App\Entity\Command;
 
 class AddProductController
