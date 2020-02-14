@@ -30,19 +30,21 @@ class MenuController
         echo "<h1>Créer un menu</h1> <br>";
         echo "Prix du menu : ".$menu->getPrix()." €<br><br>";
 
+        echo "<form method=\"post\" action=\"/\">";
+
         echo "1. Choisir un plat<br>";
         // $allPlat = listerProduitsParCategorie($ref);
         $p1 = new Produit();
         $p1->setNom("Mon Produit");
-        $p1->setPrix("10");
+        $p1->setPrix(10.0);
 
         $p2 = new Produit();
         $p2->setNom("Mon Produit 2");
-        $p2->setPrix("5");
+        $p2->setPrix(5.0);
 
         $p3 = new Produit();
         $p3->setNom("Mon Produit 3");
-        $p3->setPrix("4");
+        $p3->setPrix(5.0);
 
         $allPlat = array($p1,$p2,$p3);
 
@@ -67,13 +69,19 @@ class MenuController
             <label for=\"plat1\">".$boisson->getNom()."</label><br>";
          }
 
-         echo "<br><button type=\"button\"> Valider </button>";
-
-        // A la fin créer un menu avec les 3 trucs choisis
-      
-
-
+         echo "<br><input class=\"bouton\" type=\"submit\" value=\"Valider\"/>";      
+     
+         echo "</form>";
+        
+      return new Response($content);
 
         
     }
+
+     // add à la current command
+     public function test() {
+        alert("ok");
+        return true;
+    }
+  
 }
