@@ -12,21 +12,21 @@ class Menu implements MenuInterface
      *
      * @var string
      */
-    private $name;
+    public $name;
 
     /**
      * The list of product
      *
      * @var array
      */
-    private $products;
+    public $products;
 
     /**
      * The price of the menu
      *
      * @var float
      */
-    private $price;
+    public $price;
 
     public function __construct()
     {

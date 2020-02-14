@@ -11,21 +11,21 @@ class Product implements ProductInterface
      *
      * @var string
      */
-    private $name;
+    public $name;
 
     /**
      * The category of the product
      *
      * @var CategoryInterface
      */
-    private $category;
+    public $category;
 
     /**
      * The price of the product
      *
      * @var float
      */
-    private $price;
+    public $price;
 
     public function __construct()
     {

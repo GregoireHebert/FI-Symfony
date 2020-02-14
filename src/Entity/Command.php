@@ -11,21 +11,21 @@ class Command implements CommandInterface
      *
      * @var array
      */
-    private $products;
+    public $products;
 
     /**
      * The list of menus
      *
      * @var array
      */
-    private $menus;
+    public $menus;
 
     /**
      * The status of command
      *
      * @var bool
      */
-    private $status;
+    public $status;
 
     public function __construct()
     {

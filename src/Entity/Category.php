@@ -11,7 +11,7 @@ class Category implements CategoryInterface
      *
      * @var string
      */
-    private $name;
+    public $name;
 
     public function __construct()
     {
