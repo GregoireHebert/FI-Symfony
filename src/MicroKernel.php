@@ -37,6 +37,7 @@ final class MicroKernel
         $this->containerBuilder->register('debug', 'App\Util\Debugger');
         $this->containerBuilder->register('entity.manager', 'App\ORM\EntityManager');
         // Add your Services here. documentation here https://symfony.com/doc/4.2/components/dependency_injection.html
+        $this->containerBuilder -> register('categories', 'App\Service\CategorieService');
     }
 
     private function resolveController(Request $request)
