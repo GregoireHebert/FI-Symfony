@@ -35,7 +35,7 @@ final class MicroKernel
             [],
             '',
             [],
-            [$method]
+            $method
         );
     }
 
@@ -54,7 +54,7 @@ final class MicroKernel
 
     private function resolveController(Request $request)
     {
-        $context = new RequestContext('/');
+        $context = new RequestContext('/', $request->getRealMethod());
         $matcher = new UrlMatcher($this->routes, $context);
 
         $parameters = $matcher->match($request->getPathInfo());
