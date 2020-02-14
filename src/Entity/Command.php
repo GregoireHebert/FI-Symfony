@@ -106,5 +106,18 @@ class Command
 
         $this->total += ($menu->getPrice() * $qty);
     }
+
+    /**
+     * return command in json format
+     */
+    public function toJson(): array
+    {
+        return [
+            'id' => $this->$id,
+            'price' => $this->$price,
+            'products' => $this->products,
+            'menus' => $this->menus
+        ];
+    }
     
 }

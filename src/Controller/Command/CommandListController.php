@@ -14,6 +14,7 @@ use App\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class CommandListController
 {
@@ -38,7 +39,7 @@ class CommandListController
         $em->persist($command);
         $em->flush();
 
-        var_dump($command->getProducts());
-
+        return new JsonResponse(['data' => $command->toJSon()]);
+        
     }
 }

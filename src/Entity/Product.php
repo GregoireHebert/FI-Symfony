@@ -57,10 +57,10 @@ final class Product
     public function toJson(): array
     {
         return [
-            'id' => $this->$id;
-            'name' => $this->$name;
-            'price' => $this->$price;
-            'category' => $this->$category->toJson();
-        ]
+            'id' => $this->$id,
+            'name' => $this->$name,
+            'price' => $this->$price,
+            'category' => $this->$category->toJson()
+        ];
     }
 }
