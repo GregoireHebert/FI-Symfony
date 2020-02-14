@@ -24,6 +24,8 @@ class HomeController{
          $addition =  $container->get('commandeService')->calculerAddition($container->get('commandeService')->getCurrentCommande());
          echo('</br>Total: '.$addition.'€');
          echo('</br><a href="/payer">Payer</a>');
+
+         return new Response($content);
      }
 
      

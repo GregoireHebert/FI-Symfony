@@ -17,10 +17,10 @@ final class CategorieService {
         return $this->em->findAll(CategorieEntity::class);
     }
 
-    public function listerProduitsParCategorie(int $ref) : array {
+    public function listerProduitsParCategorie(int $id) : array {
         $result = [];
         $allProduits = $this->em->findAll(Produit::class);
-        $categorie = $this->em->find(CategorieEntity::class, $ref);
+        $categorie = $this->em->find(CategorieEntity::class, $id);
         foreach($allProduits as $produit) {
             if(in_array($produit,$categorie->getProduits())){
                 array_push($produit,$result);

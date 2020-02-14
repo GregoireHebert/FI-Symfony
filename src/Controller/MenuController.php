@@ -33,7 +33,7 @@ class MenuController
         echo "<form method=\"post\" action=\"/\">";
 
         echo "1. Choisir un plat<br>";
-        // $allPlat = listerProduitsParCategorie($ref);
+        
         $p1 = new Produit();
         $p1->setNom("Mon Produit");
         $p1->setPrix(10.0);
@@ -47,41 +47,46 @@ class MenuController
         $p3->setPrix(5.0);
 
         $allPlat = array($p1,$p2,$p3);
+        // Ajouter l'id en de la catégorie plat
+        // $allPlat = listerProduitsParCategorie($id);
 
-        //Remplacer value par id?
         foreach($allPlat as $plat) {
-            echo "<input type=\"checkbox\" name=\"plat\" value=\"plat1\">
-            <label for=\"plat1\">".$plat->getNom()."</label><br>";
+            echo "<input type=\"checkbox\" name=\"plat\" value=\"idPlat\">
+            <label for=\"idPlat\">".$plat->getNom()."</label><br>";
          }
 
 
         echo "<br>2. Choisir un accompagnement<br>";
 
-        foreach($allPlat as $accompagnement) {
-            echo "<input type=\"checkbox\" name=\"accompagnement\" value=\"plat1\">
-            <label for=\"plat1\">".$accompagnement->getNom()."</label><br>";
+         $allAccompagnement = $allPlat;
+        // Ajouter l'id en de la catégorie accompagnement
+        // $allAccompagnement = listerProduitsParCategorie($id);
+
+        foreach($allAccompagnement as $accompagnement) {
+            echo "<input type=\"checkbox\" name=\"accompagnement\" value=\"idAccompagnement\">
+            <label for=\"idAccompagnement\">".$accompagnement->getNom()."</label><br>";
          }
 
 
         echo "<br>3. Choisir une boisson<br>";
-        foreach($allPlat as $boisson) {
-            echo "<input type=\"checkbox\" name=\"accompagnement\" value=\"plat1\">
-            <label for=\"plat1\">".$boisson->getNom()."</label><br>";
+
+        $allBoissons = $allPlat;
+        // Ajouter l'id en de la catégorie boisson
+        // $allBoissons = listerProduitsParCategorie($id);
+
+        foreach($allBoissons as $boisson) {
+            echo "<input type=\"checkbox\" name=\"accompagnement\" value=\"idBoisson\">
+            <label for=\"idBoisson\">".$boisson->getNom()."</label><br>";
          }
 
+
+         // TODO : Add au menu les 3 produits sélectionnés + add à la current commande
          echo "<br><input class=\"bouton\" type=\"submit\" value=\"Valider\"/>";      
      
          echo "</form>";
         
       return new Response($content);
 
-        
     }
 
-     // add à la current command
-     public function test() {
-        alert("ok");
-        return true;
-    }
-  
 }
