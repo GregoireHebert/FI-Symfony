@@ -15,8 +15,8 @@ final class Commande
     public function __construct()
     {
         $this->ref = \App\ORM\Util\UUID::v4();
-        $this->$menus = [];
-        $this->$produits = [];
+        $this->menus = [];
+        $this->produits = array();
     }
 
     public function getId(): int
