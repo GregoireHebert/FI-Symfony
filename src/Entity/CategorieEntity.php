@@ -17,7 +17,7 @@ final class CategorieEntity
         $this->ref = \App\ORM\Util\UUID::v4();
     }
 
-    public function getRef(): int
+    public function getId(): int
     {
         return $this->ref;
     }

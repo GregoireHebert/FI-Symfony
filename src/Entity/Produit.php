@@ -19,14 +19,14 @@ final class Produit
 
     public function getId(): string
     {
-        return $this->id;
+        return $this->ref;
     }
 
     public function getPrix(): double
     {
         return $this->prix;
     }
-    public function setPrix(double $prix): void
+    public function setPrix(string $prix): void
     {
         $this->prix = $prix;
     }
