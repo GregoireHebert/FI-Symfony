@@ -7,7 +7,9 @@ namespace App\Controller;
 use App\Entity\Menu;
 use App\ORM\EntityManager;
 use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class MenuListController
 {
@@ -16,9 +18,9 @@ class MenuListController
         /** @var EntityManager $entityManager */
         $entityManager = $container->get('entity.manager');
 
-        ob_start();
-
         $menus = $entityManager->findAll(Menu::class);
-        var_dump($menus);
+
+        // Un peu sale ...
+        return new Response(serialize($menus));
     }
 }

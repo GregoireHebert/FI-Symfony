@@ -17,7 +17,6 @@ class InitController
         $entityManager = $container->get('entity.manager');
         $entityManager->resetDatabase();
 
-        ob_start();
         $menu1 = new Menu("Best Of", 7.5);
 
         $entityManager->persist($menu1);
