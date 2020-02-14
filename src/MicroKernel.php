@@ -26,6 +26,19 @@ final class MicroKernel
         $this->initServices();
     }
 
+    public static function createRoute(string $path, string $method, string $controller) : Route
+    {
+        return new Route(
+            $path,
+            ['_controller' => $controller],
+            [],
+            [],
+            '',
+            [],
+            [$method]
+        );
+    }
+
     private function initRoutes(): void
     {
         $this->routes->add('route_name', new Route('/hello', ['_controller' => 'App\Controller\MyController']));
