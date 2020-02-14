@@ -19,6 +19,8 @@ class CommandeController
 {
     public function __invoke(Request $request, Container $container)
     {
+
+
         $entityManager = $container->get('entity.manager');
         $entityManager->resetDatabase();
 
@@ -35,17 +37,15 @@ class CommandeController
 
         $commande = new Commande(0,$arrayProduct,$user,CategoryMenu::BEST_OF);
 
-        $entityManager->persist($commande);
         $entityManager->flush();
 
-        unset($bigMac, $entityManager, $toCompare);
-        unset($cheeseBurger, $entityManager, $toCompare);
+        echo "Commande id=".$commande->getId()." passée par ".$commande->getUser()->getName()." </br>";
+        echo ""
 
-        unset($commande, $entityManager, $toCompare);
+        $entityManager->persist($commande);
 
         $entityManager = new \App\ORM\EntityManager();
         $collectionCommande = $entityManager->findAll(Commande::class);
-        var_dump($collectionCommande);
 
         $content = ob_get_clean();
 
