@@ -10,8 +10,8 @@ class Element
 
     public function __construct($price, $quantite)
     {
-        $this->$quantite = $quantite;
-        $this->$price = $price;
+        $this->quantite = $quantite;
+        $this->price = $price;
     }
 
 }

@@ -18,9 +18,9 @@ class Commande
     {
         $this->id = \App\ORM\Util\UUID::v4();
         $this->numCommande = $numCommande;
-        $this->$elements = $elements;
+        $this->elements = $elements;
         $this->user = $user;
-        $this->$status = $status;
+        $this->status = $status;
     }
 
     public function getId(): string

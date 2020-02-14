@@ -14,9 +14,9 @@ class Produit extends Element
     public function __construct($quantite, $price, $name, $categoryProduits)
     {
         $this->id = \App\ORM\Util\UUID::v4();
-        $this->$quantite = $quantite;
-        $this->$price = $price;
-        $this->$name = $name;
+        $this->quantite = $quantite;
+        $this->price = $price;
+        $this->name = $name;
         $this->categoryProduits = $categoryProduits;
     }
 

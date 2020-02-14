@@ -10,9 +10,9 @@ class Menu extends Element
 
     public function __construct($quantite, $price, $produits, $categoryMenu)
     {
-        $this->$quantite = $quantite;
-        $this->$price = $price;
-        $this->$produits = $produits;
+        $this->quantite = $quantite;
+        $this->price = $price;
+        $this->produits = $produits;
         $this->categoryMenu = $categoryMenu;
     }
 
