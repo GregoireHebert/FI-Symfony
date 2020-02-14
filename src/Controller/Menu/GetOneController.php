@@ -14,7 +14,9 @@ class GetOneController
 {
     public function __invoke(Request $request, Container $container)
     {
-        if (null === $menu = $this->entityManager->find(Menu::class, $request->get('id'))) {
+        $entityManager = $container->get('entity.manager');
+
+        if (null === $menu = $entityManager->find(Menu::class, $request->get('id'))) {
             throw new NotFoundHttpException();
         }
 

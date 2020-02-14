@@ -14,7 +14,9 @@ class GetOneController
 {
     public function __invoke(Request $request, Container $container)
     {
-        if (null === $product = $this->entityManager->find(Product::class, $request->get('id'))) {
+        $entityManager = $container->get('entity.manager');
+
+        if (null === $product = $entityManager->find(Product::class, $request->get('id'))) {
             throw new NotFoundHttpException();
         }
 
