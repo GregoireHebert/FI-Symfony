@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class UpdateController
 {
-    public function __invoke(Request $request, Container $container, int $id)
+    public function __invoke(Request $request, Container $container, string $id)
     {
         $entityManager = $container->get('entity.manager');
         $product = $entityManager->find(Product::class, $id);
@@ -27,7 +27,7 @@ class UpdateController
         $category = $entityManager->find(Category::class, $request->get('category_id'));
 
         $product->setName($request->get('name'));
-        $product->setPrice($request->get('price'));
+        $product->setPrice((float)$request->get('price'));
         $product->setCategory($category);
 
         $entityManager->persist($product);
