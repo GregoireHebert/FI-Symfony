@@ -28,4 +28,24 @@ class Commande
         return $this->id;
     }
 
+    public function getUser(): User
+    {
+        return $this->user;
+    }
+
+    public function getNumCommande(): int
+    {
+        return $this->numCommande;
+    }
+
+    public function getElements(): Element
+    {
+        return $this->elements;
+    }
+
+    public function getStatus(): Statut
+    {
+        return $this->status;
+    }
+
 }
