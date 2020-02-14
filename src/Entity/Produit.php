@@ -22,11 +22,11 @@ final class Produit
         return $this->ref;
     }
 
-    public function getPrix(): string
+    public function getPrix(): float
     {
         return $this->prix;
     }
-    public function setPrix(string $prix): void
+    public function setPrix(float $prix): void
     {
         $this->prix = $prix;
     }

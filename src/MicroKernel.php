@@ -11,24 +11,27 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
+use App\Service\CommandeService;
+use App\Controller\HomeController;
+use Symfony\Component\DependencyInjection\Reference;
 
 final class MicroKernel
 {
     private $routes;
     private $containerBuilder;
+    private $commandeService;
 
     public function __construct()
     {
         $this->routes = new RouteCollection();
         $this->containerBuilder = new ContainerBuilder();
-
         $this->initRoutes();
         $this->initServices();
     }
 
     private function initRoutes(): void
     {
-        $this->routes->add('home_route', new Route('/', ['_controller' => 'App\Controller\HomeCOntroller']));
+        $this->routes->add('home_route', new Route('/', ['_controller' => 'App\Controller\HomeController']));
         // Add your Routes here. documentation here https://symfony.com/doc/4.2/components/routing.html
         $this->routes->add('menu', new Route('/menu', ['_controller' => 'App\Controller\MenuController']));
         $this->routes->add('commande', new Route('/commande', ['_controller' => 'App\Controller\CommandeController']));
@@ -40,7 +43,8 @@ final class MicroKernel
         $this->containerBuilder->register('debug', 'App\Util\Debugger');
         $this->containerBuilder->register('entity.manager', 'App\ORM\EntityManager');
         // Add your Services here. documentation here https://symfony.com/doc/4.2/components/dependency_injection.html
-        $this->containerBuilder -> register('categories', 'App\Service\CategorieService');
+        $this->containerBuilder->register('categories', 'App\Service\CategorieService');
+        $this->containerBuilder->register('commandeService', 'App\Service\CommandeService')->addArgument(new Reference('entity.manager'));
     }
 
     private function resolveController(Request $request)

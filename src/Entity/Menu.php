@@ -27,7 +27,12 @@ final class Menu
         return $this->ref;
     }
 
-    public function getPrix(): string
+    public function setPrix(float $prix): void
+    {
+        $this->$prix = $prix;
+    }
+
+    public function getPrix(): float
     {
         return $this->prix;
     }
