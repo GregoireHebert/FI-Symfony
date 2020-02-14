@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-final class Element
+class Element
 {
     private $quantite;
 

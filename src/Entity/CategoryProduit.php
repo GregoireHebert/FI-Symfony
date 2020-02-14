@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-class CategoryProduit extends SplEnum {    
+class CategoryProduit {    
     const PETITE_FAIM = 1;
     const FRITES = 2;
     const SAUCE = 3;

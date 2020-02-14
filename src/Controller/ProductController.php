@@ -4,28 +4,35 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Entity\DoStuff;
+use App\Entity\Produit;
+use App\Entity\CategoryProduit;
 use App\Util\Debugger;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class MyController
+class ProductController
 {
     public function __invoke(Request $request, Container $container)
     {
-        /** @var Debugger $debugger */
-        $debugger = $container->get('debug');
-        $debugger->dump($request);
+        $entityManager = $container->get('entity.manager');
+        $entityManager->resetDatabase();
+
+        ob_start();
+        $bigMac = new Produit(0, 6, 'BigMac', CategoryProduit::BURGER);
+        $entityManager->persist($bigMac);
+        $entityManager->flush();
+
+        unset($bigMac, $entityManager, $toCompare);
 
         $entityManager = new \App\ORM\EntityManager();
-        $collectionProduits = $entityManager->findAll(Produits::class);
+  
+        $collectionProduits = $entityManager->findAll(Produit::class);
         var_dump($collectionProduits);
 
         $content = ob_get_clean();
 
-        // $jsonResponse = new JsonResponse(['Data' => 'stuff']);
         return new Response($content);
     }
 }
