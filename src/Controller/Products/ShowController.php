@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ShowController
 {
-    public function __invoke(Request $request, Container $container, int $id)
+    public function __invoke(Request $request, Container $container, string $id)
     {
         $entityManager = $container->get('entity.manager');
         $product = $entityManager->find(Product::class, $id);
