@@ -17,9 +17,11 @@ final class Menu{
 
     private $products;
 
-    public function __construct(){
+    public function __construct(string $name, float $price){
 
         $this->id = \App\ORM\Util\UUID::v4();
+        $this->name = $name;
+        $this->price = $price;
         $this->products = array();
     }
 

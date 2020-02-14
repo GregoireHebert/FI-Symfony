@@ -28,10 +28,26 @@ final class MicroKernel
 
     private function initRoutes(): void
     {
+        //Get all products
         $productListRoute = new Route('/products', ['_controller' => 'App\Controller\ProductListController']);
         $productListRoute->setMethods("GET");
         
         $this->routes->add('productList',$productListRoute);
+        //Initialize database
+        $initRoute = new Route('/init', ['_controller' => 'App\Controller\InitController']);
+        $initRoute->setMethods(['GET']);
+        // Get all menus
+        $menuListRoute = new Route('/menus', ['_controller' => 'App\Controller\MenuListController']);
+        $menuListRoute->setMethods(['GET']);
+
+        // Get all commands
+        $commandListRoute = new Route('/Command', ['_controller' => 'App\Controller\CommandListController']);
+        $commandListRoute->setMethods(['GET']);
+
+        $this->routes->add('route_name', new Route('/', ['_controller' => 'App\Controller\MyController']));
+        $this->routes->add('initRoute', $initRoute);
+        $this->routes->add('menuListRoute', $menuListRoute);
+        $this->routes->add('list_command',$commandListRoute);
         // Add your Routes here. documentation here https://symfony.com/doc/4.2/components/routing.html
     }
 
