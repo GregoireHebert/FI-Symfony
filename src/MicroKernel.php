@@ -47,8 +47,8 @@ final class MicroKernel
         $this->routes->add('products.index', self::createRoute('/products', 'GET', 'App\Controller\Products\IndexController'));
         $this->routes->add('products.store', self::createRoute('/products', 'POST', 'App\Controller\Products\CreateController'));
         $this->routes->add('products.show', self::createRoute('/products/{id}', 'GET', 'App\Controller\Products\ShowController'));
-        $this->routes->add('products.store', self::createRoute('/products/{id}', 'PUT', 'App\Controller\Products\UpdateController'));
-        $this->routes->add('products.store', self::createRoute('/products/{id}', 'DELETE', 'App\Controller\Products\DeleteController'));
+        $this->routes->add('products.update', self::createRoute('/products/{id}', 'PUT', 'App\Controller\Products\UpdateController'));
+        $this->routes->add('products.destroy', self::createRoute('/products/{id}', 'DELETE', 'App\Controller\Products\DeleteController'));
         // Add your Routes here. documentation here https://symfony.com/doc/4.2/components/routing.html
     }
 
@@ -90,6 +90,6 @@ final class MicroKernel
             throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable.', $request->getPathInfo()));
         }
 
-        return $controller(...$arguments);
+        return $controller(...array_values($arguments));
     }
 }
