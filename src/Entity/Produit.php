@@ -22,11 +22,11 @@ final class Produit
         return $this->id;
     }
 
-    public function getPrix(): string
+    public function getPrix(): double
     {
         return $this->prix;
     }
-    public function setPrix(string $prix): void
+    public function setPrix(double $prix): void
     {
         $this->prix = $prix;
     }
