@@ -30,6 +30,9 @@ final class MicroKernel
     {
         $this->routes->add('route_name', new Route('/', ['_controller' => 'App\Controller\MyController']));
         // Add your Routes here. documentation here https://symfony.com/doc/4.2/components/routing.html
+        $this->routes->add('menu', new Route('/menu', ['_controller' => 'App\Controller\MenuController']));
+        $this->routes->add('commande', new Route('/commande', ['_controller' => 'App\Controller\CommandeController']));
+        $this->routes->add('produit', new Route('/produit', ['_controller' => 'App\Controller\ProduitController']));
     }
 
     private function initServices(): void
