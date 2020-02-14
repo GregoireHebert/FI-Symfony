@@ -4,6 +4,11 @@ namespace App\Entity;
 
 class Menu extends Element
 {
+
+    private $quantite;
+
+    private $price;
+
     private $produits;
 
     private $categoryMenu;
@@ -14,6 +19,26 @@ class Menu extends Element
         $this->price = $price;
         $this->produits = $produits;
         $this->categoryMenu = $categoryMenu;
+    }
+
+    public function getQuantite(): int
+    {
+        return $this->produits;
+    }
+
+    public function getPrice(): int
+    {
+        return $this->produits;
+    }
+
+    public function getProduits(): string
+    {
+        return $this->produits;
+    }
+
+    public function getCategoryMenu(): string
+    {
+        return $this->categoryMenu;
     }
 
 }
