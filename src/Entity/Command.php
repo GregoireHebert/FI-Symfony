@@ -4,6 +4,7 @@ namespace App\Entity;
 
 class Command implements CommandInterface
 {
+    use IdentifiableTrait;
     /**
      * The list of products
      *
@@ -47,6 +48,16 @@ class Command implements CommandInterface
     }
 
     /**
+     * Add product to command
+     * 
+     * @param ProductInterface $product a product
+     */
+    public function addProduct(ProductInterface $product)
+    {
+        $this->products[] = $product;
+    }
+
+    /**
      * Get the list of menus
      *
      * @return  array
@@ -67,6 +78,15 @@ class Command implements CommandInterface
         $this->menus = $menus;
     }
 
+    /**
+     * Add menu to command
+     * 
+     * @param MenuInterface $menu a menu
+     */
+    public function addMenu(MenuInterface $menu)
+    {
+        $this->menus[] = $menu;
+    }
 
     /**
      * Get the status of command

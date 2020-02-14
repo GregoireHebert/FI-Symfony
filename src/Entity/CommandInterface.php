@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-interface CommandInterface
+interface CommandInterface extends IdentifiableTraitInterface
 {
     public function getProducts(): array;
 
@@ -16,4 +16,7 @@ interface CommandInterface
 
     public function setStatus(bool $status);
 
+    public function addProduct(ProductInterface $product);
+    
+    public function addMenu(MenuInterface $menu);
 }
