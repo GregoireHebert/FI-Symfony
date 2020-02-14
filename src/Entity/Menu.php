@@ -19,7 +19,7 @@ final class Menu
     public function __construct()
     {
         $this->ref = \App\ORM\Util\UUID::v4();
-        $this->prix = "10";
+        $this->prix = 10.0;
     }
 
     public function getId(): string
