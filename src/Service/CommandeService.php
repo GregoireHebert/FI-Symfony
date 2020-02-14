@@ -9,6 +9,7 @@ use App\ORM\EntityManager;
 final class CommandeService {
 
     protected $em;
+    private $currentCommande;
 
     public function __construct(EntityManager $entityManager)
     {
@@ -16,11 +17,12 @@ final class CommandeService {
     }
 
     public function afficherCommande(Commande $commande){
+        echo("<h3>Commande</h3>");
         foreach($commande->getProduits() as $produit){
-            echo($produit->getNom()."       ".$produit->getPrix());
+            echo('<p>'.$produit->getNom()."       ".$produit->getPrix().'</p>');
         }
         foreach($commande->getMenus() as $menu){
-            echo($menu->getId()."  ".$produit->getPrix());
+            echo('<p>'.$menu->getId()."  ".$produit->getPrix().'</p>');
         }
     }
 
@@ -33,6 +35,15 @@ final class CommandeService {
             $addition += $produit->getPrix();
         }
         return $addition;
+    }
+
+    private function getCurrentCommande(): Commande
+    {
+        return $this->$currentCommande;
+    }
+
+    private function setCurrentCommande(Commande $commande){
+        $this->$currentCommande = $commande;
     }
 
 }
