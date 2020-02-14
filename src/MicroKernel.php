@@ -43,6 +43,7 @@ final class MicroKernel
     {
         $this->routes->add('menus.index', self::createRoute('/menus', 'GET', 'App\Controller\Menu\IndexController'));
         $this->routes->add('menus.store', self::createRoute('/menus', 'POST', 'App\Controller\Menu\StoreController'));
+        $this->routes->add('menus.show', self::createRoute('/menus/{id}', 'GET', 'App\Controller\Menu\ShowController'));
 
         $this->routes->add('products.index', self::createRoute('/products', 'GET', 'App\Controller\Products\IndexController'));
         $this->routes->add('products.store', self::createRoute('/products', 'POST', 'App\Controller\Products\CreateController'));
