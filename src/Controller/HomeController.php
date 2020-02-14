@@ -17,22 +17,14 @@ class HomeController{
       
       public function __invoke(Request $request, Container $container)
       {  
-
-         $container->get('commandeService')->afficherCommande($this->createFakeCommande());
+         echo('<h3>Votre commande en cours</h3>');
+         $container->get('commandeService')->afficherCommande($container->get('commandeService')->getCurrentCommande());
+         echo('</br><a href="/menu">Ajouter un menu</a>');
+         echo('</br><a href="/produit">Ajouter un produit</a>');
+         $addition =  $container->get('commandeService')->calculerAddition($container->get('commandeService')->getCurrentCommande());
+         echo('</br>Total: '.$addition.'€');
+         echo('</br><a href="/payer">Payer</a>');
      }
 
-     private function createFakeCommande(){
-      $commande = new Commande();
-      $frite = new Produit();
-      $frite->setPrix(3.0);
-      $frite->setNom('Frites');
-
-      $menu = new Menu();
-      $menu->setPrix(9.0);
-      
-      $commande->setProduits(array($frite));
-      $commande->setMenus(array($menu));
-
-      return $commande;
-     }
+     
 }

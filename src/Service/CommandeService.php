@@ -17,7 +17,6 @@ final class CommandeService {
     }
 
     public function afficherCommande(Commande $commande){
-        echo("<h3>Commande</h3>");
         foreach($commande->getProduits() as $produit){
             echo('<p>'.$produit->getNom()."       ".$produit->getPrix().'</p>');
         }
@@ -37,12 +36,15 @@ final class CommandeService {
         return $addition;
     }
 
-    private function getCurrentCommande(): Commande
+    public function getCurrentCommande(): Commande
     {
+        if($this->$currentCommande == null){
+            $this->$currentCommande = new Commande();
+        }
         return $this->$currentCommande;
     }
 
-    private function setCurrentCommande(Commande $commande){
+    public function setCurrentCommande(Commande $commande){
         $this->$currentCommande = $commande;
     }
 
