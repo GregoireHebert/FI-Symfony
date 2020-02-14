@@ -22,7 +22,7 @@ final class Produit
         return $this->ref;
     }
 
-    public function getPrix(): double
+    public function getPrix(): string
     {
         return $this->prix;
     }
