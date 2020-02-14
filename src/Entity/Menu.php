@@ -5,6 +5,8 @@ namespace App\Entity;
 class Menu implements MenuInterface
 {
 
+    use IdentifiableTrait;
+
     /**
      * The name of the menu
      *
@@ -26,7 +28,7 @@ class Menu implements MenuInterface
      */
     private $price;
 
-    
+
 
     /**
      * Get the name of the menu

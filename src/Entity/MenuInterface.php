@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-interface MenuInterface
+interface MenuInterface extends IdentifiableTraitInterface
 {
 
     public function getName(): string;
