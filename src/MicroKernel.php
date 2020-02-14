@@ -41,7 +41,8 @@ final class MicroKernel
 
     private function initRoutes(): void
     {
-        $this->routes->add('route_name', new Route('/hello', ['_controller' => 'App\Controller\MyController']));
+        $this->routes->add('menus.index', self::createRoute('/menus', 'GET', 'App\Controller\Menu\IndexController'));
+        $this->routes->add('menus.store', self::createRoute('/menus', 'POST', 'App\Controller\Menu\StoreController'));
         // Add your Routes here. documentation here https://symfony.com/doc/4.2/components/routing.html
     }
 
