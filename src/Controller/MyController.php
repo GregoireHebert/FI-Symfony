@@ -17,7 +17,7 @@ class MyController
     {
         /** @var Debugger $debugger */
         $debugger = $container->get('debug');
-        //$debugger->dump($request);
+        $debugger->dump($request);
 
         $entityManager = $container->get('entity.manager');
         $entityManager->resetDatabase();
