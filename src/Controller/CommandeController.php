@@ -37,15 +37,17 @@ class CommandeController
 
         $commande = new Commande(0,$arrayProduct,$user,CategoryMenu::BEST_OF);
 
-        $entityManager->flush();
-
-        echo "Commande id=".$commande->getId()." passée par ".$commande->getUser()->getName()." </br>";
-        echo ""
-
         $entityManager->persist($commande);
+
+        $entityManager->flush();
 
         $entityManager = new \App\ORM\EntityManager();
         $collectionCommande = $entityManager->findAll(Commande::class);
+
+        foreach($collectionCommande as &$commandeDb){
+            echo "Commande id=".$commandeDb->getId()."</br>Numéro de commande ".$commandeDb->getNumCommande()."</br>Utilisateur ".$commandeDb->getUser()->getName()." (id = ".$commandeDb->getUser()->getId().") </br>";
+            
+        }
 
         $content = ob_get_clean();
 

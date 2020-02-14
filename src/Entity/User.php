@@ -19,4 +19,9 @@ class User
         return $this->name;
     }
 
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
 }

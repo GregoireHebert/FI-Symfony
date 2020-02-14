@@ -33,7 +33,7 @@ class Commande
         return $this->user;
     }
 
-    public function getNumCommande(): int
+    public function getNumCommande(): string
     {
         return $this->numCommande;
     }
