@@ -14,16 +14,12 @@ final class CategorieEntity
 
     public function __construct()
     {
-        
+        $this->ref = \App\ORM\Util\UUID::v4();
     }
 
     public function getRef(): int
     {
         return $this->ref;
-    }
-
-    public function setRef(int $newRef): void {
-        $this-> ref = $newRef;
     }
 
     public function getNom(): string {
