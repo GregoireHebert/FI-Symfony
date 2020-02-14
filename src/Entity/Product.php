@@ -53,4 +53,14 @@ final class Product
     {
         $this->category = $category;
     }
+
+    public function toJson(): array
+    {
+        return [
+            'id' => $this->$id;
+            'name' => $this->$name;
+            'price' => $this->$price;
+            'category' => $this->$category->toJson();
+        ]
+    }
 }
