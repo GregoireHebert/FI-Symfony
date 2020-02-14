@@ -35,11 +35,22 @@ final class Menu{
     public function getName() :string{
         return $this->name;
     }
-    
+
     public function getPrice() :float{
         return $this->price;
     }
 
+    public function setName($name) :void{
+        $this->name = $name;
+    }
+
+    public function setPrice($price) :void{
+        $this->price = $price;
+    }
+
+    public function setProducts($products) :void{
+        $this->products = $products;
+    }
 }
 
 ?>
