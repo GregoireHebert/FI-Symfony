@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-final class Menu extends Element
+class Menu extends Element
 {
     private $produits;
 

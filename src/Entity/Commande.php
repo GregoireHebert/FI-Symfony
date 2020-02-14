@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-final class Commande
+class Commande
 {
     private $numCommande;
 
