@@ -46,7 +46,6 @@ class CommandeController
 
         foreach($collectionCommande as &$commandeDb){
             echo "Commande id=".$commandeDb->getId()."</br>Numéro de commande ".$commandeDb->getNumCommande()."</br>Utilisateur ".$commandeDb->getUser()->getName()." (id = ".$commandeDb->getUser()->getId().") </br>";
-            
         }
 
         $content = ob_get_clean();
