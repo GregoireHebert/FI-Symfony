@@ -28,8 +28,24 @@ final class MicroKernel
 
     private function initRoutes(): void
     {
-        $this->routes->add('route_name', new Route('/', ['_controller' => 'App\Controller\MyController']));
-        // Add your Routes here. documentation here https://symfony.com/doc/4.2/components/routing.html
+        //$this->routes->add('route_name', new Route('/', ['_controller' => 'App\Controller\MyController']));
+
+        // Category
+        $this->routes->add('category_find_all', new Route('/categories', ['_controller' => 'App\Controller\Category\FindAllController']));
+
+        // Command
+        $this->routes->add('command_add_menu', new Route('/commands/{commandId}/menu/{menuId}', ['_controller' => 'App\Controller\Command\AddMenuController']));
+        $this->routes->add('command_add_product', new Route('/commands/{commandId}/product/{productId}', ['_controller' => 'App\Controller\Command\AddProductController']));
+        $this->routes->add('command_get_one', new Route('/commands/{id}', ['_controller' => 'App\Controller\Command\GetOneController']));
+        $this->routes->add('command_validate', new Route('/commands/{id}/validate', ['_controller' => 'App\Controller\Command\ValidateController']));
+
+        // Menu
+        $this->routes->add('menu_find_all', new Route('/menus', ['_controller' => 'App\Controller\Menu\FindAllController']));
+        $this->routes->add('menu_get_one', new Route('/menus/{id}', ['_controller' => 'App\Controller\Menu\GetOneController']));
+
+        // Product
+        $this->routes->add('product_find_all', new Route('/products', ['_controller' => 'App\Controller\Product\FindAllController']));
+        $this->routes->add('product_get_one', new Route('/products/{id}', ['_controller' => 'App\Controller\Product\GetOneController']));
     }
 
     private function initServices(): void
