@@ -17,11 +17,11 @@ class ShowController
         $entityManager = $container->get('entity.manager');
         $product = $entityManager->find(Product::class, $id);
 
-        $this->show($product);
+        return $this->show($product);
     }
 
     public function show(Product $product)
     {
-        return new JsonResponse(['data' => $product]);
+        return new JsonResponse(['data' => $product->toJson()]);
     }
 }

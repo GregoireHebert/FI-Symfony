@@ -11,12 +11,12 @@ final class Product
     private $price;
     private $category;
 
-    public function __construct(string $name, float $price, Category $category)
+    public function __construct(string $name, float $price, $category)
     {
         $this->id = \App\ORM\Util\UUID::v4();
         $this->name = $name;
         $this->price = $price;
-        $this->category = $category;
+        $this->category = $category ? $category : new Category('Burger');
     }
 
     public function getId(): string
@@ -57,10 +57,10 @@ final class Product
     public function toJson(): array
     {
         return [
-            'id' => $this->$id;
-            'name' => $this->$name;
-            'price' => $this->$price;
-            'category' => $this->$category->toJson();
-        ]
+            'id' => $this->id,
+            'name' => $this->name,
+            'price' => $this->price,
+            'category' => $this->category->toJson(),
+        ];
     }
 }
