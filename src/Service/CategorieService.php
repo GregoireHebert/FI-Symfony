@@ -14,13 +14,13 @@ final class CategorieService {
     }
 
     public function listerCategories() : array{
-        return $this->em->findAll("categorie");
+        return $this->em->findAll(CategorieEntity::class);
     }
 
     public function listerProduitsParCategorie(int $ref) : array {
         $result = [];
-        $allProduits = $this->em->findAll("produit");
-        $categorie = $this->em->find("categorie", $ref);
+        $allProduits = $this->em->findAll(Produit::class);
+        $categorie = $this->em->find(CategorieEntity::class, $ref);
         foreach($allProduits as $produit) {
             if(in_array($produit,$categorie->getProduits())){
                 array_push($produit,$result);
