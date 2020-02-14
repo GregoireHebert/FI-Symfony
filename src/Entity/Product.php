@@ -4,6 +4,8 @@ namespace App\Entity;
 
 class Product implements ProductInterface
 {
+    use IdentifiableTrait;
+
     /**
      * The name of the product
      *

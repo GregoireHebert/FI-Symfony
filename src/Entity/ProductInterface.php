@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-interface ProductInterface
+interface ProductInterface extends IdentifiableTraitInterface
 {
     public function getName(): string;
 
