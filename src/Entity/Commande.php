@@ -15,6 +15,8 @@ final class Commande
     public function __construct()
     {
         $this->ref = \App\ORM\Util\UUID::v4();
+        $this->$menus = [];
+        $this->$produits = [];
     }
 
     public function getId(): int
@@ -22,7 +24,7 @@ final class Commande
         return $this->ref;
     }
 
-    public function getMenus(): array {
+    public function getMenus() {
         return $this -> menus;
     }
     public function setMenus(array $menus): void
@@ -34,8 +36,8 @@ final class Commande
         array_push($this->menus,$menu);
     }
 
-    public function getProduits(): array {
-        return $this -> produits;
+    public function getProduits() {
+        return $this->produits;
     }
     public function setProduits(array $produits): void
     {
