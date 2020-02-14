@@ -4,6 +4,8 @@ namespace App\Entity;
 
 class Category implements CategoryInterface
 {
+    use IdentifiableTrait;
+
     /**
      * The name of the category.
      *

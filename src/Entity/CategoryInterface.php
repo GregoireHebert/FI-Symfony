@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-interface CategoryInterface
+interface CategoryInterface extends IdentifiableTraitInterface
 {
     public function getName(): string;
 
