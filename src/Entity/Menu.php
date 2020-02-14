@@ -28,7 +28,10 @@ class Menu implements MenuInterface
      */
     private $price;
 
-
+    public function __construct()
+    {
+        $this->id = \App\ORM\Util\UUID::v4();
+    }
 
     /**
      * Get the name of the menu

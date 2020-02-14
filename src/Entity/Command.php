@@ -5,6 +5,7 @@ namespace App\Entity;
 class Command implements CommandInterface
 {
     use IdentifiableTrait;
+
     /**
      * The list of products
      *
@@ -25,6 +26,11 @@ class Command implements CommandInterface
      * @var bool
      */
     private $status;
+
+    public function __construct()
+    {
+        $this->id = \App\ORM\Util\UUID::v4();
+    }
 
     /**
      * Get the list of products

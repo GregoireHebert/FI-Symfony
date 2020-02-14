@@ -16,12 +16,4 @@ trait IdentifiableTrait
     {
         return $this->id;
     }
-
-    /**
-     * Set the identifier of the identifiable object
-     */ 
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 }

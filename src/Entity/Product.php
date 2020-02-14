@@ -27,6 +27,11 @@ class Product implements ProductInterface
      */
     private $price;
 
+    public function __construct()
+    {
+        $this->id = \App\ORM\Util\UUID::v4();
+    }
+
     public function getName(): string
     {
         return $this->name;
