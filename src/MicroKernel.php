@@ -43,6 +43,12 @@ final class MicroKernel
     {
         $this->routes->add('menus.index', self::createRoute('/menus', 'GET', 'App\Controller\Menu\IndexController'));
         $this->routes->add('menus.store', self::createRoute('/menus', 'POST', 'App\Controller\Menu\StoreController'));
+
+        $this->routes->add('products.index', self::createRoute('/products', 'GET', 'App\Controller\Products\IndexController'));
+        $this->routes->add('products.store', self::createRoute('/products', 'POST', 'App\Controller\Products\CreateController'));
+        $this->routes->add('products.show', self::createRoute('/products/{id}', 'GET', 'App\Controller\Products\ShowController'));
+        $this->routes->add('products.store', self::createRoute('/products/{id}', 'PUT', 'App\Controller\Products\UpdateController'));
+        $this->routes->add('products.store', self::createRoute('/products/{id}', 'DELETE', 'App\Controller\Products\DeleteController'));
         // Add your Routes here. documentation here https://symfony.com/doc/4.2/components/routing.html
     }
 
@@ -59,7 +65,6 @@ final class MicroKernel
         $matcher = new UrlMatcher($this->routes, $context);
 
         $parameters = $matcher->match($request->getPathInfo());
-
         if (!isset($parameters['_controller'])) {
             return false;
         }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller\Products;
 
 use App\Entity\Product;
+use App\ORM\EntityManager;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +18,7 @@ class DeleteController
         $entityManager = $container->get('entity.manager');
         $product = $entityManager->find(Product::class, $id);
 
-        $this->delete($entityManager, $product);
+        return $this->delete($entityManager, $product);
     }
 
     public function delete(EntityManager $entityManager, Product $product)
