@@ -43,6 +43,20 @@ class Command
         return $this->total;
     }
 
+
+    /**
+     * gets products list
+     */
+    public function getProducts() : array
+    {
+        return $this->products;
+    }
+
+    public function getMenus() : array
+    {
+        return $this->menus;
+    }
+
     /**
      * adds product in products list
      * 
@@ -50,12 +64,8 @@ class Command
      */
     public function addProduct(Product $product)
     {
-        //initialize product quantity
-        $product[$product] ?? $product[$product] = 0;
-        //increase the number of procuts
-        $product[$product]++;
+        $this->products[$product->getName()] += 1;
 
-        //update total price
         $this->total += $product->getPrice();
     }
 
@@ -67,12 +77,9 @@ class Command
      */
     public function addProductQuantity(Product $product, int $qty)
     {
-        //initialize product quantity
-        $product[$product] ?? $product[$product] = 0;
-        //increase the number of products to the quantity
-        $product[$product]+= qty;
+        $this->products[$product->getName()] += $qty;
 
-        $this->total += ($product->getPrice() * qty);
+        $this->total += ($product->getPrice() * $qty);
     }
 
     /**
@@ -82,9 +89,7 @@ class Command
      */
     public function addMenu(Menu $menu)
     {
-        //initialize product to 
-        $menus[$menu] ?? $menus[$menu] = 0;
-        $menus[$menu]++;
+        $this->menus[$menu->getName()] += 1;
 
         $this->total += $menu->getPrice();
     }
@@ -96,11 +101,10 @@ class Command
      * @param qty : the quantity of the menu
      */
     public function addMenuQuantity(Menu $menu, int $qty){
-        //initialize product to 
-        $menus[$menu] ?? $menus[$menu] = 0;
-        $menus[$menu]+= $qty;
+        
+        $this->menus[$menu->getName()]+= $qty;
 
-        $this->total += ($menu->getPrice() * qty);
+        $this->total += ($menu->getPrice() * $qty);
     }
     
 }
