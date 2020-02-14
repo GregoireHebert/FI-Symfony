@@ -29,7 +29,7 @@ final class Menu
 
     public function setPrix(float $prix): void
     {
-        $this->$prix = $prix;
+        $this->prix = $prix;
     }
 
     public function getPrix(): float
