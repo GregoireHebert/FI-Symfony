@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Products;
+namespace App\Controller\Menu;
 
-use App\Entity\Product;
+use App\Entity\Menu;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,13 +15,13 @@ class ShowController
     public function __invoke(Request $request, Container $container, string $id)
     {
         $entityManager = $container->get('entity.manager');
-        $product = $entityManager->find(Product::class, $id);
+        $menu = $entityManager->find(Menu::class, $id);
 
-        return $this->show($product);
+        return $this->show($menu);
     }
 
-    public function show(Product $product)
+    public function show(Menu $menu)
     {
-        return new JsonResponse(['data' => $product->toJson()]);
+        return new JsonResponse(['data' => $menu->toJson()]);
     }
 }

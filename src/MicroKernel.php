@@ -35,13 +35,21 @@ final class MicroKernel
             [],
             '',
             [],
-            [$method]
+            $method
         );
     }
 
     private function initRoutes(): void
     {
-        $this->routes->add('route_name', new Route('/hello', ['_controller' => 'App\Controller\MyController']));
+        $this->routes->add('menus.index', self::createRoute('/menus', 'GET', 'App\Controller\Menu\IndexController'));
+        $this->routes->add('menus.store', self::createRoute('/menus', 'POST', 'App\Controller\Menu\StoreController'));
+        $this->routes->add('menus.show', self::createRoute('/menus/{id}', 'GET', 'App\Controller\Menu\ShowController'));
+
+        $this->routes->add('products.index', self::createRoute('/products', 'GET', 'App\Controller\Products\IndexController'));
+        $this->routes->add('products.store', self::createRoute('/products', 'POST', 'App\Controller\Products\CreateController'));
+        $this->routes->add('products.show', self::createRoute('/products/{id}', 'GET', 'App\Controller\Products\ShowController'));
+        $this->routes->add('products.update', self::createRoute('/products/{id}', 'PUT', 'App\Controller\Products\UpdateController'));
+        $this->routes->add('products.destroy', self::createRoute('/products/{id}', 'DELETE', 'App\Controller\Products\DeleteController'));
         // Add your Routes here. documentation here https://symfony.com/doc/4.2/components/routing.html
 
         //Adding commands route
@@ -57,11 +65,10 @@ final class MicroKernel
 
     private function resolveController(Request $request)
     {
-        $context = new RequestContext('/');
+        $context = new RequestContext('/', $request->getRealMethod());
         $matcher = new UrlMatcher($this->routes, $context);
 
         $parameters = $matcher->match($request->getPathInfo());
-
         if (!isset($parameters['_controller'])) {
             return false;
         }
@@ -87,6 +94,6 @@ final class MicroKernel
             throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable.', $request->getPathInfo()));
         }
 
-        return $controller(...$arguments);
+        return $controller(...array_values($arguments));
     }
 }

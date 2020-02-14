@@ -33,8 +33,8 @@ final class Category
     public function toJson(): array
     {
         return [
-            'id' => $this->$id,
-            'name' => $this->$name
+            'id' => $this->id,
+            'name' => $this->name,
         ];
     }
 }

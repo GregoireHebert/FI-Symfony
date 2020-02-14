@@ -20,7 +20,7 @@ class IndexController
             return $product->toJson();
         }, $products);
 
-        $this->index($products);
+        return $this->index($products);
     }
 
     public function index(array $products)

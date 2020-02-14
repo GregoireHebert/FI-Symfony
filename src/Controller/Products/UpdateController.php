@@ -6,6 +6,7 @@ namespace App\Controller\Products;
 
 use App\Entity\Product;
 use App\Entity\Category;
+use App\ORM\EntityManager;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,12 +14,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class UpdateController
 {
-    public function __invoke(Request $request, Container $container, int $id)
+    public function __invoke(Request $request, Container $container, string $id)
     {
         $entityManager = $container->get('entity.manager');
         $product = $entityManager->find(Product::class, $id);
 
-        $this->update($entityManager, $request, $product);
+        return $this->update($entityManager, $request, $product);
     }
 
     public function update(EntityManager $entityManager, Request $request, Product $product)
@@ -26,12 +27,12 @@ class UpdateController
         $category = $entityManager->find(Category::class, $request->get('category_id'));
 
         $product->setName($request->get('name'));
-        $product->setPrice($request->get('price'));
+        $product->setPrice((float)$request->get('price'));
         $product->setCategory($category);
 
         $entityManager->persist($product);
         $entityManager->flush();
 
-        return new JsonResponse(['data' => $product]);
+        return new JsonResponse(['data' => $product->toJson()]);
     }
 }

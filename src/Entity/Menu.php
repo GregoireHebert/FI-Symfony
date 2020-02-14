@@ -69,4 +69,12 @@ class Menu
     {
         $this->products = $products;
     }
+
+    public function toJson(): array
+    {
+        return [
+            'name' => $this->name,
+            'products' => $this->products
+        ];
+    }
 }
