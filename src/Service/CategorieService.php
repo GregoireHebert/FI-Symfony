@@ -20,9 +20,10 @@ final class CategorieService {
     public function listerProduitsParCategorie(int $ref) : array {
         $result = [];
         $allProduits = $this->em->findAll("produit");
+        $categorie = $this->em->find("categorie", $ref);
         foreach($allProduits as $produit) {
-            if($produit->$ref == $ref) {
-                array_push($result,$produit);
+            if(in_array($produit,$categorie->getProduits())){
+                array_push($produit,$result);
             }
         }
         return $result;
