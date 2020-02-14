@@ -55,12 +55,28 @@ class Command
     public function getMenus() : array
     {
         return $this->menus;
+<<<<<<< HEAD
+=======
     }
 
     /**
      * adds product in products list
      * 
      * @param prodcuct : the product to add
+     */
+    public function addProduct(Product $product)
+    {
+        $this->products[$product->getName()] += 1;
+
+        $this->total += $product->getPrice();
+>>>>>>> 0083357dac2b32721a6d893fa2732702943c7957
+    }
+
+    /**
+     * adds product in products list
+     * 
+     * @param prodcuct : the product to add
+<<<<<<< HEAD
      */
     public function addProduct(Product $product)
     {
@@ -75,6 +91,10 @@ class Command
      * @param prodcuct : the product to add
      * @param qty : the quantity of the ptoduct
      */
+=======
+     * @param qty : the quantity of the ptoduct
+     */
+>>>>>>> 0083357dac2b32721a6d893fa2732702943c7957
     public function addProductQuantity(Product $product, int $qty)
     {
         $this->products[$product->getName()] += $qty;
@@ -105,6 +125,7 @@ class Command
         $this->menus[$menu->getName()]+= $qty;
 
         $this->total += ($menu->getPrice() * $qty);
+<<<<<<< HEAD
     }
 
     /**
@@ -118,6 +139,8 @@ class Command
             'products' => $this->products,
             'menus' => $this->menus
         ];
+=======
+>>>>>>> 0083357dac2b32721a6d893fa2732702943c7957
     }
     
 }
