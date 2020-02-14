@@ -74,5 +74,7 @@ class ProduitController
         $produit3->setPrix(3.0);
 
         $entityManager->persist($produit3);
+
+        $entityManager->flush();
     }
 }
