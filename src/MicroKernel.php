@@ -71,6 +71,6 @@ final class MicroKernel
             throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable.', $request->getPathInfo()));
         }
 
-        return $controller(...$arguments);
+        return $controller(...array_values($arguments));
     }
 }
