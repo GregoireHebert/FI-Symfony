@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-class Produit extends Element
+class Produit
 {
 
     private $id;
@@ -10,6 +10,10 @@ class Produit extends Element
     private $name;
 
     private $categoryProduits;
+
+    private $quantite;
+
+    private $price;
 
     public function __construct($quantite, $price, $name, $categoryProduits)
     {
@@ -23,6 +27,26 @@ class Produit extends Element
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getCategoryProduits(): string
+    {
+        return $this->categoryProduits;
+    }
+
+    public function getQuantite(): string
+    {
+        return $this->quantite;
+    }
+
+    public function getPrice(): string
+    {
+        return $this->price;
     }
 
 }

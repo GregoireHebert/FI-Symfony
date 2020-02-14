@@ -3,11 +3,11 @@
 namespace App\Entity;
 
 class CategoryProduit {    
-    const PETITE_FAIM = 1;
-    const FRITES = 2;
-    const SAUCE = 3;
-    const BURGER = 4;
-    const SALADE = 5;
-    const DESSERT = 6;
-    const BOISSON = 7;
+    const PETITE_FAIM = "Petite faim";
+    const FRITES = "Frites";
+    const SAUCE = "Sauce";
+    const BURGER = "Burger";
+    const SALADE = "Salade";
+    const DESSERT = "Dessert";
+    const BOISSON = "Boisson";
 }
