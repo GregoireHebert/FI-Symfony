@@ -19,6 +19,7 @@ final class Menu
     public function __construct()
     {
         $this->ref = \App\ORM\Util\UUID::v4();
+        $this->prix = "10";
     }
 
     public function getId(): string
@@ -29,10 +30,6 @@ final class Menu
     public function getPrix(): string
     {
         return $this->prix;
-    }
-    public function setPrix(string $prix): void
-    {
-        $this->prix = $prix;
     }
 
     public function getBoisson(): CategorieEntity
